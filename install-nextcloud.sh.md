@@ -2,7 +2,10 @@
 #
 # Nextcloud v.21.0.4 Installer for ncmbd-debx Server.
 #
+clear
+#
 
+# install apache2 mod-php openssl.
 sudo apt update
 sudo apt install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
@@ -15,9 +18,11 @@ sudo a2enmod ssl
 sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
+# install php php-commons.
 sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 sudo php -v
 sleep 2
+# install mariadb-server as mysql-server.
 sudo apt install mariadb-server mariadb-client
 sleep 2
 sudo mysql_secure_installation
@@ -30,7 +35,8 @@ printf "type \"source ncdb.sql\"\n"
 sleep 2
 sudo mysql -u root -p
 sleep 2
-sudo apt install wget zip unzip
+# install common for installing Nextcloud.
+sudo apt install curl wget zip unzip ffmpeg
 sleep 2
 sudo rm -r nextcloud/
 sudo rm dlds/nextcloud-21.0.4.zip*
