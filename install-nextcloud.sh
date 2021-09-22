@@ -38,12 +38,13 @@ sleep 2
 sudo mysql -u root -p
 sleep 2
 # install common for installing Nextcloud.
-sudo apt install curl wget zip unzip ffmpeg
+sudo apt install curl wget zip unzip aria2 ffmpeg
 sleep 2
 sudo rm -r nextcloud/
 sudo rm dlds/nextcloud-21.0.4.zip*
 #sudo rm dlds/v21.0.4.zip*
-wget -P dlds/ https://download.nextcloud.com/server/releases/nextcloud-21.0.4.zip
+#wget -P dlds/ https://download.nextcloud.com/server/releases/nextcloud-21.0.4.zip
+aria2c -d dlds/ -c -x 16 https://download.nextcloud.com/server/releases/nextcloud-21.0.4.zip
 #wget -P dlds/ https://github.com/nextcloud/server/archive/refs/tags/v21.0.4.zip
 sleep 2
 unzip dlds/nextcloud-21.0.4.zip
