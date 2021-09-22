@@ -39,10 +39,13 @@ sleep 2
 sudo apt install curl wget zip unzip ffmpeg
 sleep 2
 sudo rm -r nextcloud/
-sudo rm dlds/nextcloud-21.0.4.zip*
-wget -P dlds/ https://download.nextcloud.com/server/releases/nextcloud-21.0.4.zip
+#sudo rm dlds/nextcloud-21.0.4.zip*
+sudo rm dlds/v21.0.4.zip*
+#wget -P dlds/ https://download.nextcloud.com/server/releases/nextcloud-21.0.4.zip
+wget -P dlds/ https://github.com/nextcloud/server/archive/refs/tags/v21.0.4.zip
 sleep 2
-unzip dlds/nextcloud-21.0.4.zip
+#unzip dlds/nextcloud-21.0.4.zip
+unzip dlds/v21.0.4.zip
 sleep 2
 cd /var/www/html/
 sudo mkdir .apps/
