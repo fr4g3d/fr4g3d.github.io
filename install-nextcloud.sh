@@ -3,7 +3,7 @@
 # Nextcloud v.21.0.4 Installer for ncmbd-debx Server.
 #
 clear
-#
+# 
 
 # install apache2 mod-php openssl.
 sudo apt update
