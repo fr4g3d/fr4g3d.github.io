@@ -31,7 +31,9 @@ printf "CREATE DATABASE nextcloud;\n" > ncdb.sql
 printf "CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'nextcloud123';\n"  >> ncdb.sql
 printf "GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';\n"  >> ncdb.sql
 printf "FLUSH PRIVILEGES;\n\\q"  >> ncdb.sql
+printf "enter MySQL ROOT password and then -\n"
 printf "type \"source ncdb.sql\"\n"
+printf "then type \\q\n"
 sleep 2
 sudo mysql -u root -p
 sleep 2
