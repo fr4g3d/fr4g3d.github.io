@@ -16,7 +16,7 @@ sudo service networking reload
 # install common apps.
 sudo apt update
 sleep 2
-sudo apt install openssl openssh-server openssh-client curl wget aria2 zip unzip
+sudo apt install dnsutils openssl openssh-server openssh-client curl wget aria2 zip unzip
 aria2c -d dlds/ -c -x 16 https://github.com/nirui/sshwifty/releases/download/0.2.14-beta-release-prebuild/sshwifty_0.2.14-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 tar -xf dlds/sshwifty_0.2.14-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
