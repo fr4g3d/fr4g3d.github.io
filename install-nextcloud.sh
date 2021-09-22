@@ -64,4 +64,4 @@ sudo a2ensite nextcloud.conf
 sleep 2
 sudo service apache2 restart
 sleep 3
-echo Done.
+echo Done..
