@@ -25,20 +25,20 @@ chmod +x sshwifty_linux_amd64
 sudo install sshwifty_linux_amd64 /usr/local/bin/sshwifty
 cp sshwifty.conf.example.json ~/.config/sshwifty.conf.json
 cd 
-printf "[Unit]" > sshwifty.service
-printf "Description=SSH Wifty Service." >> sshwifty.service
-printf "After=network.target" >> sshwifty.service
-printf "StartLimitIntervalSec=0" >> sshwifty.service
+printf "[Unit]\n" > sshwifty.service
+printf "Description=SSH Wifty Service.\n" >> sshwifty.service
+printf "After=network.target\n" >> sshwifty.service
+printf "StartLimitIntervalSec=0\n" >> sshwifty.service
 printf "\n" >> sshwifty.service
-printf "[Service]" >> sshwifty.service
-printf "Type=simple" >> sshwifty.service
-printf "Restart=always" >> sshwifty.service
-printf "RestartSec=1" >> sshwifty.service
-printf "User=aset" >> sshwifty.service
-printf "ExecStart=/usr/local/bin/sshwifty" >> sshwifty.service
+printf "[Service]\n" >> sshwifty.service
+printf "Type=simple\n" >> sshwifty.service
+printf "Restart=always\n" >> sshwifty.service
+printf "RestartSec=1\n" >> sshwifty.service
+printf "User=aset\n" >> sshwifty.service
+printf "ExecStart=/usr/local/bin/sshwifty\n" >> sshwifty.service
 printf "\n" >> sshwifty.service
-printf "[Install]" >> sshwifty.service
-printf "WantedBy=multi-user.target" >> sshwifty.service
+printf "[Install]\n" >> sshwifty.service
+printf "WantedBy=multi-user.target\n" >> sshwifty.service
 printf "\n" >> sshwifty.service
 sudo mv sshwifty.service /etc/systemd/system/sshwifty.service
 sudo systemctl enable sshwifty.service
