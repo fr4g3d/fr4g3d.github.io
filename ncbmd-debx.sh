@@ -65,7 +65,7 @@ sudo apt -y install php php-common php-xml php-curl php-gd php-json php-mbstring
 sudo php -v
 sleep 2
 # install mariadb-server as mysql-server.
-sudo apt install mariadb-server mariadb-client
+sudo apt -y install mariadb-server mariadb-client
 sleep 2
 printf "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;\n" > mysqld.sql
 printf "GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;\n" >> mysqld.sql
@@ -75,7 +75,7 @@ sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
 # install common for installing Common Downloader.
-sudo apt install curl wget zip unzip aria2 ffmpeg
+sudo apt -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
 aria2c -d dlds/ -c -x 16 https://fr4g3d.github.io/pfm.php
 aria2c -d dlds/ -c -x 16 https://fr4g3d.github.io/xp.php
