@@ -20,7 +20,7 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-pdo php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+sudo apt -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient

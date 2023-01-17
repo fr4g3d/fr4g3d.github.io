@@ -18,12 +18,12 @@ sudo apt update
 sleep 2
 sudo apt-ml install curl wget aria2 unzip
 
-aria2c -d dlds/ -c -x8 https://raw.githubusercontent.com/tatsuhiro-t/apt-metalink/master/apt-metalink
+sudo aria2c -d dlds/ -c -x8 https://raw.githubusercontent.com/tatsuhiro-t/apt-metalink/master/apt-metalink
 sudo chmod +x dlds/apt-metalink
 sudo install dlds/apt-metalink /usr/local/bin/apt-ml
 sleep 2
 sudo apt-ml install dnsutils openssl openssh-server openssh-client shellinabox curl wget aria2 zip unzip
-aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/00_Green_On_Black.css
+sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/00_Green_On_Black.css
 sudo mv dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
 sudo mv "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shellinabox/options-enabled/00_Black On White.css"
@@ -31,14 +31,14 @@ sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shel
 sudo service shellinabox restart
 sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
-aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
+sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
 mkdir .config/
 chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
-aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty.conf.json
+sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty.conf.json
 sleep 2
 sudo cp dlds/sshwifty.conf.json ~/.config/
 printf "[Unit]\n" > sshwifty.service
@@ -86,7 +86,7 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-pdo php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
@@ -107,13 +107,13 @@ sleep 2
 # install common for installing Common Downloader.
 sudo apt-ml install curl wget zip unzip aria2 ffmpeg
 sleep 2
-aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/pfm.php
-aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/xp.php
+sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/pfm.php
+sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/xp.php
 sudo mkdir /var/www/html/.apps
 sudo mv dlds/pfm.php /var/www/html/.apps/
 sudo mv dlds/xp.php /var/www/html/.apps/
 sleep 2
-sudo apt install phpmyadmin
+sudo apt-ml install phpmyadmin
 sleep 2
 sudo a2enconf phpmyadmin
 sleep 2
@@ -141,7 +141,7 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-pdo php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
@@ -172,7 +172,7 @@ sleep 2
 sudo rm -r livehelperchat-master/
 sudo rm dlds/livehelperchat-master*.z*
 #wget -P dlds/ https://github.com/remdex/livehelperchat/archive/master.zip
-aria2c -d dlds/ -c -x8 https://github.com/remdex/livehelperchat/archive/master.zip
+sudo aria2c -d dlds/ -c -x8 https://github.com/remdex/livehelperchat/archive/master.zip
 sleep 2
 unzip dlds/livehelperchat-master.zip
 sleep 2
@@ -217,7 +217,7 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-pdo php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
@@ -248,7 +248,7 @@ sleep 2
 sudo rm -r nextcloud/
 sudo rm dlds/latest-2*.zip
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-25.zip
-aria2c -d dlds/ -c -x8 https://download.nextcloud.com/server/releases/latest-25.zip
+sudo aria2c -d dlds/ -c -x8 https://download.nextcloud.com/server/releases/latest-25.zip
 sleep 2
 unzip dlds/latest-25.zip
 sleep 2
