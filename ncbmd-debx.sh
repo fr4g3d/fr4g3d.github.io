@@ -29,12 +29,10 @@ aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty_0.2.31-beta-release_lin
 mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 mkdir .config/
-cd sshwifty/
-chmod +x sshwifty_linux_amd64
-sudo install sshwifty_linux_amd64 /usr/local/bin/sshwifty
-aria2c -c -x8 https://fr4g3d.github.io/sshwifty.conf.json
-sudo cp sshwifty.conf.json ~/.config/sshwifty.conf.json
-cd 
+chmod +x sshwifty/sshwifty_linux_amd64
+sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
+aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty.conf.json
+sudo cp dlds/sshwifty.conf.json ~/.config/sshwifty.conf.json
 printf "[Unit]\n" > sshwifty.service
 printf "Description=SSH Wifty Service.\n" >> sshwifty.service
 printf "After=network.target\n" >> sshwifty.service
@@ -53,5 +51,6 @@ printf "\n" >> sshwifty.service
 sudo mv sshwifty.service /etc/systemd/system/sshwifty.service
 sudo systemctl enable sshwifty.service
 sudo service sshwifty start
+sudo service sshwifty restart
 sleep 2
 echo Done.
