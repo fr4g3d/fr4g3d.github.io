@@ -28,11 +28,13 @@ sudo rm dlds/sshwifty_0.2.*.tar.gz
 aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
+sleep 2
 mkdir .config/
 chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
 aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty.conf.json
-sudo cp dlds/sshwifty.conf.json ~/.config/sshwifty.conf.json
+sleep 2
+sudo cp dlds/sshwifty.conf.json ~/.config/
 printf "[Unit]\n" > sshwifty.service
 printf "Description=SSH Wifty Service.\n" >> sshwifty.service
 printf "After=network.target\n" >> sshwifty.service
@@ -48,9 +50,12 @@ printf "\n" >> sshwifty.service
 printf "[Install]\n" >> sshwifty.service
 printf "WantedBy=multi-user.target\n" >> sshwifty.service
 printf "\n" >> sshwifty.service
+sleep 2
 sudo mv sshwifty.service /etc/systemd/system/sshwifty.service
 sudo systemctl enable sshwifty.service
+sleep 2
 sudo service sshwifty start
+sleep 2
 sudo service sshwifty restart
 sleep 2
 echo Done.

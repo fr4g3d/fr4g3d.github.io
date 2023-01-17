@@ -48,7 +48,9 @@ sudo mv dlds/pfm.php /var/www/html/.apps/
 sudo mv dlds/xp.php /var/www/html/.apps/
 sleep 2
 sudo apt install phpmyadmin
+sleep 2
 sudo a2enconf phpmyadmin
+sleep 2
 sudo service apache2 reload
 echo Done.
 sleep 3
