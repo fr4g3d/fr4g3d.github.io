@@ -27,7 +27,7 @@ sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
 aria2c -d dlds/ -c -x 16 https://fr4g3d.github.io/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
-tar -xf dlds/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
+sudo tar -xf dlds/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 mkdir .config/
 cd sshwifty/
 chmod +x sshwifty_linux_amd64
