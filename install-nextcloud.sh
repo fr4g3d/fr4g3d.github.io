@@ -20,7 +20,7 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite* php-mysql* php-pgsql* php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+sudo apt -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-pdo php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
@@ -50,10 +50,10 @@ sudo apt -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
 sudo rm -r nextcloud/
 sudo rm dlds/latest-2*.zip
-#wget -P dlds/ https://download.nextcloud.com/server/releases/latest-25.zip
-aria2c -d dlds/ -c -x8 https://download.nextcloud.com/server/releases/latest-25.zip
+#wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
+aria2c -d dlds/ -c -x8 https://download.nextcloud.com/server/releases/latest-23.zip
 sleep 2
-unzip dlds/latest-25.zip
+unzip dlds/latest-23.zip
 sleep 2
 sudo mkdir /var/www/html/.apps
 sudo mv nextcloud/ /var/www/html/.apps/
