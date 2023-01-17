@@ -1,5 +1,5 @@
 <?php
-//{"lang":"","fm_root":"C:\\xampp-windows-x64-7.4.15-0-VC15\\","timezone":"","date_format":"Y\/m\/d H:i","auth_pass":"5e61307ed45113617d6caa63220e3926","error_reporting":1}
+//{"lang":"","fm_root":"/home/aset/","timezone":"","date_format":"Y\/m\/d H:i","auth_pass":"71db8e9433dcc3dec86f7d8157720624","error_reporting":1}
 /*-------------------------------------------------
 | PHP FILE MANAGER
 +--------------------------------------------------
