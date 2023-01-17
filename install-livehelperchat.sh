@@ -49,11 +49,11 @@ sleep 2
 sudo apt -y install curl wget zip unzip aria2
 sleep 2
 sudo rm -r livehelperchat-master/
-sudo rm dlds/master.z*
+sudo rm dlds/livehelperchat-master*.z*
 #wget -P dlds/ https://github.com/remdex/livehelperchat/archive/master.zip
 aria2c -d dlds/ -c -x8 https://github.com/remdex/livehelperchat/archive/master.zip
 sleep 2
-unzip dlds/master.zip
+unzip dlds/livehelperchat-master.zip
 sleep 2
 sudo mkdir /var/www/html/.apps
 sudo mv livehelperchat-master/lhc_web/ /var/www/html/.apps/lhc/
