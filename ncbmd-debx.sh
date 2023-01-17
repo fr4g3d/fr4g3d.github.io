@@ -24,9 +24,10 @@ sudo mv "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shellinab
 sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shellinabox"
 sudo service shellinabox restart
 sleep 2
-aria2c -d dlds/ -c -x 16 https://github.com/nirui/sshwifty/releases/download/0.2.14-beta-release-prebuild/sshwifty_0.2.14-beta-release_linux_amd64.tar.gz
+sudo rm dlds/sshwifty_0.2.*.tar.gz
+aria2c -d dlds/ -c -x 16 https://github.com/nirui/sshwifty/releases/download/0.2.31-beta-release-prebuild/sshwifty_0.2.14-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
-tar -xf dlds/sshwifty_0.2.14-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
+tar -xf dlds/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 mkdir .config/
 cd sshwifty/
 chmod +x sshwifty_linux_amd64
