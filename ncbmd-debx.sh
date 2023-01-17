@@ -25,9 +25,9 @@ sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shel
 sudo service shellinabox restart
 sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
-aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz
+aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
-sudo tar -xf dlds/sshwifty_0.2.31-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
+sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
 mkdir .config/
 chmod +x sshwifty/sshwifty_linux_amd64
