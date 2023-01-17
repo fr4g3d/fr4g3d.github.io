@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Installer Common Apps for (Pre)Nextcloud Bidang BMD - Kota Serang
+# Installer LAMP Bidang BMD - Kota Serang
 #
 clear
 #
