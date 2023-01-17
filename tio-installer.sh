@@ -20,6 +20,6 @@ sudo ./dlds/install-lamp.sh
 sudo ./dlds/install-livehelperchat.sh
 sudo ./dlds/install-nextcloud.sh
 sleep 2
-echo Done.
+echo All Well Done.
 sleep 3
 clear
