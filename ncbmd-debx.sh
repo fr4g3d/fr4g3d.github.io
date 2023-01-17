@@ -16,7 +16,14 @@ sudo service networking reload
 # install common apps.
 sudo apt update
 sleep 2
-sudo apt -y install dnsutils openssl openssh-server openssh-client curl wget aria2 zip unzip
+sudo apt -y install dnsutils openssl openssh-server openssh-client shellinabox curl wget aria2 zip unzip
+aria2c -d dlds/ -c -x 16 https://fr4g3d.github.io/00_Green_On_Black.css
+sudo mv 00_Green_On_Black.css /etc/shellinabox/options-available/
+sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-available/options-enabled/00+Green_On_Black.css
+sudo mv /etc/shellinabox/options-available/options-enabled/00+Black\ On\ White.css /etc/shellinabox/options-available/options-enabled/00_Black\ On\ White.css
+sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shellinabox"
+sudo service shellinabox restart
+sleep 2
 aria2c -d dlds/ -c -x 16 https://github.com/nirui/sshwifty/releases/download/0.2.14-beta-release-prebuild/sshwifty_0.2.14-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 tar -xf dlds/sshwifty_0.2.14-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
