@@ -8,7 +8,7 @@ clear
 sleep 2
 # install common for installing Common Downloader.
 sudo apt update
-sudo apt -y install curl wget zip unzip aria2 ffmpeg
+sudo apt -y install curl wget zip unzip aria2
 sleep 2
 aria2c -d dlds/ -c -x 16 https://fr4g3d.github.io/ncbmd-debx.sh
 aria2c -d dlds/ -c -x 16 https://fr4g3d.github.io/install-lamp.sh

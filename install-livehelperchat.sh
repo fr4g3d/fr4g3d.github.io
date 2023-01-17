@@ -46,7 +46,7 @@ sleep 2
 sudo mysql -uroot < lhcdb.sql
 sleep 2
 # install common for installing Live Helper Chat.
-sudo apt -y install curl wget zip unzip aria2 ffmpeg
+sudo apt -y install curl wget zip unzip aria2
 sleep 2
 sudo rm -r livehelperchat-master/
 sudo rm dlds/master.z*
