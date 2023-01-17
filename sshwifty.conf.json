@@ -1,0 +1,52 @@
+{
+  "HostName": "",
+  "SharedKey": "aset123",
+  "DialTimeout": 5,
+  "Socks5": "",
+  "Socks5User": "",
+  "Socks5Password": "",
+  "Servers": [
+    {
+      "ListenInterface": "0.0.0.0",
+      "ListenPort": 8182,
+      "InitialTimeout": 3,
+      "ReadTimeout": 60,
+      "WriteTimeout": 60,
+      "HeartbeatTimeout": 20,
+      "ReadDelay": 10,
+      "WriteDelay": 10,
+      "TLSCertificateFile": "",
+      "TLSCertificateKeyFile": ""
+    }
+  ],
+  "Presets": [
+    {
+      "Title": "This Server",
+      "Type": "SSH",
+      "Host": "localhost:22",
+      "Meta": {
+        "Encoding": "utf-8",
+        "Authentication": "Password"
+      }
+    },
+    {
+      "Title": "NCAset-DebX-NGRok",
+      "Type": "SSH",
+      "Host": "0.tcp.ap.ngrok.io:13544",
+      "Meta": {
+        "User": "aset",
+        "Encoding": "utf-8",
+        "Authentication": "Password"
+      }
+    },
+    {
+      "Title": "My own super expensive router",
+      "Type": "Telnet",
+      "Host": "aset-00",
+      "Meta": {
+        "Encoding": "ibm866"
+      }
+    }
+  ],
+  "OnlyAllowPresetRemotes": false
+}
