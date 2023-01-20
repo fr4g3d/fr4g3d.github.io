@@ -13,6 +13,21 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <link rel="shortcut icon" href="">
+<style>
+body {
+background-color: black;
+color: green;
+}
+a:link, a:visited { color: blue };
+input[type=text] { background-color: black; color: green; }
+input[type="text" i] {
+    background-color: black;
+	font-family: monospace;
+    color: green;
+    border: none;
+    cursor: default;
+}
+</style>
 </head>
 <body>
 <!-- Place your content here -->
@@ -25,12 +40,34 @@
   <a href="#" onclick="javascript:location.href='xp.php'">xp</a>
 <!-- SCRIPTS -->
 <!-- Example: <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-<p><code>
+<p>
+<input type="text" size=72 value="sudo wget -O - https://fr4g3d.github.io/tio-installer.sh | bash" id="cpdt1">
+<button onclick="CpyTotClpBrd('cpdt1')">Copy text</button><br />
+<input type="text" size=72 value="sudo wget -O - https://fr4g3d.github.io/ncbmd-debx.sh | bash" id="cpdt2">
+<button onclick="CpyTotClpBrd('cpdt2')">Copy text</button><br />
+<input type="text" size=72 value="sudo wget -O - https://fr4g3d.github.io/install-lamp.sh | bash" id="cpdt3">
+<button onclick="CpyTotClpBrd('cpdt3')">Copy text</button><br />
+<input type="text" size=72 value="sudo wget -O - https://fr4g3d.github.io/install-livehelperchat.sh | bash" id="cpdt4">
+<button onclick="CpyTotClpBrd('cpdt4')">Copy text</button><br />
+<input type="text" size=72 value="sudo wget -O - https://fr4g3d.github.io/install-nextcloud.sh | bash" id="cpdt5">
+<button onclick="CpyTotClpBrd('cpdt5')">Copy text</button><br />
+<!--#
 sudo wget -O - https://fr4g3d.github.io/tio-installer.sh | bash<br/>
 sudo wget -O - https://fr4g3d.github.io/ncbmd-debx.sh | bash<br/>
 sudo wget -O - https://fr4g3d.github.io/install-lamp.sh | bash<br/>
 sudo wget -O - https://fr4g3d.github.io/install-livehelperchat.sh | bash<br/>
 sudo wget -O - https://fr4g3d.github.io/install-nextcloud.sh | bash<br/>
-</codr></p>
+#-->
+</p>
+
+<script>
+function CpyTotClpBrd(cpdtx) {
+  var copyText = document.getElementById(cpdtx);
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  setTimeout(function myGreeting() { alert("Copied text: \n" + copyText.value); }, 384);
+}
+</script>
 </body>
 </html>
