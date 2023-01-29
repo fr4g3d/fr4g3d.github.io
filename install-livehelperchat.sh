@@ -39,8 +39,8 @@ sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
 printf "CREATE DATABASE livehelperchat;\n" > lhcdb.sql
-printf "CREATE USER 'livehelperchatuser'@'localhost' IDENTIFIED BY 'livehelperchatuser123';\n"  >> lhcdb.sql
-printf "GRANT ALL PRIVILEGES ON livehelperchat.* TO 'livehelperchatuser'@'localhost';\n"  >> lhcdb.sql
+printf "CREATE USER 'livehelperchat'@'localhost' IDENTIFIED BY 'livehelperchat123';\n"  >> lhcdb.sql
+printf "GRANT ALL PRIVILEGES ON livehelperchat.* TO 'livehelperchat'@'localhost';\n"  >> lhcdb.sql
 printf "FLUSH PRIVILEGES;\n\\q"  >> lhcdb.sql
 sleep 2
 sudo mysql -uroot < lhcdb.sql
