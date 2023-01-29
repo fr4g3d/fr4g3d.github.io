@@ -14,11 +14,13 @@ aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/ncbmd-debx.sh
 aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/install-lamp.sh
 aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/install-livehelperchat.sh
 aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/install-nextcloud.sh
+aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/install-kodexplorer.sh
 sudo chmod +x dlds/*.sh
 sudo ./dlds/ncbmd-debx.sh
 sudo ./dlds/install-lamp.sh
 sudo ./dlds/install-livehelperchat.sh
 sudo ./dlds/install-nextcloud.sh
+sudo ./dlds/install-kodexplorer.sh
 sleep 2
 echo All Well Done.
 sleep 3
