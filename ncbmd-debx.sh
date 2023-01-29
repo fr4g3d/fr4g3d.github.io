@@ -30,7 +30,7 @@ mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
 mkdir .config/
-chmod +x sshwifty/sshwifty_linux_amd64
+sudo chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
 aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sshwifty.conf.json
 sleep 2
