@@ -56,7 +56,7 @@ sleep 2
 unzip dlds/livehelperchat-master.zip
 sleep 2
 sudo mkdir /var/www/html/.apps
-sudo mv livehelperchat-master/lhc_web/ /var/www/html/.apps/lhc/
+sudo mv -f livehelperchat-master/lhc_web/ /var/www/html/.apps/lhc/
 sudo chown -R www-data:www-data /var/www/html/.apps/lhc/
 sudo chmod -R 755 /var/www/html/.apps/lhc/
 printf "Alias /lhc \"/var/www/html/.apps/lhc\"\n\n" > livehelperchat.conf

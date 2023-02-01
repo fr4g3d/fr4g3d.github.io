@@ -56,7 +56,7 @@ sleep 2
 unzip dlds/latest-23.zip
 sleep 2
 sudo mkdir /var/www/html/.apps
-sudo mv nextcloud/ /var/www/html/.apps/
+sudo mv -f nextcloud/ /var/www/html/.apps/
 sudo chown -R www-data:www-data /var/www/html/.apps/nextcloud/
 sudo chmod -R 755 /var/www/html/.apps/nextcloud/
 printf "Alias /nc \"/var/www/html/.apps/nextcloud/\"\n\n" > nextcloud.conf

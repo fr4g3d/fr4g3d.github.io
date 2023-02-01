@@ -56,7 +56,7 @@ sleep 2
 unzip dlds/KodExplorer.zip
 sleep 2
 sudo mkdir /var/www/html/.apps
-sudo mv KodExplorer/ /var/www/html/.apps/
+sudo mv -f KodExplorer/ /var/www/html/.apps/
 sudo chown -R www-data:www-data /var/www/html/.apps/KodExplorer/
 sudo chmod -R 755 /var/www/html/.apps/KodExplorer/
 printf "Alias /kode \"/var/www/html/.apps/KodExplorer/\"\n\n" > KodExplorer.conf

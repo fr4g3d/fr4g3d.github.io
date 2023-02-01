@@ -18,9 +18,9 @@ sudo apt update
 sleep 2
 sudo apt -y install dnsutils openssl openssh-server openssh-client shellinabox curl wget aria2 zip unzip
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/00_Green_On_Black.css
-sudo mv dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
+sudo mv -f dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
-sudo mv "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shellinabox/options-enabled/00_Black On White.css"
+sudo mv -f "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shellinabox/options-enabled/00_Black On White.css"
 sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shellinabox"
 sudo service shellinabox restart
 sleep 2
@@ -51,7 +51,7 @@ printf "[Install]\n" >> sshwifty.service
 printf "WantedBy=multi-user.target\n" >> sshwifty.service
 printf "\n" >> sshwifty.service
 sleep 2
-sudo mv sshwifty.service /etc/systemd/system/sshwifty.service
+sudo mv -f sshwifty.service /etc/systemd/system/sshwifty.service
 sudo systemctl enable sshwifty.service
 sleep 2
 sudo service sshwifty start
