@@ -51,7 +51,7 @@ sleep 2
 sudo rm -r nextcloud/
 sudo rm dlds/latest-2*.zip
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
-aria2c -d dlds/ -c -x8 https://download.nextcloud.com/server/releases/latest-23.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/latest-23.zip
 sleep 2
 unzip dlds/latest-23.zip
 sleep 2

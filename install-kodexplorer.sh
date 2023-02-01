@@ -51,7 +51,7 @@ sleep 2
 sudo rm -r KodExplorer/
 sudo rm dlds/KodExplorer.zip
 #wget -P dlds/ https://fr4g3d.github.io/KodExplorer.zip
-aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/KodExplorer.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/KodExplorer.zip
 sleep 2
 unzip dlds/KodExplorer.zip
 sleep 2

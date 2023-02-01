@@ -51,7 +51,7 @@ sleep 2
 sudo rm -r livehelperchat-master/
 sudo rm dlds/livehelperchat-master*.z*
 #wget -P dlds/ https://github.com/remdex/livehelperchat/archive/master.zip
-aria2c -d dlds/ -c -x8 https://github.com/remdex/livehelperchat/archive/master.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 https://github.com/remdex/livehelperchat/archive/master.zip
 sleep 2
 unzip dlds/livehelperchat-master.zip
 sleep 2
