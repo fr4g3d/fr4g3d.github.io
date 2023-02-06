@@ -50,8 +50,17 @@ sudo apt -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
 sudo rm -r nextcloud/
 sudo rm dlds/latest-2*.zip
+sleep 1
+VERSION=$(sed 's/\..*//' /etc/debian_version)
+if [[ $VERSION == '10' ]]; then
+  NCVer="latest-23.zip"
+elif [[ $VERSION == '11' ]]; then
+  NCVer="latest-25.zip"
+fi
+echo $NCVer;
+sleep 1
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/latest-23.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer
 sleep 2
 unzip dlds/latest-23.zip
 sleep 2
