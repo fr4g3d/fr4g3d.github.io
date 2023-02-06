@@ -10,11 +10,18 @@ sleep 2
 sudo apt update
 sudo apt -y install curl wget zip unzip aria2
 sleep 2
+rm ./dlds/ncbmd-debx.sh
+rm ./dlds/install-lamp.sh
+rm ./dlds/install-livehelperchat.sh
+rm ./dlds/install-nextcloud.sh
+rm ./dlds/install-kodexplorer.sh
+sleep 2
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/ncbmd-debx.sh
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/install-lamp.sh
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/install-livehelperchat.sh
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/install-nextcloud.sh
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/install-kodexplorer.sh
+sleep 2
 sudo chmod +x dlds/*.sh
 sudo ./dlds/ncbmd-debx.sh
 sudo ./dlds/install-lamp.sh
