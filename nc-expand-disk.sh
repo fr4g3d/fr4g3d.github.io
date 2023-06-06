@@ -24,10 +24,10 @@ sudo mhddfs /var/www/html/.apps/nextcloud/data,/mnt/ncd0 /mnt/fncd -o allow_othe
 sudo printf "mhddfs#/var/www/html/.apps/nextcloud/data,/mnt/ncd0 /mnt/fncd fuse defaults,allow_other,nonempty 0 0\n" | sudo tee -a /etc/fstab
 clear
 sleep 2
-sudo printf "change this:"
-sudo printf "/var/www/html/.apps/nextcloud/data"
-sudo printf "-- into -- thie :"
-sudo printf "/mnt/fncd"
+sudo printf "change this:\n"
+sudo printf "/var/www/html/.apps/nextcloud/data\n"
+sudo printf "-- into -- thie :\n"
+sudo printf "/mnt/fncd\n"
 sleep 11
 sudo -u www-data php /var/www/html/.apps/nextcloud/occ maintenance:mode --on
 sudo nano /var/www/html/.apps/nextcloud/config/config.php
