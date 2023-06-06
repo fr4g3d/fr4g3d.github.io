@@ -25,9 +25,9 @@ sudo printf "mhddfs#/var/www/html/.apps/nextcloud/data,/mnt/ncd0 /mnt/fncd fuse 
 clear
 sleep 2
 sudo printf "change this:\n"
-sudo printf "/var/www/html/.apps/nextcloud/data\n"
-sudo printf "-- into -- thie :\n"
-sudo printf "/mnt/fncd\n"
+sudo printf "'/var/www/html/.apps/nextcloud/data'\n"
+sudo printf "-- into -- this :\n"
+sudo printf "'/mnt/fncd'\n"
 sleep 11
 sudo -u www-data php /var/www/html/.apps/nextcloud/occ maintenance:mode --on
 sudo nano /var/www/html/.apps/nextcloud/config/config.php
