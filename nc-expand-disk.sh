@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Nextcloud v.21.0.4 Installer for ncmbd-debx Server.
+# Nextcloud Server - Expander Storage.
 #
 clear
 #
@@ -24,6 +24,11 @@ sudo mhddfs /var/www/html/.apps/nextcloud/data,/mnt/ncd0 /mnt/fncd -o allow_othe
 sudo printf "mhddfs#/var/www/html/.apps/nextcloud/data,/mnt/ncd0 /mnt/fncd fuse defaults,allow_other,nonempty 0 0\n" | sudo tee -a /etc/fstab
 clear
 sleep 2
+sudo printf "change this:"
+sudo printf "/var/www/html/.apps/nextcloud/data"
+sudo printf "-- into -- thie :"
+sudo printf "/mnt/fncd"
+sleep 11
 sudo -u www-data php /var/www/html/.apps/nextcloud/occ maintenance:mode --on
 sudo nano /var/www/html/.apps/nextcloud/config/config.php
 sleep 2
