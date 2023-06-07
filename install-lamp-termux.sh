@@ -18,7 +18,7 @@ pkg install php-apache php apache2 mariadb -y -f
 wget https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
 tar xzvf dokuwiki-stable.tgz
 mkdir $PREFIX/share/apache2/default-site/htdocs/dw/
-mv dokuwiki/* $PREFIX/share/apache2/default-site/htdocs/dw/
+mv dokuwiki-*/* $PREFIX/share/apache2/default-site/htdocs/dw/
 httpd &
 mysqld &
 printf "Done..."
