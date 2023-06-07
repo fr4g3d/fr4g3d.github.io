@@ -15,6 +15,7 @@ pkg install openssl openssh wget git -y
 #dpkg -i php-apache_7.4.12_aarch64.deb
 apt --fix-missing --fix-broken install
 pkg install php php-apache apache2 mariadb -y -f
+rm dokuwiki-stable.tgz
 wget https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
 tar -xzvf dokuwiki-stable.tgz
 mkdir $PREFIX/share/apache2/default-site/htdocs/dw/
