@@ -20,6 +20,9 @@ wget https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
 tar -xzvf dokuwiki-stable.tgz
 mkdir $PREFIX/share/apache2/default-site/htdocs/dw/
 mv dokuwiki-*/* $PREFIX/share/apache2/default-site/htdocs/dw/
+cd $PREFIX/share/apache2/default-site/htdocs/
+git clone https://github.com/gabrielecirulli/2048.git
+cd
 printf "LoadModule mpm_worker_module libexec/apache2/mod_mpm_worker.so" >> $PREFIX/etc/apache2/httpd.conf
 printf "LoadModule php_module libexec/apache2/libphp.so" >> $PREFIX/etc/apache2/httpd.conf
 printf "<IfModule dir_module>" >> $PREFIX/etc/apache2/httpd.conf
