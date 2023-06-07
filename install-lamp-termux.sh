@@ -6,7 +6,7 @@ clear
 #
 pkg update
 termux-change-repo
-pkg install wget git
+pkg install openssl openssh wget git -y
 #rm php_7.4.12_aarch64.deb
 #rm php-apache_7.4.12_aarch64.deb
 #wget https://github.com/Termux-pod/termux-pod/raw/main/aarch64/Php7/php_7.4.12_aarch64.deb
