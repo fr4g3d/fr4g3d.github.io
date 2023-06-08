@@ -55,7 +55,7 @@ printf "Setting Up httpd.conf and Enable Modules..."
 sleep 3
 printf "LoadModule mpm_worker_module libexec/apache2/mod_mpm_worker.so\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "LoadModule php_module libexec/apache2/libphp.so\n" >> $PREFIX/etc/apache2/httpd.conf
-printf "#" >> $PREFIX/etc/apache2/httpd.conf
+printf "#\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "<IfModule dir_module>\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "  DirectoryIndex index.html index.php\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "</IfModule>\n" >> $PREFIX/etc/apache2/httpd.conf
