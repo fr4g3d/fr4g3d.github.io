@@ -37,12 +37,12 @@ pkg install php php-apache apache2 mariadb -y
 sleep 3
 printf "Download AjaxCMS Package...\n"
 sleep 3
-rm flatpress-1.2.1.zip
+rm ajax_cms.zip
 wget https://fr4g3d.github.io/ajax_cms.zip
 sleep 3
 printf "Extracting AjaxCMS Package...\n"
 sleep 3
-unzip flatpress-1.2.1.zip
+unzip ajax_cms.zip
 sleep 3
 printf "Moving AjaxCMS Package...\n"
 sleep 3
