@@ -58,7 +58,6 @@ printf "LoadModule php_module libexec/apache2/libphp.so\n" >> $PREFIX/etc/apache
 printf "<IfModule dir_module>\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "  DirectoryIndex index.html index.php\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "</IfModule>\n" >> $PREFIX/etc/apache2/httpd.conf
-printf "</IfModule>\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "<FilesMatch \.php$>\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "    SetHandler application/x-httpd-php\n" >> $PREFIX/etc/apache2/httpd.conf
 printf "</FilesMatch>\n" >> $PREFIX/etc/apache2/httpd.conf
