@@ -41,9 +41,9 @@ sleep 2
 # install common for installing Common Downloader.
 sudo apt -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/admnr.php
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/pfm.php
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/xp.php
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/admnr.php
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/pfm.php
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/xp.php
 sudo mkdir /var/www/html/.apps
 sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
