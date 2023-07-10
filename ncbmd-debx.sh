@@ -34,7 +34,7 @@ sudo chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sshwifty.conf.json
 sleep 2
-cp dlds/sshwifty.conf.json ~/.config/
+sudo cp dlds/sshwifty.conf.json ~/.config/
 printf "[Unit]\n" > sshwifty.service
 printf "Description=SSH Wifty Service.\n" >> sshwifty.service
 printf "After=network.target\n" >> sshwifty.service
