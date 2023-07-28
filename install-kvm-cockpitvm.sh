@@ -15,6 +15,8 @@ sudo systemctl enable --now libvirtd
 sleep 2
 sudo virsh net-start default
 sleep 2
+sudo service cockpit start
+sleep 2
 # install Cockpit VM App.
 sudo apt -y install cockpit cockpit-machines
 sleep 2
