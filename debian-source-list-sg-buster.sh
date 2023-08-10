@@ -62,3 +62,5 @@ deb-src http://mirror.sg.gs/debian/ buster-updates main non-free contrib
 #deb http://deb.debian.org/debian-security buster/updates main non-free contrib
 #deb-src http://deb.debian.org/debian-security buster/updates main non-free contrib
 " >> /etc/apt/source.list
+sleep 2
+sudo apt update
