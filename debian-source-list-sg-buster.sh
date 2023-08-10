@@ -5,7 +5,7 @@
 clear
 #
 
-printf "
+echo "
 
 #
 deb  http://ftp.sg.debian.org/debian/ buster main non-free contrib
