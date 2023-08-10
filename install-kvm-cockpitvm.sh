@@ -5,28 +5,29 @@
 clear
 #
 
-# install common apps for Downloader.
-sudo apt -y install curl wget aria2
+# install common apps and Downloader.
+sudo apt -y install curl wget aria2 coreutils
 sleep 2
-# install KVM/Qemu.
-sudo apt -y install --no-install-recommends qemu qemu-kvm qemu-system libvirt-daemon libvirt-daemon-system libvirt-clients bridge-utils virt-manager virtinst
+# install Cockpit VM App.
+sudo apt -y install cockpit cockpit-machines
 sleep 2
 sudo systemctl enable --now libvirtd
+sleep 2
+sudo virsh net-autostart default
 sleep 2
 sudo virsh net-start default
 sleep 2
 sudo service cockpit start
 sleep 2
-# install Cockpit VM App.
-sudo apt -y install cockpit cockpit-machines
-#sleep 2
-# install Cockpit Navigator App.
-# aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/cockpit-navigator_0.5.10-1focal_all.deb
-# sudo apt -y install ./dlds/cockpit-navigator_0.5.10-1focal_all.deb
-# sleep 2
-# install Cockpit File-Sharing App.
-#aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/cockpit-file-sharing_3.3.3-1focal_all.deb
-#sudo apt -y install ./dlds/cockpit-file-sharing_3.3.3-1focal_all.deb
+sudo usermod -aG kvm $(whoami)
+sudo usermod -aG libvirt $(whoami)
+newgrp kvm
+newgrp libvirt
+sleep 2
+# install FileBrowser App.
+sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
+dpkg -S /usr/bin/nohup
+nohup filebrowser -a 0.0.0.0 -p 8787 -r /home &
 sleep 2
 echo Done.
 sleep 3
