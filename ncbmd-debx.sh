@@ -5,6 +5,9 @@
 clear
 #
 
+# Always SysAdmin Message
+sudo echo "Defaults lecture = always" >> /etc/sudoers.d/privacy
+
 # disabling ipv6
 sudo sh -c "printf \"\n\" >> /etc/sysctl.conf"
 sudo sh -c "printf \"net.ipv6.conf.all.disable_ipv6 = 1\n\" >> /etc/sysctl.conf"

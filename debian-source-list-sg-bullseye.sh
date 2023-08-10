@@ -5,7 +5,7 @@
 clear
 #
 
-echo "
+sudo echo "
 
 #
 deb  http://ftp.sg.debian.org/debian/ bullseye main non-free contrib
