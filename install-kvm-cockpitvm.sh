@@ -27,12 +27,33 @@ sleep 2
 # install FileBrowser App.
 sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
 dpkg -S /usr/bin/nohup
-sudo sh -c "printf \"#!/bin/bash
 
-nohup filebrowser -a 0.0.0.0 -p 8787 -r /home &
+printf "[Unit]
+Description=FileBrowser Service
+After=network-online.target
+StartLimitIntervalSec=0
 
-exit 0
-\" > /etc/rc.local"
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+Group=root
+ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 8787 -r /home
+
+[Install]
+WantedBy=multi-user.target
+" >> filebrowserd.service
+sleep 2
+sudo mv -f filebrowserd.service /etc/systemd/system/filebrowserd.service
+sleep 2
+sudo systemctl enable filebrowserd.service
+sleep 2
+sudo service filebrowserd start
+sleep 2
+sudo service filebrowserd restart
+sleep 2
+nohup filebrowser -a 0.0.0.0 -p 8787 -r /home
 sleep 2
 echo Done.
 sleep 3
