@@ -27,7 +27,12 @@ sleep 2
 # install FileBrowser App.
 sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
 dpkg -S /usr/bin/nohup
+sudo sh -c "printf \"#!/bin/bash
+
 nohup filebrowser -a 0.0.0.0 -p 8787 -r /home &
+
+exit 0
+\" > /etc/rc.local"
 sleep 2
 echo Done.
 sleep 3
