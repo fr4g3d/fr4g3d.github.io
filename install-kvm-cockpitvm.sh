@@ -41,7 +41,7 @@ Restart=always
 RestartSec=1
 User=root
 Group=root
-ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 8787 -r /home
+ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 8787 -r /home -d /home/aset/filebrowser.db
 
 [Install]
 WantedBy=multi-user.target
