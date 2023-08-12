@@ -24,6 +24,8 @@ sudo usermod -aG libvirt $(whoami)
 newgrp kvm
 newgrp libvirt
 sleep 2
+sudo service cockpit start
+sleep 2
 # install FileBrowser App.
 sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
 dpkg -S /usr/bin/nohup
@@ -53,7 +55,7 @@ sudo service filebrowserd start
 sleep 2
 sudo service filebrowserd restart
 sleep 2
-nohup filebrowser -a 0.0.0.0 -p 8787 -r /home
+# nohup filebrowser -a 0.0.0.0 -p 8787 -r /home
 sleep 2
 echo Done.
 sleep 3

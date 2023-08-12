@@ -8,59 +8,59 @@ clear
 sudo sh -c "printf \"
 
 #
-deb  http://ftp.sg.debian.org/debian/ bullseye main non-free contrib
-deb-src http://ftp.sg.debian.org/debian/ bullseye main non-free contrib
+deb  http://ftp.sg.debian.org/debian/ bullseye main contrib non-free
+deb-src http://ftp.sg.debian.org/debian/ bullseye main contrib non-free
 
-deb http://ftp.sg.debian.org/debian/ bullseye-updates main non-free contrib
-deb-src http://ftp.sg.debian.org/debian/ bullseye-updates main non-free contrib
+deb http://ftp.sg.debian.org/debian/ bullseye-updates main contrib non-free
+deb-src http://ftp.sg.debian.org/debian/ bullseye-updates main contrib non-free
 
-deb http://deb.debian.org/debian/ bullseye-backports main non-free contrib
-deb-src http://deb.debian.org/debian/ bullseye-backports main non-free contrib
+deb http://deb.debian.org/debian/ bullseye-backports main contrib non-free
+deb-src http://deb.debian.org/debian/ bullseye-backports main contrib non-free
 
-#deb http://ftp.sg.debian.org/debian/ unstable main non-free contrib
-#deb-src http://ftp.sg.debian.org/debian/ unstable main non-free contrib
+#deb http://ftp.sg.debian.org/debian/ unstable main contrib non-free
+#deb-src http://ftp.sg.debian.org/debian/ unstable main contrib non-free
 
-deb http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
-deb-src http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
-
-#
-#deb http://mirror.coganng.com/debian/ bullseye main non-free contrib
-#deb-src http://mirror.coganng.com/debian/ bullseye main non-free contrib
-
-#deb http://mirror.coganng.com/debian/ bullseye-updates main non-free contrib
-#deb-src http://mirror.coganng.com/debian/ bullseye-updates main non-free contrib
-
-#deb http://mirror.coganng.com/debian/ unstable main non-free contrib
-#deb-src http://mirror.coganng.com/debian/ unstable main non-free contrib
-
-#deb http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
-#deb-src http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
+deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
 
 #
-deb http://mirror.sg.gs/debian/ bullseye main non-free contrib
-deb-src http://mirror.sg.gs/debian/ bullseye main non-free contrib
+#deb http://mirror.coganng.com/debian/ bullseye main contrib non-free
+#deb-src http://mirror.coganng.com/debian/ bullseye main contrib non-free
 
-deb http://mirror.sg.gs/debian/ bullseye-updates main non-free contrib
-deb-src http://mirror.sg.gs/debian/ bullseye-updates main non-free contrib
+#deb http://mirror.coganng.com/debian/ bullseye-updates main contrib non-free
+#deb-src http://mirror.coganng.com/debian/ bullseye-updates main contrib non-free
 
-#deb http://mirror.sg.gs/debian/ unstable main non-free contrib
-#deb-src http://mirror.sg.gs/debian/ unstable main non-free contrib
+#deb http://mirror.coganng.com/debian/ unstable main contrib non-free
+#deb-src http://mirror.coganng.com/debian/ unstable main contrib non-free
 
-#deb http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
-#deb-src http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
+#deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+#deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
 
 #
-#deb http://mirror.soonkeat.sg/debian/ bullseye main non-free contrib
-#deb-src http://mirror.soonkeat.sg/debian/ bullseye main non-free contrib
+deb http://mirror.sg.gs/debian/ bullseye main contrib non-free
+deb-src http://mirror.sg.gs/debian/ bullseye main contrib non-free
 
-#deb http://mirror.soonkeat.sg/debian/ bullseye-updates main non-free contrib
-#deb-src http://mirror.soonkeat.sg/debian/ bullseye-updates main non-free contrib
+deb http://mirror.sg.gs/debian/ bullseye-updates main contrib non-free
+deb-src http://mirror.sg.gs/debian/ bullseye-updates main contrib non-free
 
-#deb http://mirror.soonkeat.sg/debian/ unstable main non-free contrib
-#deb-src http://mirror.soonkeat.sg/debian/ unstable main non-free contrib
+#deb http://mirror.sg.gs/debian/ unstable main contrib non-free
+#deb-src http://mirror.sg.gs/debian/ unstable main contrib non-free
 
-#deb http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
-#deb-src http://deb.debian.org/debian-security/ bullseye-security main non-free contrib
+#deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+#deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+
+#
+#deb http://mirror.soonkeat.sg/debian/ bullseye main contrib non-free
+#deb-src http://mirror.soonkeat.sg/debian/ bullseye main contrib non-free
+
+#deb http://mirror.soonkeat.sg/debian/ bullseye-updates main contrib non-free
+#deb-src http://mirror.soonkeat.sg/debian/ bullseye-updates main contrib non-free
+
+#deb http://mirror.soonkeat.sg/debian/ unstable main contrib non-free
+#deb-src http://mirror.soonkeat.sg/debian/ unstable main contrib non-free
+
+#deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+#deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
 \" >> /etc/apt/sources.list"
 sleep 2
 sudo apt update
