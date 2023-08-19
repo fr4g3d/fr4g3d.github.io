@@ -30,8 +30,9 @@ sudo apt -y update
 sleep 2
 sudo apt -y install bc-flexisip
 sleep 2
-sudo su 
-/opt/belledonne-communications/bin/flexisip --dump-default all > /etc/flexisip/flexisip.conf
+/opt/belledonne-communications/bin/flexisip --dump-default all > flexisip.conf
+sleep 2
+sudo cp flexisip.conf /etc/flexisip/flexisip.conf
 exit
 sleep 2
 sudo systemctl enable flexisip-proxy flexisip-presence
