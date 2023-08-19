@@ -32,10 +32,13 @@ sudo apt -y install bc-flexisip
 sleep 2
 /opt/belledonne-communications/bin/flexisip --dump-default all > flexisip.conf
 sleep 2
-sudo sh -c "printf \"#
+sudo sh -c "printf \"
+#
 [global]
-debug=false
 aliases=sip.example.org localhost
+
+[module::DoSProtection]
+enabled=false
 
 [module::Registrar]
 enabled=true
@@ -47,6 +50,7 @@ enabled=true
 auth-domains=sip.example.org localhost
 db-implementation=file
 file-path=/etc/flexisip/users.db.txt
+#
 \" >> flexisip.conf"
 sleep 2
 sudo sh -c "printf \"#
@@ -66,12 +70,7 @@ sudo cp users.db.txt /etc/flexisip/users.db.txt
 sleep 2
 # install IPTables
 sudo apt -y install iptables
-# Zero-FlexiSiP RuleZ
-sudo iptables -w -V > /dev/null 2>&1
-sudo iptables -F FLEXISIP 2>&1
-sudo ip6tables -F FLEXISIP 2>&1
-sudo iptables -t filter -A INPUT -j FLEXISIP 2>&1
-sudo ip6tables -t filter -A INPUT -j FLEXISIP 2>&1
+sleep 2
 # First, create a specific chain for Flexisip rules.
 sudo iptables -N flexisip-input-rules
 # UDP/TCP on port 5060
@@ -90,3 +89,5 @@ sleep 2
 sudo systemctl enable flexisip-proxy flexisip-presence
 sleep 2
 sudo systemctl start flexisip-proxy flexisip-presence
+echo Done.
+
