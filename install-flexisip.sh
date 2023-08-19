@@ -59,8 +59,7 @@ sleep 2
 sudo sh -c "printf \"#
 \" >> domain-registrations.conf"
 sleep 2
-sudo sh -c "printf \"#
-version:1
+sudo sh -c "printf \"version:1
 
 admin@sip.example.org clrtxt:admin123 ;
 user1@sip.example.org clrtxt:user1231 ;
