@@ -18,7 +18,7 @@ deb [arch=amd64] http://linphone.org/snapshots/debian buster stable # hotfix bet
 deb [arch=amd64] http://linphone.org/snapshots/debian bullseye stable # hotfix beta alpha
 # For Debian 12
 #deb [arch=amd64] http://linphone.org/snapshots/debian bookworm stable # hotfix beta alpha
-\" >> /etc/apt/sources.list.d/belledonne.list
+\" >> /etc/apt/sources.list.d/belledonne.list"
 
 sleep 2
 # For Debian
