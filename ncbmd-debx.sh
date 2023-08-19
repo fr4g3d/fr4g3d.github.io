@@ -27,6 +27,14 @@ sudo mv -f "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shelli
 sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shellinabox"
 sudo service shellinabox restart
 sleep 2
+# install Synth-Shell
+sudo apt -y install git
+sleep 2
+git clone --recursive https://github.com/andresgongora/synth-shell.git
+sleep 2
+sudo chmod +x synth-shell/setup.sh
+#./synth-shell/setup.sh
+sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
