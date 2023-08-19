@@ -13,7 +13,7 @@ sudo sh -c "printf \"
 # For Debian 9
 # deb [arch=amd64] http://linphone.org/snapshots/debian stretch stable # hotfix beta alpha
 # For Debian 10
-#deb [arch=amd64] http://linphone.org/snapshots/debian buster stable # hotfix beta alpha
+# deb [arch=amd64] http://linphone.org/snapshots/debian buster stable # hotfix beta alpha
 # For Debian 11
 deb [arch=amd64] http://linphone.org/snapshots/debian bullseye stable # hotfix beta alpha
 # For Debian 12
