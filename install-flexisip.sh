@@ -64,6 +64,8 @@ sudo cp flexisip.conf /etc/flexisip/flexisip.conf
 sudo cp domain-registrations.conf /etc/flexisip/domain-registrations.conf
 sudo cp users.db.txt /etc/flexisip/users.db.txt
 sleep 2
+# install IPTables
+sudo apt -y install iptables
 # Zero-FlexiSiP RuleZ
 sudo iptables -w -V > /dev/null 2>&1
 sudo iptables -F FLEXISIP 2>&1
