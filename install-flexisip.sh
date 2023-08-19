@@ -62,8 +62,10 @@ sleep 2
 sudo sh -c "printf \"#
 version:1
 
-admin@sip.example.org clrtxt:admin@123 ;
-user1@sip.example.org clrtxt:user1@123 ;
+admin@sip.example.org clrtxt:admin123 ;
+user1@sip.example.org clrtxt:user1231 ;
+user2@sip.example.org clrtxt:user1232 ;
+user3@sip.example.org clrtxt:user1233 ;
 \" >> users.db.txt"
 sleep 2
 # copy configs.
