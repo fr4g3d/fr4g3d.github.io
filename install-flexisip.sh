@@ -93,5 +93,7 @@ sleep 2
 sudo systemctl enable flexisip-proxy flexisip-presence
 sleep 2
 sudo systemctl start flexisip-proxy flexisip-presence
+sleep 2
+sudo systemctl status flexisip-proxy flexisip-presence
+sleep 2
 echo Done.
-
