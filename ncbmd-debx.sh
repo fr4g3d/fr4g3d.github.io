@@ -33,6 +33,8 @@ sleep 2
 git clone --recursive https://github.com/andresgongora/synth-shell.git
 sleep 2
 sudo chmod +x synth-shell/setup.sh
+sleep 2
+sudo apt -y install fonts-powerline
 #./synth-shell/setup.sh
 sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
