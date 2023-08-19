@@ -37,6 +37,9 @@ sudo sh -c "printf \"
 [global]
 aliases=sip.example.org localhost
 
+[presence-server]
+long-term-enabled=true
+
 [module::DoSProtection]
 enabled=false
 
