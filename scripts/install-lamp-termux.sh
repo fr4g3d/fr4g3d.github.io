@@ -19,8 +19,8 @@ pkg install openssl openssh wget git -y
 sleep 3
 #rm php_7.4.12_aarch64.deb
 #rm php-apache_7.4.12_aarch64.deb
-#wget https://fr4g3d.github.io/php_7.4.12_aarch64.deb
-#wget https://fr4g3d.github.io/php-apache_7.4.12_aarch64.deb
+#wget https://fr4g3d.github.io/sdeb/php_7.4.12_aarch64.deb
+#wget https://fr4g3d.github.io/sdeb/php-apache_7.4.12_aarch64.deb
 #dpkg -i php_7.4.12_aarch64.deb
 #dpkg -i php-apache_7.4.12_aarch64.deb
 #sleep 3
@@ -38,7 +38,7 @@ sleep 3
 printf "Download AjaxCMS Package...\n"
 sleep 3
 rm ajax_cms.zip
-wget https://fr4g3d.github.io/ajax_cms.zip
+wget https://fr4g3d.github.io/sarch/ajax_cms.zip
 sleep 3
 printf "Extracting AjaxCMS Package...\n"
 sleep 3
@@ -54,7 +54,7 @@ sleep 3
 printf "Download DokuWiki Package...\n"
 sleep 3
 rm dokuwiki-stable.tgz
-wget https://fr4g3d.github.io/dokuwiki-2023-04-04a.tgz
+wget https://fr4g3d.github.io/sarch/dokuwiki-2023-04-04a.tgz
 sleep 3
 printf "Extracting DokuWiki Package...\n"
 sleep 3
@@ -77,9 +77,9 @@ sleep 3
 cd
 printf "Setting Up httpd.conf and Enable Modules...\n"
 sleep 3
-wget https://fr4g3d.github.io/httpd-php.conf
+wget https://fr4g3d.github.io/sconf/httpd-php.conf
 mv -f httpd-php.conf $PREFIX/etc/apache2/httpd.conf
-wget https://fr4g3d.github.io/index.html.crc.html
+wget https://fr4g3d.github.io/sphp/index.html.crc.html
 mv -f index.html.crc.html $PREFIX/share/apache2/default-site/htdocs/index.html
 printf "<? phpinfo(); ?>\n" > $PREFIX/share/apache2/default-site/htdocs/index.php
 sleep 3

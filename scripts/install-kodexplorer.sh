@@ -31,17 +31,21 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt -y install mariadb-server mariadb-client
 sleep 2
-printf "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;\n" > mysqld.sql
-printf "GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;\n" >> mysqld.sql
-printf "FLUSH PRIVILEGES;\n\\q"  >> mysqld.sql
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+\"  > mysqld.sql"
 printf "type \"source mysqld.sql\"\n"
 sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
-printf "CREATE DATABASE kodexplorer;\n" > kodedb.sql
-printf "CREATE USER 'kodexplorer'@'localhost' IDENTIFIED BY 'kodexplorer123';\n"  >> kodedb.sql
-printf "GRANT ALL PRIVILEGES ON kodexplorer.* TO 'kodexplorer'@'localhost';\n"  >> kodedb.sql
-printf "FLUSH PRIVILEGES;\n\\q"  >> kodedb.sql
+sudo sh -c "printf \"CREATE DATABASE kodexplorer;
+CREATE USER 'kodexplorer'@'localhost' IDENTIFIED BY 'kodexplorer123';
+GRANT ALL PRIVILEGES ON kodexplorer.* TO 'kodexplorer'@'localhost';
+FLUSH PRIVILEGES;
+\"  > kodedb.sql"
+printf "type \"source kodedb.sql\"\n"
 sleep 2
 sudo mysql -uroot < kodedb.sql
 sleep 2
@@ -50,8 +54,8 @@ sudo apt -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
 sudo rm -r KodExplorer/
 sudo rm dlds/KodExplorer.zip
-#wget -P dlds/ https://fr4g3d.github.io/KodExplorer.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/KodExplorer.zip
+#wget -P dlds/ https://fr4g3d.github.io/sarch/KodExplorer.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/KodExplorer.zip
 sleep 2
 unzip dlds/KodExplorer.zip
 sleep 2
@@ -59,15 +63,16 @@ sudo mkdir /var/www/html/.apps
 sudo mv -f KodExplorer/ /var/www/html/.apps/
 sudo chown -R www-data:www-data /var/www/html/.apps/KodExplorer/
 sudo chmod -R 755 /var/www/html/.apps/KodExplorer/
-printf "Alias /kode \"/var/www/html/.apps/KodExplorer/\"\n\n" > KodExplorer.conf
-printf "<Directory /var/www/html/.apps/KodExplorer/>\n" >> KodExplorer.conf
-printf "  Require all granted\n" >> KodExplorer.conf
-printf "  AllowOverride All\n" >> KodExplorer.conf
-printf "  Options FollowSymLinks MultiViews\n\n" >> KodExplorer.conf
-printf "  <IfModule mod_dav.c>\n" >> KodExplorer.conf
-printf "    Dav off\n" >> KodExplorer.conf
-printf "  </IfModule>\n" >> KodExplorer.conf
-printf "</Directory>\n\n" >> KodExplorer.conf
+sudo sh -c "printf \"Alias /kode \"/var/www/html/.apps/KodExplorer/\"
+<Directory /var/www/html/.apps/KodExplorer/>
+  Require all granted
+  AllowOverride All
+  Options FollowSymLinks MultiViews
+  <IfModule mod_dav.c>
+    Dav off
+  </IfModule>
+</Directory>
+\" > KodExplorer.conf"
 sudo cp KodExplorer.conf /etc/apache2/sites-available/
 sudo a2ensite KodExplorer.conf
 sleep 2

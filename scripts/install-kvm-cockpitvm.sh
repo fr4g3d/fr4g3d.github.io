@@ -30,7 +30,7 @@ sleep 2
 sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
 dpkg -S /usr/bin/nohup
 
-printf "[Unit]
+sudo sh -c "printf \"[Unit]
 Description=FileBrowser Service
 After=network-online.target
 StartLimitIntervalSec=0
@@ -41,11 +41,11 @@ Restart=always
 RestartSec=1
 User=root
 Group=root
-ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 8787 -r /home -d /home/aset/filebrowser.db
+ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 8787 -r /home -d /root/filebrowser.db
 
 [Install]
 WantedBy=multi-user.target
-" >> filebrowserd.service
+\" >> filebrowserd.service"
 sleep 2
 sudo mv -f filebrowserd.service /etc/systemd/system/filebrowserd.service
 sleep 2

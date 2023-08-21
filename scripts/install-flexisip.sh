@@ -9,19 +9,22 @@ clear
 sudo apt -y install curl wget aria2 coreutils
 sleep 2
 # install FlexiSiP.
-sudo sh -c "printf \"
-# For Debian 9
-# deb [arch=amd64] http://linphone.org/snapshots/debian stretch stable # hotfix beta alpha
-# For Debian 10
-# deb [arch=amd64] http://linphone.org/snapshots/debian buster stable # hotfix beta alpha
-# For Debian 11
-deb [arch=amd64] http://linphone.org/snapshots/debian bullseye stable # hotfix beta alpha
-# For Debian 12
-#deb [arch=amd64] http://linphone.org/snapshots/debian bookworm stable # hotfix beta alpha
-\" >> /etc/apt/sources.list.d/belledonne.list"
-
+VERSION=NONE
+if [ $(sed 's/\..*//' /etc/debian_version) == '9' ]; then
+  VERSION=$(sed 's/\..*//' /etc/debian_version)
+  sudo sh -c "printf \"deb [arch=amd64] http://linphone.org/snapshots/debian stretch stable # hotfix beta alpha\" > /etc/apt/sources.list.d/belledonne.list"
+elif [ $(sed 's/\..*//' /etc/debian_version) == '10' ]; then
+  VERSION=$(sed 's/\..*//' /etc/debian_version)
+  sudo sh -c "printf \"deb [arch=amd64] http://linphone.org/snapshots/debian buster stable # hotfix beta alpha\" > /etc/apt/sources.list.d/belledonne.list"
+elif [ $(sed 's/\..*//' /etc/debian_version) == '11' ]; then
+  VERSION=$(sed 's/\..*//' /etc/debian_version)
+  sudo sh -c "printf \"deb [arch=amd64] http://linphone.org/snapshots/debian bullseye stable # hotfix beta alpha\" > /etc/apt/sources.list.d/belledonne.list"
+elif [ $(sed 's/\..*//' /etc/debian_version) == '12' ]; then
+  VERSION=$(sed 's/\..*//' /etc/debian_version)
+  sudo sh -c "printf \"deb [arch=amd64] http://linphone.org/snapshots/debian bookworm stable # hotfix beta alpha\" > /etc/apt/sources.list.d/belledonne.list"
+fi
 sleep 2
-# For Debian
+# Key-Ring For Debian
 wget https://linphone.org/snapshots/debian/keyring.gpg -O - | sudo apt-key add -
 sleep 2
 #sudo apt -y install libmariadb-dev

@@ -31,17 +31,20 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt -y install mariadb-server mariadb-client
 sleep 2
-printf "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;\n" > mysqld.sql
-printf "GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;\n" >> mysqld.sql
-printf "FLUSH PRIVILEGES;\n\\q"  >> mysqld.sql
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+\" > mysqld.sql"
 printf "type \"source mysqld.sql\"\n"
 sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
-printf "CREATE DATABASE livehelperchat;\n" > lhcdb.sql
-printf "CREATE USER 'livehelperchat'@'localhost' IDENTIFIED BY 'livehelperchat123';\n"  >> lhcdb.sql
-printf "GRANT ALL PRIVILEGES ON livehelperchat.* TO 'livehelperchat'@'localhost';\n"  >> lhcdb.sql
-printf "FLUSH PRIVILEGES;\n\\q"  >> lhcdb.sql
+sudo sh -c "printf \"CREATE DATABASE livehelperchat;
+CREATE USER 'livehelperchat'@'localhost' IDENTIFIED BY 'livehelperchat123';
+GRANT ALL PRIVILEGES ON livehelperchat.* TO 'livehelperchat'@'localhost';
+FLUSH PRIVILEGES;
+\"  > lhcdb.sql"
 sleep 2
 sudo mysql -uroot < lhcdb.sql
 sleep 2
@@ -59,15 +62,16 @@ sudo mkdir /var/www/html/.apps
 sudo mv -f livehelperchat-master/lhc_web/ /var/www/html/.apps/lhc/
 sudo chown -R www-data:www-data /var/www/html/.apps/lhc/
 sudo chmod -R 755 /var/www/html/.apps/lhc/
-printf "Alias /lhc \"/var/www/html/.apps/lhc\"\n\n" > livehelperchat.conf
-printf "<Directory /var/www/html/.apps/lhc>\n" >> livehelperchat.conf
-printf "  Require all granted\n" >> livehelperchat.conf
-printf "  AllowOverride All\n" >> livehelperchat.conf
-printf "  Options FollowSymLinks MultiViews\n\n" >> livehelperchat.conf
-printf "  <IfModule mod_dav.c>\n" >> livehelperchat.conf
-printf "    Dav off\n" >> livehelperchat.conf
-printf "  </IfModule>\n" >> livehelperchat.conf
-printf "</Directory>\n\n" >> livehelperchat.conf
+sudo sh -c "printf \"Alias /lhc \"/var/www/html/.apps/lhc\"
+<Directory /var/www/html/.apps/lhc>
+  Require all granted
+  AllowOverride All
+  Options FollowSymLinks MultiViews
+  <IfModule mod_dav.c>
+    Dav off
+  </IfModule>
+</Directory>
+\" > livehelperchat.conf"
 sudo cp livehelperchat.conf /etc/apache2/sites-available/
 sudo a2ensite livehelperchat.conf
 sleep 2

@@ -31,17 +31,21 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt -y install mariadb-server mariadb-client
 sleep 2
-printf "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;\n" > mysqld.sql
-printf "GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;\n" >> mysqld.sql
-printf "FLUSH PRIVILEGES;\n\\q"  >> mysqld.sql
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+\" > mysqld.sql"
 printf "type \"source mysqld.sql\"\n"
 sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
-printf "CREATE DATABASE nextcloud;\n" > ncdb.sql
-printf "CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'nextcloud123';\n"  >> ncdb.sql
-printf "GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';\n"  >> ncdb.sql
-printf "FLUSH PRIVILEGES;\n\\q"  >> ncdb.sql
+sudo sh -c "printf \"CREATE DATABASE nextcloud;
+CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'nextcloud123';
+GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';
+FLUSH PRIVILEGES;
+\"  > ncdb.sql"
+printf "type \"source ncdb.sql\"\n"
 sleep 2
 sudo mysql -uroot < ncdb.sql
 sleep 2
@@ -68,15 +72,16 @@ sudo mkdir /var/www/html/.apps
 sudo mv -f nextcloud/ /var/www/html/.apps/
 sudo chown -R www-data:www-data /var/www/html/.apps/nextcloud/
 sudo chmod -R 755 /var/www/html/.apps/nextcloud/
-printf "Alias /nc \"/var/www/html/.apps/nextcloud/\"\n\n" > nextcloud.conf
-printf "<Directory /var/www/html/.apps/nextcloud/>\n" >> nextcloud.conf
-printf "  Require all granted\n" >> nextcloud.conf
-printf "  AllowOverride All\n" >> nextcloud.conf
-printf "  Options FollowSymLinks MultiViews\n\n" >> nextcloud.conf
-printf "  <IfModule mod_dav.c>\n" >> nextcloud.conf
-printf "    Dav off\n" >> nextcloud.conf
-printf "  </IfModule>\n" >> nextcloud.conf
-printf "</Directory>\n\n" >> nextcloud.conf
+sudo sh -c "printf \"Alias /nc \"/var/www/html/.apps/nextcloud/\"
+<Directory /var/www/html/.apps/nextcloud/>
+  Require all granted
+  AllowOverride All
+  Options FollowSymLinks MultiViews
+  <IfModule mod_dav.c>
+    Dav off
+  </IfModule>
+</Directory>
+\" > nextcloud.conf"
 sudo cp nextcloud.conf /etc/apache2/sites-available/
 sudo a2ensite nextcloud.conf
 sleep 2

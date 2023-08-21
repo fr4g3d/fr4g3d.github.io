@@ -31,9 +31,11 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt -y install mariadb-server mariadb-client
 sleep 2
-printf "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;\n" > mysqld.sql
-printf "GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;\n" >> mysqld.sql
-printf "FLUSH PRIVILEGES;\n\\q"  >> mysqld.sql
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+\" > mysqld.sql"
 printf "type \"source mysqld.sql\"\n"
 sleep 2
 sudo mysql -uroot < mysqld.sql
@@ -41,18 +43,22 @@ sleep 2
 # install common for installing Common Downloader.
 sudo apt -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/admnr.php
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/pfm.php
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/xp.php
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sphp/admnr.php
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sphp/pfm.php
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sphp/xp.php
 sudo mkdir /var/www/html/.apps
 sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
 sudo mv -f dlds/xp.php /var/www/html/.apps/
 sleep 2
-#sudo apt -y install phpmyadmin
-#sleep 2
-#sudo a2enconf phpmyadmin
-#sleep 2
+# install phpmyadmin.
+VERSION=$(sed 's/\..*//' /etc/debian_version)
+if [[ $VERSION == '11' ]]; then
+  sudo apt -y install phpmyadmin
+  sleep 2
+  sudo a2enconf phpmyadmin
+fi
+sleep 2
 sudo service apache2 reload
 echo Done.
 sleep 3
