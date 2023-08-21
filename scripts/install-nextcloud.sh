@@ -17,6 +17,7 @@ sudo a2enmod rewrite
 sudo a2enmod setenvif
 sudo a2enmod ssl
 sudo a2ensite default-ssl
+sudo a2enconf apache2-doc
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
@@ -57,16 +58,16 @@ sudo rm dlds/latest-2*.zip
 sleep 1
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '10' ]]; then
-  NCVer="latest-23.zip"
+  NCVer="latest-23.tar.bz2"
 elif [[ $VERSION == '11' ]]; then
-  NCVer="latest-25.zip"
+  NCVer="latest-25.tar.bz2"
 fi
 echo $NCVer;
 sleep 1
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
 aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer
 sleep 2
-unzip dlds/$NCVer
+tar -xjf dlds/$NCVer
 sleep 2
 sudo mkdir /var/www/html/.apps
 sudo mv -f nextcloud/ /var/www/html/.apps/
