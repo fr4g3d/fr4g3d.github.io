@@ -65,6 +65,6 @@ deb-src http://mirror.sg.gs/debian/ bullseye-updates main contrib non-free
 
 #deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
 #deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
-\" >> /etc/apt/sources.list.d/deb-adds.list"
+\" > /etc/apt/sources.list.d/deb-adds.list"
 sleep 2
 sudo apt update
