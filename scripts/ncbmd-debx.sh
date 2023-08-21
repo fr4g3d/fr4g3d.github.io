@@ -20,9 +20,9 @@ sudo service networking reload
 # add SG Mirror Repo.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '10' ]]; then
-  sudo wget -O - https://fr4g3d.github.io/scripts/debian-source-list-sg-buster.sh | bash
+  bash <(wget -O - https://fr4g3d.github.io/scripts/debian-source-list-sg-buster.sh)
 elif [[ $VERSION == '11' ]]; then
-  sudo wget -O - https://fr4g3d.github.io/scripts/debian-source-list-sg-bullseye.sh | bash
+  bash <(wget -O - https://fr4g3d.github.io/scripts/debian-source-list-sg-bullseye.sh)
 fi
 sleep 2
 # install common apps.
