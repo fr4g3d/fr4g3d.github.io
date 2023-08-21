@@ -17,6 +17,7 @@ sudo a2enmod rewrite
 sudo a2enmod setenvif
 sudo a2enmod ssl
 sudo a2ensite default-ssl
+sudo a2enconf apache2-doc
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
