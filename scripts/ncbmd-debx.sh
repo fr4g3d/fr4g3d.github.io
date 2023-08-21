@@ -44,19 +44,21 @@ sleep 2
 sudo chmod +x synth-shell/setup.sh
 sleep 2
 sudo apt -y install bc fonts-powerline
-#./synth-shell/setup.sh
+./synth-shell/setup.sh
 sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
-mkdir .config/
+mkdir ~/.config/
+sudo mkdir /root/.config/
 sudo chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/sshwifty.conf.json
 sleep 2
 sudo cp dlds/sshwifty.conf.json ~/.config/
+sudo cp dlds/sshwifty.conf.json /root/.config/
 sudo sh -c "printf \"[Unit]
 Description=SSH Wifty Service.
 After=network.target

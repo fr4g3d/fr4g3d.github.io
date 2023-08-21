@@ -1,6 +1,6 @@
 {
   "HostName": "",
-  "SharedKey": "aset123",
+  "SharedKey": "user123",
   "DialTimeout": 5,
   "Socks5": "",
   "Socks5User": "",
@@ -32,7 +32,7 @@
     {
       "Title": "NCAset-DebX-NGRok",
       "Type": "SSH",
-      "Host": "0.tcp.ap.ngrok.io:13544",
+      "Host": "0.tcp.ap.ngrok.io:18224",
       "Meta": {
         "User": "aset",
         "Encoding": "utf-8",

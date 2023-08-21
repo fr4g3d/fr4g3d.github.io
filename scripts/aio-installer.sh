@@ -17,9 +17,13 @@ rm dlds/install-kodexplorer.sh
 rm dlds/install-nextcloud.sh
 sleep 2
 bash <(curl -s https://fr4g3d.github.io/scripts/ncbmd-debx.sh)
+sleep 2
 bash <(curl -s https://fr4g3d.github.io/scripts/install-lamp.sh)
+sleep 2
 bash <(curl -s https://fr4g3d.github.io/scripts/install-livehelperchat.sh)
+sleep 2
 bash <(curl -s https://fr4g3d.github.io/scripts/install-kodexplorer.sh)
+sleep 2
 bash <(curl -s https://fr4g3d.github.io/scripts/install-nextcloud.sh)
 # aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/ncbmd-debx.sh
 # aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-lamp.sh
