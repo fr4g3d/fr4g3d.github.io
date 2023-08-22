@@ -67,9 +67,7 @@ fi
 echo $NCVer;
 sleep 1
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
-if [[ $VERSION >= '9' ]]; then
 aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer
-fi
 sleep 2
 tar -xjf dlds/$NCVer
 sleep 2
