@@ -57,7 +57,9 @@ sudo rm -r nextcloud/
 sudo rm dlds/latest-2*.zip
 sleep 1
 VERSION=$(sed 's/\..*//' /etc/debian_version)
-if [[ $VERSION == '10' ]]; then
+if [[ $VERSION == '9' ]]; then
+  NCVer="latest-21.tar.bz2"
+elif [[ $VERSION == '10' ]]; then
   NCVer="latest-23.tar.bz2"
 elif [[ $VERSION == '11' ]]; then
   NCVer="latest-25.tar.bz2"
@@ -65,7 +67,9 @@ fi
 echo $NCVer;
 sleep 1
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
+if [[ $VERSION >= '9' ]]; then
 aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer
+fi
 sleep 2
 tar -xjf dlds/$NCVer
 sleep 2
