@@ -6,9 +6,9 @@ clear
 #
 
 # install apache2 mod-php openssl.
-sudo apt update
+sudo apt-get update
 sleep 2
-sudo apt -y install fdisk mhddfs
+sudo apt-get -y install fdisk mhddfs
 sleep 2
 sudo fdisk /dev/sdb
 sleep 2

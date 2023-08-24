@@ -26,9 +26,9 @@ elif [[ $VERSION == '11' ]]; then
 fi
 sleep 2
 # install common apps.
-sudo apt update
+sudo apt-get update
 sleep 2
-sudo apt -y install curl wget aria2 zip unzip dnsutils openssl openssh-server openssh-client shellinabox
+sudo apt-get -y install curl wget aria2 zip unzip dnsutils openssl openssh-server openssh-client shellinabox
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/scss/00_Green_On_Black.css
 sudo mv -f dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
@@ -37,13 +37,13 @@ sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shel
 sudo service shellinabox restart
 sleep 2
 # install Synth-Shell
-sudo apt -y install git
+sudo apt-get -y install git
 sleep 2
 git clone --recursive https://github.com/andresgongora/synth-shell.git
 sleep 2
 sudo chmod +x synth-shell/setup.sh
 sleep 2
-sudo apt -y install bc fonts-powerline
+sudo apt-get -y install bc fonts-powerline
 ./synth-shell/setup.sh
 sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz

@@ -6,10 +6,10 @@ clear
 #
 
 # install common apps and Downloader.
-sudo apt -y install curl wget aria2 coreutils
+sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # install Cockpit VM App.
-sudo apt -y install cockpit cockpit-machines
+sudo apt-get -y install cockpit cockpit-machines
 sleep 2
 sudo systemctl enable --now libvirtd
 sleep 2

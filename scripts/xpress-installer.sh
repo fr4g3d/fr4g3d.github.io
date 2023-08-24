@@ -15,15 +15,15 @@ net.ipv6.conf.tun0.disable_ipv6 = 1
 sudo service networking reload
 
 # install common apps.
-sudo apt update
+sudo apt-get update
 sleep 2
-sudo apt-ml install curl wget aria2 unzip
+sudo apt-get -y install curl wget aria2 unzip
 
 sudo aria2c -d dlds/ -c -x8 https://raw.githubusercontent.com/tatsuhiro-t/apt-metalink/master/apt-metalink
 sudo chmod +x dlds/apt-metalink
 sudo install dlds/apt-metalink /usr/local/bin/apt-ml
 sleep 2
-sudo apt-ml install dnsutils openssl openssh-server openssh-client shellinabox curl wget aria2 zip unzip
+sudo apt-get -y install dnsutils openssl openssh-server openssh-client shellinabox curl wget aria2 zip unzip
 sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/scss/00_Green_On_Black.css
 sudo mv dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
@@ -74,9 +74,9 @@ clear
 #
 
 # install apache2 mod-php openssl.
-sudo apt update
-sudo apt-ml install apache2 apache2-doc libapache2-mod-php openssl 
-#sudo apt install apache2 apache2-doc libapache2-mod-php openssl 
+sudo apt-get update
+sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
+#sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
 sudo a2enmod env
 sudo a2enmod dir
@@ -88,16 +88,16 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
-#sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
-#sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
+sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+#sudo apt-get -y install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
+#sudo apt-get -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
 #sudo sh -c "printf 'extension=smbclient.so' >> /etc/php/7.4/fpm/php.ini"
 #sudo systemctl restart php7.4-fpm
 sudo php -v
 sleep 2
 # install mariadb-server as mysql-server.
-sudo apt-ml install mariadb-server mariadb-client
+sudo apt-get -y install mariadb-server mariadb-client
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
@@ -108,7 +108,7 @@ sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
 # install common for installing Common Downloader.
-sudo apt-ml install curl wget zip unzip aria2 ffmpeg
+sudo apt-get -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
 sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sphp/pfm.php
 sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sphp/xp.php
@@ -116,7 +116,7 @@ sudo mkdir /var/www/html/.apps
 sudo mv dlds/pfm.php /var/www/html/.apps/
 sudo mv dlds/xp.php /var/www/html/.apps/
 sleep 2
-sudo apt-ml install phpmyadmin
+sudo apt-get -y install phpmyadmin
 sleep 2
 sudo a2enconf phpmyadmin
 sleep 2
@@ -130,9 +130,9 @@ clear
 #
 
 # install apache2 mod-php openssl.
-sudo apt update
-sudo apt-ml install apache2 apache2-doc libapache2-mod-php openssl 
-#sudo apt install apache2 apache2-doc libapache2-mod-php openssl 
+sudo apt-get update
+sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
+#sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
 sudo a2enmod env
 sudo a2enmod dir
@@ -144,16 +144,16 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
-#sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
-#sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
+sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+#sudo apt-get -y install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
+#sudo apt-get -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
 #sudo sh -c "printf 'extension=smbclient.so' >> /etc/php/7.4/fpm/php.ini"
 #sudo systemctl restart php7.4-fpm
 sudo php -v
 sleep 2
 # install mariadb-server as mysql-server.
-sudo apt-ml install mariadb-server mariadb-client
+sudo apt-get -y install mariadb-server mariadb-client
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
@@ -172,7 +172,7 @@ sleep 2
 sudo mysql -uroot < lhcdb.sql
 sleep 2
 # install common for installing Live Helper Chat.
-sudo apt-ml install curl wget zip unzip aria2
+sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
 sudo rm -r livehelperchat-master/
 sudo rm dlds/livehelperchat-master*.z*
@@ -209,9 +209,9 @@ clear
 #
 
 # install apache2 mod-php openssl.
-sudo apt update
-sudo apt-ml install apache2 apache2-doc libapache2-mod-php openssl 
-#sudo apt install apache2 apache2-doc libapache2-mod-php openssl 
+sudo apt-get update
+sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
+#sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
 sudo a2enmod env
 sudo a2enmod dir
@@ -223,16 +223,16 @@ sudo a2ensite default-ssl
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-ml install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
-#sudo apt install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
-#sudo apt -y install smbclient cifs-utils libsmbclient-dev php-dev make
+sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-redis php-imagick
+#sudo apt-get -y install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
+#sudo apt-get -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
 #sudo sh -c "printf 'extension=smbclient.so' >> /etc/php/7.4/fpm/php.ini"
 #sudo systemctl restart php7.4-fpm
 sudo php -v
 sleep 2
 # install mariadb-server as mysql-server.
-sudo apt-ml install mariadb-server mariadb-client
+sudo apt-get -y install mariadb-server mariadb-client
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
@@ -251,7 +251,7 @@ sleep 2
 sudo mysql -uroot < ncdb.sql
 sleep 2
 # install common for installing Nextcloud.
-sudo apt-ml install curl wget zip unzip aria2 ffmpeg
+sudo apt-get -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
 sudo rm -r nextcloud/
 sudo rm dlds/latest-2*.zip

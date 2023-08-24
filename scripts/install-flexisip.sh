@@ -6,7 +6,7 @@ clear
 #
 
 # install common apps and Downloader.
-sudo apt -y install curl wget aria2 coreutils
+sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # install FlexiSiP.
 VERSION=NONE
@@ -27,11 +27,11 @@ sleep 2
 # Key-Ring For Debian
 wget https://linphone.org/snapshots/debian/keyring.gpg -O - | sudo apt-key add -
 sleep 2
-#sudo apt -y install libmariadb-dev
+#sudo apt-get -y install libmariadb-dev
 #sleep 2
-sudo apt -y update
+sudo apt-get -y update
 sleep 2
-sudo apt -y install bc-flexisip
+sudo apt-get -y install bc-flexisip
 sleep 2
 /opt/belledonne-communications/bin/flexisip --dump-default all > flexisip.conf
 sleep 2
@@ -76,7 +76,7 @@ sudo cp domain-registrations.conf /etc/flexisip/domain-registrations.conf
 sudo cp users.db.txt /etc/flexisip/users.db.txt
 sleep 2
 # install IPTables
-sudo apt -y install iptables
+sudo apt-get -y install iptables
 sleep 2
 # First, create a specific chain for Flexisip rules.
 sudo iptables -N flexisip-input-rules

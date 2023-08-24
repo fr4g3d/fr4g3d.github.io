@@ -27,7 +27,7 @@ sleep 3
 sleep 3
 printf "Install and Fix Missing and Broken Packages...\n"
 sleep 3
-apt --fix-missing --fix-broken install
+apt-get --fix-missing --fix-broken install
 sleep 3
 printf "Install PHP, PHP-Apache, Apache2 and MariDB Packages...\n"
 #sleep 3

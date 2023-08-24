@@ -7,8 +7,8 @@ clear
 
 sleep 2
 # install common for installing Common Downloader.
-sudo apt update
-sudo apt -y install curl wget zip unzip aria2
+sudo apt-get update
+sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
 rm dlds/ncbmd-debx.sh
 rm dlds/install-lamp.sh
