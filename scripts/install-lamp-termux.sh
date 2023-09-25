@@ -120,7 +120,15 @@ mysqld &
 
 sleep 3
 printf "#!/bin/bash
-sshd && httpd && mysqld &
+
+sshd &
+
+httpd &
+
+mysqld &
+
+exit &
+
 exit
 
 ">start-slamp.sh
