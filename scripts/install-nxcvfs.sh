@@ -10,7 +10,7 @@ printf "add inside section [General]\n"
 printf "showExperimentalOptions=true\n\n"
 rm dlds/nxcvfs-mime.tar.gz
 sleep 3s
-wget https://fr4g3d.github.io/sarch/nxcvfs-mime.tar.gz
+#wget https://fr4g3d.github.io/sarch/nxcvfs-mime.tar.gz
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/nxcvfs-mime.tar.gz
 sleep 2s
 tar -xf dlds/nxcvfs-mime.tar.gz -C dlds/
