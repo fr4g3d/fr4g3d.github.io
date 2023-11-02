@@ -6,8 +6,8 @@ clear
 #
 
 # install Nextcloud Virtual File System MIME.
-printf "add inside section [General]"
-printf "showExperimentalOptions=true"
+printf "add inside section [General]\n"
+printf "showExperimentalOptions=true\n"
 sleep 3s
 wget https://fr4g3d.github.io/sarch/nxcvfs-mime.tar.gz
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/nxcvfs-mime.tar.gz
