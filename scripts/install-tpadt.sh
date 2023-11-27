@@ -18,7 +18,7 @@ sleep 2s
 mkdir -p ~/.config/tpads/
 cp dlds/tpt.sh ~/.config/tpads/
 sleep 2s
-printf "Please Assign this script in the Keyboard Shortcuts to 'sh \"~/.config/tpads/tpt.sh\"'\n"
+printf "\nPlease Assign this script in the Keyboard Shortcuts to 'sh \"~/.config/tpads/tpt.sh\"'\n"
 sleep 2s
 printf "and Assign this script in the StartUp Task to 'sh \"~/.config/tpads/tpt.sh\" startup'\n"
 sleep 5s
