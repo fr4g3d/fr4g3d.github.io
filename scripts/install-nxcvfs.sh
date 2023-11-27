@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Nextcloud Server - Expander Storage.
+# Nextcloud Desktop - Virtual File System MIME.
 #
 clear
 #
