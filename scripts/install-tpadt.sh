@@ -6,8 +6,7 @@ clear
 #
 
 # install TouchPad Toggle Script.
-printf "add inside section [General]\n"
-printf "showExperimentalOptions=true\n\n"
+printf "install TouchPad Toggle Script\n"
 rm dlds/touchpad-script.tar.gz
 sleep 3s
 #wget https://fr4g3d.github.io/sarch/touchpad-script.tar.gz
