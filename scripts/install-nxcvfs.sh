@@ -4,7 +4,8 @@
 #
 clear
 #
-
+sudo apt-get -y install curl wget aria2 zip unzip tar gzip
+clear
 # install Nextcloud Virtual File System MIME.
 printf "add inside section [General]\n"
 printf "showExperimentalOptions=true\n\n"
