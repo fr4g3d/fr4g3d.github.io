@@ -18,9 +18,6 @@ deb-src http://ftp.sg.debian.org/debian/ buster main contrib non-free
 deb http://ftp.sg.debian.org/debian/ buster-updates main contrib non-free
 deb-src http://ftp.sg.debian.org/debian/ buster-updates main contrib non-free
 
-deb http://deb.debian.org/debian/ buster-backports main contrib non-free
-deb-src http://deb.debian.org/debian/ buster-backports main contrib non-free
-
 #deb http://ftp.sg.debian.org/debian/ unstable main contrib non-free
 #deb-src http://ftp.sg.debian.org/debian/ unstable main contrib non-free
 
