@@ -1,6 +1,6 @@
 {
   "HostName": "",
-  "SharedKey": "user123",
+  "SharedKey": "abc123",
   "DialTimeout": 5,
   "Socks5": "",
   "Socks5User": "",

@@ -9,10 +9,12 @@ clear
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # install WebMin.
-sudo -s
-curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
-sh setup-repos.sh
-sudo apt-get install webmin --install-recommends
-sleep 2
-echo Done.
-sleep 3
+sudo -s << block
+curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh;
+sh setup-repos.sh;
+sudo apt-get install webmin --install-recommends;
+sleep 2;
+echo Done.;
+sleep 3;
+block
+
