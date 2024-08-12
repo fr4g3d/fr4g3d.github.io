@@ -1,0 +1,29 @@
+[Scripts Collection]
+
+<!-- Place your content here -->
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/aio-installer.sh'">aio-installer</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/ncbmd-debx.sh'">ncbmd-debx</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-lamp.sh'">lamp</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-lamp-termux.sh'">lamp-termux</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-livehelperchat.sh'">livehelperchat</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-kodexplorer.sh'">kodexplorer</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-nextcloud.sh'">nextcloud</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-webmin.sh'">webmin</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh'">kvm-cckptvm</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/nc-expand-disk.sh'">nc-expand-disk</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/install-xfce.sh'">xfce</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/sphp/pfm.php'">pfm</a>
+  <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/sphp/xp.php'">xp</a>
+<!-- SCRIPTS -->
+
+bash <(wget -O - https://fr4g3d.github.io/scripts/aio-installer.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/ncbmd-debx.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-lamp.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-livehelperchat.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-kodexplorer.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-nextcloud.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-webmin.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/nc-expand-disk.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-xfce.sh)
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-lamp-termux.sh)
