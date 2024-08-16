@@ -15,7 +15,7 @@ net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
 net.ipv6.conf.tun0.disable_ipv6 = 1
 \" >> /etc/sysctl.conf"
-sudo service networking reload
+#sudo service networking reload
 
 # add SG Mirror Repo.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
