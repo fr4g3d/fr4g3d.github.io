@@ -56,7 +56,7 @@ aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/appz.zip
 sleep 2
 unzip -o dlds/appz.zip
 sleep 2
-sudo mv -f apps.conf /etc/apache2/sites-avaliable/apps.conf
+sudo mv -f apps.conf /etc/apache2/sites-available/apps.conf
 sudo mv -f .htaccess /var/www/html/.apps/.htaccess
 sudo mv -f .htpasswd /var/www/html/.apps/.htpasswd
 sleep 2
