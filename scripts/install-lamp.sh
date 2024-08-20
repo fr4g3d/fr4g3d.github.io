@@ -53,10 +53,10 @@ sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
 sudo mv -f dlds/xp.php /var/www/html/.apps/
 sleep 2
-sudo rm dlds/admnr-lib.zip
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/admnr-lib.zip
-unzip -o dlds/admnr-lib.zip
-sudo mv -f lib/ /var/www/html/.apps/
+sudo rm dlds/adminer.zip
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/adminer.zip
+unzip -o dlds/adminer.zip
+sudo mv -f adminer/ /var/www/html/.apps/
 sleep 2
 sudo rm dlds/appz.zip
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/appz.zip
@@ -64,8 +64,10 @@ sleep 2
 unzip -o dlds/appz.zip
 sleep 2
 sudo mv -f apps.conf /etc/apache2/sites-available/apps.conf
-sudo mv -f .htaccess /var/www/html/.apps/.htaccess
-sudo mv -f .htpasswd /var/www/html/.apps/.htpasswd
+sudo cp -f .htaccess /var/www/html/.apps/.htaccess
+sudo cp -f .htpasswd /var/www/html/.apps/.htpasswd
+sudo mv -f .htaccess /var/www/html/.apps/adminer/.htaccess
+sudo mv -f .htpasswd /var/www/html/.apps/adminer/.htpasswd
 sleep 2
 sudo a2ensite apps
 sleep 2
