@@ -49,14 +49,13 @@ sleep 2
 # install Fancy Prompts
 sleep 2
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/fancyprompts.zip
-mkdir .fancyprompts/
-unzip dlds/fancyprompts.zip
+unzip -o dlds/fancyprompts.zip
 sleep 2
-sudo mv -f fancyprompts/ ~/.fancyprompts/
+sudo mv -f fancyprompts/ ~/.fancyprompts
 sleep 2
-sudo cp .bashrc .bashrc-bak
+sudo cp ~/.bashrc ~/.bashrc-bak
 sleep 2
-sudo cp -f .fancyprompts/.bashrc-ptch ~/.bashrc
+sudo cp -f ~/.fancyprompts/.bashrc-ptch ~/.bashrc
 sleep 2
 # install sshWifty.
 sleep 2
