@@ -47,6 +47,12 @@ sleep 2
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sphp/admnr.php
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sphp/pfm.php
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sphp/xp.php
+sleep 2
+sudo rm dlds/admnr-lib.zip
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/admnr-lib.zip
+unzip -o dlds/admnr-lib.zip
+mv lib/ /var/www/html/.apps/
+sleep 2
 sudo mkdir /var/www/html/.apps
 sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
