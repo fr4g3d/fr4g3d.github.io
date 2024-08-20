@@ -52,28 +52,15 @@ sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
 sudo mv -f dlds/xp.php /var/www/html/.apps/
 sleep 2
-sudo sh -c "printf \"Alias /apps /var/www/html/.apps/
-<Directory /var/www/html/.apps/>
-  Require all granted
-  AllowOverride All
-  Require all granted
-  Options Indexes Includes FollowSymLinks MultiViews
-  AuthType Basic
-  AuthName \"Apps Folder\"
-  AuthUserFile /var/www/html/.apps/.htpasswd
-  Require valid-user
-</Directory>
-\" > /etc/apache2/sites-available/apps.conf"
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/apps.conf
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/.htaccess
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/.htpasswd
 sleep 2
-sudo sh -c "printf \"AuthType Basic
-AuthName \"Wajib Login\"
-AuthBasicProvider file
-AuthUserFile \"/var/www/html/.apps/.htpasswd\"
-Require valid-user
-\" > .htaccess"
+sudo mv -f dlds/apps.conf /etc/apache2/site-avaliable/apps.conf
+sudo mv -f dlds/.htaccess /var/www/html/.apps/.htaccess
+sudo mv -f dlds/.htpasswd /var/www/html/.apps/.htpasswd
 sleep 2
-sudo sh -c "printf \"sadmin:$apr1$/21OU1wf$Yn6ITVZizJijeRZvZYzJp.
-\" > .htpasswd"
+sudo a2ensite apps
 sleep 2
 # install phpmyadmin.
 VERSION=$(sed 's/\..*//' /etc/debian_version)

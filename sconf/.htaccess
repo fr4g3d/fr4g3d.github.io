@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Wajib Login"
+AuthBasicProvider file
+AuthUserFile \"/var/www/html/.apps/.htpasswd\"
+Require valid-user
