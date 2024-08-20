@@ -52,6 +52,29 @@ sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
 sudo mv -f dlds/xp.php /var/www/html/.apps/
 sleep 2
+sudo sh -c "printf \"Alias /apps /var/www/html/.apps/
+<Directory /var/www/html/.apps/>
+  Require all granted
+  AllowOverride All
+  Require all granted
+  Options Indexes Includes FollowSymLinks MultiViews
+  AuthType Basic
+  AuthName \"Apps Folder\"
+  AuthUserFile /var/www/html/.apps/.htpasswd
+  Require valid-user
+</Directory>
+\" > /etc/apache2/sites-available/apps.conf"
+sleep 2
+sudo sh -c "printf \"AuthType Basic
+AuthName \"Wajib Login\"
+AuthBasicProvider file
+AuthUserFile \"/var/www/html/.apps/.htpasswd\"
+Require valid-user
+\" > .htaccess"
+sleep 2
+sudo sh -c "printf \"sadmin:$apr1$/21OU1wf$Yn6ITVZizJijeRZvZYzJp.
+\" > .htpasswd"
+sleep 2
 # install phpmyadmin.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '11' ]]; then
