@@ -52,6 +52,7 @@ sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
 sudo mv -f dlds/xp.php /var/www/html/.apps/
 sleep 2
+sudo rm dlds/appz.zip
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/appz.zip
 sleep 2
 unzip -o dlds/appz.zip
