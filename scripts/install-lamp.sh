@@ -52,13 +52,13 @@ sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
 sudo mv -f dlds/xp.php /var/www/html/.apps/
 sleep 2
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/apps.conf
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/.htaccess
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/.htpasswd
+aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/appz.zip
 sleep 2
-sudo mv -f dlds/apps.conf /etc/apache2/site-avaliable/apps.conf
-sudo mv -f dlds/.htaccess /var/www/html/.apps/.htaccess
-sudo mv -f dlds/.htpasswd /var/www/html/.apps/.htpasswd
+unzip -o dlds/appz.zip
+sleep 2
+sudo mv -f apps.conf /etc/apache2/site-avaliable/apps.conf
+sudo mv -f .htaccess /var/www/html/.apps/.htaccess
+sudo mv -f .htpasswd /var/www/html/.apps/.htpasswd
 sleep 2
 sudo a2ensite apps
 sleep 2
