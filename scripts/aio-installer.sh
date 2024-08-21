@@ -24,7 +24,11 @@ bash <(wget -O - https://fr4g3d.github.io/scripts/install-livehelperchat.sh)
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-kodexplorer.sh)
 sleep 2
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh)
+sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-nextcloud.sh)
+sleep 2
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-webmin.sh)
 # aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/ncbmd-debx.sh
 # aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-lamp.sh
 # aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-livehelperchat.sh
