@@ -58,6 +58,24 @@ aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/adminer.zip
 unzip -o dlds/adminer.zip
 sudo mv -f adminer/ /var/www/html/.apps/
 sleep 2
+sudo apt -y install adminer
+sleep 2
+sudo sh -c "printf \"Alias /adminer /etc/adminer
+
+<Directory /etc/adminer>
+        Require all granted
+        AllowOverride All
+        Options Indexes Includes FollowSymLinks MultiViews
+        DirectoryIndex conf.php
+</Directory>
+\" > /etc/apache2/conf-available/adminer.conf"
+sleep 2
+sudo a2enconf adminer
+sleep 2
+sudo ln -s -f /usr/share/adminer/designs/rmsoft/adminer.css /etc/adminer/adminer.css
+sleep 2
+sudo service apache2 reload
+sleep 2
 sudo rm dlds/appz.zip
 aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/appz.zip
 sleep 2
@@ -66,6 +84,8 @@ sleep 2
 sudo mv -f apps.conf /etc/apache2/sites-available/apps.conf
 sudo cp -f .htaccess /var/www/html/.apps/.htaccess
 sudo cp -f .htpasswd /var/www/html/.apps/.htpasswd
+sudo cp -f .htaccess /etc/adminer/.htaccess
+sudo cp -f .htpasswd /etc/adminer/.htpasswd
 sudo mv -f .htaccess /var/www/html/.apps/adminer/.htaccess
 sudo mv -f .htpasswd /var/www/html/.apps/adminer/.htpasswd
 sleep 2
