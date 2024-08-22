@@ -24,7 +24,7 @@ sudo usermod -aG libvirt $(whoami)
 newgrp kvm
 newgrp libvirt
 sleep 2
-sudo service cockpit start
+sudo service cockpit restart
 sleep 2
 # install FileBrowser App.
 sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
