@@ -60,15 +60,13 @@ sleep 2
 unzip dlds/phpMyAdmin-5.1.2-all-languages.zip
 sleep 2
 unzip dlds/boodark-1.0.1.zip
+sudo mv -f phpMyAdmin-5.1.2-all-languages/ /usr/share/
 sleep 2
-sudo mkdir /usr/share/phpmyadmin
-sudo mv -f phpMyAdmin-5.1.2-all-languages/ /usr/share/phpmyadmin
-sleep 2
-sudo mv -f boodark/ /usr/share/phpmyadmin/themes/
-sudo chown -R www-data:www-data /usr/share/phpmyadmin/
-sudo chmod -R 755 /usr/share/phpmyadmin/
-sudo sh -c "printf \"Alias /pmadmin \"/usr/share/phpmyadmin\"
-<Directory /usr/share/phpmyadmin/>
+sudo mv -f boodark/ /usr/share/phpMyAdmin-5.1.2-all-languages/themes/
+sudo chown -R www-data:www-data /usr/share/phpMyAdmin-5.1.2-all-languages/
+sudo chmod -R 755 /usr/share/phpMyAdmin-5.1.2-all-languages/
+sudo sh -c "printf \"Alias /pmadmin \"/usr/share/phpMyAdmin-5.1.2-all-languages\"
+<Directory /usr/share/phpMyAdmin-5.1.2-all-languages/>
   Require all granted
   AllowOverride All
   Options FollowSymLinks MultiViews
