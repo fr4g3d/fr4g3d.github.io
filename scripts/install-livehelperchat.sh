@@ -29,7 +29,7 @@ sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json 
 sudo php -v
 sleep 2
 # install mariadb-server as mysql-server.
-sudo apt-get -y install mariadb-server mariadb-client
+sudo apt-get -y install mariadb-server mariadb-client libdbd-mysql-perl
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
