@@ -12,6 +12,9 @@ sleep 2
 sudo sh -c "printf \"
 
 #
+deb  http://mr.heru.id/debian/ buster main contrib non-free
+deb-src http://mr.heru.id/debian/ buster main contrib non-free
+
 deb  http://ftp.sg.debian.org/debian/ buster main contrib non-free
 deb-src http://ftp.sg.debian.org/debian/ buster main contrib non-free
 

@@ -1,4 +1,7 @@
 #
+deb  http://mr.heru.id/debian/ buster main contrib non-free
+deb-src http://mr.heru.id/debian/ buster main contrib non-free
+
 deb  http://ftp.sg.debian.org/debian/ bullseye main non-free contrib
 deb-src http://ftp.sg.debian.org/debian/ bullseye main non-free contrib
 
