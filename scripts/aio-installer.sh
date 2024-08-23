@@ -26,8 +26,8 @@ sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-speedtest.sh)
-sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-kodexplorer.sh)
+#sleep 2
+#bash <(wget -O - https://fr4g3d.github.io/scripts/install-kodexplorer.sh)
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-nextcloud.sh)
 sleep 2
