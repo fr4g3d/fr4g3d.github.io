@@ -55,7 +55,7 @@ sudo service filebrowserd start
 sleep 2
 sudo service filebrowserd restart
 sleep 2
-# nohup filebrowser -a 0.0.0.0 -p 8787 -r /home
+echo Type: \"nohup filebrowser -a 0.0.0.0 -p 8787 -r /home\"
 sleep 2
 echo Done.
 sleep 3
