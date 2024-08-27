@@ -23,7 +23,6 @@ if [[ $VERSION == '10' ]]; then
   sudo systemctl restart php7.3-fpm
 #  bash <(wget -O - https://fr4g3d.github.io/scripts/debian-source-list-sg-buster.sh)
 elif [[ $VERSION == '11' ]]; then
-  phpver = '7.4'
   aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/000-default11.conf
   sleep 2
   sudo mv -f dlds/000-default11.conf /etc/apache2/sites-available/000-default.conf
