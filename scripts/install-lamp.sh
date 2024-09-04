@@ -68,9 +68,9 @@ sudo sh -c "printf \"Alias /adminer /etc/adminer
         Options Indexes Includes FollowSymLinks MultiViews
         DirectoryIndex conf.php
 </Directory>
-\" > /etc/apache2/conf-available/adminer.conf"
+\" > /etc/apache2/site-available/adminer.conf"
 sleep 2
-sudo a2enconf adminer
+sudo a2ensite adminer
 sleep 2
 sudo ln -s -f /usr/share/adminer/designs/rmsoft/adminer.css /etc/adminer/adminer.css
 sleep 2

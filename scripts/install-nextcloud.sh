@@ -59,10 +59,13 @@ sleep 1
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
   NCVer="latest-21.tar.bz2"
+  NCConf="nxcbmd10.conf"
 elif [[ $VERSION == '10' ]]; then
   NCVer="latest-23.tar.bz2"
+  NCConf="nxcbmd10.conf"
 elif [[ $VERSION == '11' ]]; then
   NCVer="latest-25.tar.bz2"
+  NCConf="nxcbmd11.conf"
 fi
 echo $NCVer;
 sleep 1
@@ -71,13 +74,15 @@ aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$N
 sleep 2
 tar -xjvf dlds/$NCVer
 sleep 2
-sudo mkdir /var/www/html/.nc
-sudo mv -f nextcloud/* /var/www/html/.nc/
-sudo chown -R www-data:www-data /var/www/html/.nc/
-sudo chmod -R 755 /var/www/html/.nc/
+sudo mkdir /var/www/.nc
+sudo mv -f nextcloud/* /var/www/.nc/
+sudo chown -R www-data:www-data /var/www/.nc/
+sudo chmod -R 755 /var/www/.nc/
 sudo rm -r nextcloud/
-sudo sh -c "printf \"Alias /nc \"/var/www/html/.nc/\"
-<Directory /var/www/html/.nc/>
+sleep 2
+bash <(wget -O - https://fr4g3d.github.io/sconf/$NCConf)
+sudo sh -c "printf \"Alias /nc \"/var/www/.nc/\"
+<Directory /var/www/.nc/>
   Require all granted
   AllowOverride All
   Options FollowSymLinks MultiViews
@@ -87,7 +92,9 @@ sudo sh -c "printf \"Alias /nc \"/var/www/html/.nc/\"
 </Directory>
 \" > nextcloud.conf"
 sudo cp nextcloud.conf /etc/apache2/sites-available/
+sudo cp dlds/$NCConf /etc/apache2/sites-available/nxcbmd.lan.conf
 sudo a2ensite nextcloud.conf
+sudo a2ensite nxcbmd.lan.conf
 sleep 2
 sudo service apache2 restart
 sleep 2
