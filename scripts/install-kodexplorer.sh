@@ -31,9 +31,9 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt-get -y install mariadb-server mariadb-client libdbd-mysql-perl
 sleep 2
-sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user@123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 \"  > mysqld.sql"
 printf "type \"source mysqld.sql\"\n"
@@ -41,7 +41,7 @@ sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
 sudo sh -c "printf \"CREATE DATABASE kodexplorer;
-CREATE USER 'kodexplorer'@'localhost' IDENTIFIED BY 'kodexplorer123';
+CREATE USER 'kodexplorer'@'localhost' IDENTIFIED BY 'kodexplorer@123';
 GRANT ALL PRIVILEGES ON kodexplorer.* TO 'kodexplorer'@'localhost';
 FLUSH PRIVILEGES;
 \"  > kodedb.sql"

@@ -99,9 +99,9 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt-get -y install mariadb-server mariadb-client
 sleep 2
-sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user@123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 \" > mysqld.sql"
 sleep 2
@@ -155,16 +155,16 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt-get -y install mariadb-server mariadb-client
 sleep 2
-sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user@123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 \" > mysqld.sql"
 sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
 sudo sh -c "printf \"CREATE DATABASE livehelperchat;
-CREATE USER 'livehelperchat'@'localhost' IDENTIFIED BY 'livehelperchat123';
+CREATE USER 'livehelperchat'@'localhost' IDENTIFIED BY 'livehelperchat@123';
 GRANT ALL PRIVILEGES ON livehelperchat.* TO 'livehelperchat'@'localhost';
 FLUSH PRIVILEGES;
 \"  > lhcdb.sql"
@@ -234,16 +234,16 @@ sleep 2
 # install mariadb-server as mysql-server.
 sudo apt-get -y install mariadb-server mariadb-client
 sleep 2
-sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user123' WITH GRANT OPTION;
+sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user@123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 \" > mysqld.sql"
 sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
 sudo sh -c "printf \"CREATE DATABASE nextcloud;
-CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'nextcloud123';
+CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'nextcloud@123';
 GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
 \"  > ncdb.sql"
