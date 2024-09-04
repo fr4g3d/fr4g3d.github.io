@@ -68,7 +68,7 @@ sudo sh -c "printf \"Alias /adminer /etc/adminer
         Options Indexes Includes FollowSymLinks MultiViews
         DirectoryIndex conf.php
 </Directory>
-\" > /etc/apache2/site-available/adminer.conf"
+\" > /etc/apache2/sites-available/adminer.conf"
 sleep 2
 sudo a2ensite adminer
 sleep 2
