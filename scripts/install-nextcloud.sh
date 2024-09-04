@@ -71,12 +71,13 @@ aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$N
 sleep 2
 tar -xjf dlds/$NCVer
 sleep 2
-sudo mkdir /var/www/html/.apps
-sudo mv -f nextcloud/ /var/www/html/.apps/
-sudo chown -R www-data:www-data /var/www/html/.apps/nextcloud/
-sudo chmod -R 755 /var/www/html/.apps/nextcloud/
-sudo sh -c "printf \"Alias /nc \"/var/www/html/.apps/nextcloud/\"
-<Directory /var/www/html/.apps/nextcloud/>
+sudo mkdir /var/www/html/.nc
+sudo mv -f nextcloud/* /var/www/html/.nc/
+sudo chown -R www-data:www-data /var/www/html/.nc/
+sudo chmod -R 755 /var/www/html/.nc/
+sudo rm -r nextcloud/
+sudo sh -c "printf \"Alias /nc \"/var/www/html/.nc/\"
+<Directory /var/www/html/.nc/>
   Require all granted
   AllowOverride All
   Options FollowSymLinks MultiViews
