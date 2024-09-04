@@ -69,7 +69,7 @@ sleep 1
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
 aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer
 sleep 2
-tar -xjf dlds/$NCVer
+tar -xjvf dlds/$NCVer
 sleep 2
 sudo mkdir /var/www/html/.nc
 sudo mv -f nextcloud/* /var/www/html/.nc/
