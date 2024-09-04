@@ -41,11 +41,11 @@ deb-src http://deb.debian.org/debian-security buster/updates main contrib non-fr
 #deb-src http://deb.debian.org/debian-security buster/updates main contrib non-free
 
 #
-deb http://mirror.sg.gs/debian/ buster main contrib non-free
-deb-src http://mirror.sg.gs/debian/ buster main contrib non-free
+#deb http://mirror.sg.gs/debian/ buster main contrib non-free
+#deb-src http://mirror.sg.gs/debian/ buster main contrib non-free
 
-deb http://mirror.sg.gs/debian/ buster-updates main contrib non-free
-deb-src http://mirror.sg.gs/debian/ buster-updates main contrib non-free
+#deb http://mirror.sg.gs/debian/ buster-updates main contrib non-free
+#deb-src http://mirror.sg.gs/debian/ buster-updates main contrib non-free
 
 #deb http://mirror.sg.gs/debian/ unstable main contrib non-free
 #deb-src http://mirror.sg.gs/debian/ unstable main contrib non-free

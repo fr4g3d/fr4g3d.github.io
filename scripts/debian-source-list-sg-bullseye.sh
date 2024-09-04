@@ -41,11 +41,11 @@ deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib no
 #deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
 
 #
-deb http://mirror.sg.gs/debian/ bullseye main contrib non-free
-deb-src http://mirror.sg.gs/debian/ bullseye main contrib non-free
+#deb http://mirror.sg.gs/debian/ bullseye main contrib non-free
+#deb-src http://mirror.sg.gs/debian/ bullseye main contrib non-free
 
-deb http://mirror.sg.gs/debian/ bullseye-updates main contrib non-free
-deb-src http://mirror.sg.gs/debian/ bullseye-updates main contrib non-free
+#deb http://mirror.sg.gs/debian/ bullseye-updates main contrib non-free
+#deb-src http://mirror.sg.gs/debian/ bullseye-updates main contrib non-free
 
 #deb http://mirror.sg.gs/debian/ unstable main contrib non-free
 #deb-src http://mirror.sg.gs/debian/ unstable main contrib non-free
