@@ -80,7 +80,7 @@ sudo chown -R www-data:www-data /var/www/.nc/
 sudo chmod -R 755 /var/www/.nc/
 sudo rm -r nextcloud/
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/sconf/$NCConf)
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/$NCConf
 sudo sh -c "printf \"Alias /nc \"/var/www/.nc/\"
 <Directory /var/www/.nc/>
   Require all granted
