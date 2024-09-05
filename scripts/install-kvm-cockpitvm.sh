@@ -40,9 +40,6 @@ sudo service filebrowserd start
 sleep 2
 sudo service filebrowserd restart
 sleep 2
-echo Type: \"nohup filebrowser -a 0.0.0.0 -p 8787 -r /home\"
-# End Install FileBrowser App
-sleep 2
 sudo usermod -aG kvm $(whoami)
 sudo usermod -aG libvirt $(whoami)
 newgrp kvm
