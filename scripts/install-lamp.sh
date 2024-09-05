@@ -92,13 +92,13 @@ sleep 2
 sudo a2ensite apps
 sleep 2
 # install phpmyadmin.
-VERSION=$(sed 's/\..*//' /etc/debian_version)
-if [[ $VERSION == '11' ]]; then
-  sudo apt-get -y install phpmyadmin
-  sleep 2
-  sudo a2enconf phpmyadmin
-fi
+#VERSION=$(sed 's/\..*//' /etc/debian_version)
+#if [[ $VERSION == '11' ]]; then
+#  sudo apt-get -y install phpmyadmin
+#  sleep 2
+#  sudo a2enconf phpmyadmin
+#fi
 sleep 2
 sudo service apache2 reload
-echo Done.
+echo Install [LAMP] is Done.
 sleep 3

@@ -23,6 +23,8 @@ bash <(wget -O - https://fr4g3d.github.io/scripts/ncbmd-debx.sh)
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-lamp.sh)
 sleep 2
+bash <(wget -O - https://fr4g3d.github.io/scripts/enable-fastcgi.sh)
+sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-speedtest.sh)

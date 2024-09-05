@@ -56,5 +56,5 @@ sudo virsh net-start default
 sleep 2
 sudo service cockpit restart
 sleep 2
-echo Done.
+echo Install [CockPit+KVM] is Done.
 sleep 3

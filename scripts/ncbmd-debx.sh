@@ -95,4 +95,4 @@ sudo service sshwifty start
 sleep 2
 sudo service sshwifty restart
 sleep 2
-echo Done.
+echo Install [DebX-SVR] is Done.

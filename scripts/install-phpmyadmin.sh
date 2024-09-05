@@ -80,5 +80,5 @@ sudo a2ensite phpmyadmin.conf
 sleep 2
 sudo service apache2 restart
 sleep 2
-echo Done.
+echo Install [phpMyAdmin] is Done.
 sleep 3

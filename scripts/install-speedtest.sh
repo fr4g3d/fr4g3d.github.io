@@ -16,5 +16,5 @@ unzip -o dlds/spdtest.zip
 sleep 2
 sudo mv -f speedtest/ /var/www/html/.apps/
 sleep 2
-echo Done.
+echo Install [LibreSpeedTest] is Done.
 sleep 3

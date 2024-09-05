@@ -13,5 +13,5 @@ curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/se
 sh setup-repos.sh
 sudo apt-get -y install webmin --install-recommends
 sleep 2
-echo Done.
+echo Install [WebMin] is Done.
 sleep 3

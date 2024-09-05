@@ -98,5 +98,5 @@ sudo a2ensite nxcbmd.lan.conf
 sleep 2
 sudo service apache2 restart
 sleep 2
-echo Done.
+echo Install [NextCloud] is Done.
 sleep 3
