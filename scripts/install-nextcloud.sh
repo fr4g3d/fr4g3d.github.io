@@ -96,7 +96,7 @@ sudo sh -c "printf \"Alias /nc \"/var/www/.nc/\"
 </Directory>
 \" > nextcloud.conf"
 sudo cp nextcloud.conf /etc/apache2/sites-available/
-sudo cp dlds/$NCConf /etc/apache2/sites-available/nxcbmd.lan.conf
+sudo cp dlds/$NCConf.conf /etc/apache2/sites-available/nxcbmd.lan.conf
 sudo a2ensite nextcloud.conf
 sudo a2ensite nxcbmd.lan.conf
 sleep 2
