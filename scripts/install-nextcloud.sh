@@ -77,7 +77,8 @@ aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.z04
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.z05
 sleep 2
 sudo mkdir /var/www/.nc
-sudo -u www-data unzip -o dlds/$NCVer -d /var/www/.nc
+zip -F dlds/$NCVer.zip --out dlds/nc-$NCVer.zip
+sudo -u www-data unzip -o dlds/nc-$NCVer.zip -d /var/www/.nc
 sleep 2
 sudo chown -R www-data:www-data /var/www/.nc/
 sudo chmod -R 755 /var/www/.nc/
