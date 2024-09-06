@@ -39,6 +39,6 @@ sudo a2enmod alias proxy proxy_fcgi
 sleep 2
 sudo systemctl restart apache2.service
 sleep 2
-echo Enable [PHP-FPM|FastCGi] is Done.
+echo Enable [PHP-FPM/FastCGi] is Done.
 sleep 3
 clear
