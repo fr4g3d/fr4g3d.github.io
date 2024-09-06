@@ -79,6 +79,7 @@ sleep 2
 sudo mkdir /var/www/.nc
 zip -F dlds/$NCVer.zip --out dlds/nc-$NCVer.zip
 sudo -u www-data unzip -o dlds/nc-$NCVer.zip -d /var/www/.nc
+clear
 sleep 2
 sudo chown -R www-data:www-data /var/www/.nc/
 sudo chmod -R 755 /var/www/.nc/
