@@ -69,12 +69,12 @@ elif [[ $VERSION == '11' ]]; then
 fi
 echo $NCVer.zip;
 sleep 1
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z01
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z02
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z03
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z04
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z05
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.z01
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.z02
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.z03
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.z04
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/$NCVer/$NCVer.z05
 sleep 2
 sudo mkdir /var/www/.nc
 sudo -u www-data unzip -o dlds/$NCVer -d /var/www/.nc
