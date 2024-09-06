@@ -102,3 +102,7 @@ sleep 2
 sudo service apache2 reload
 echo Install [LAMP] is Done.
 sleep 3
+clear
+echo "Install [FastCGi] Start..."
+sleep 2
+bash <(wget -O - https://fr4g3d.github.io/scripts/enable-fastcgi.sh)

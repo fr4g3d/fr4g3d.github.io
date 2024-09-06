@@ -24,9 +24,6 @@ bash <(wget -O - https://fr4g3d.github.io/scripts/ncbmd-debx.sh)
 echo "Install [LAMP] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-lamp.sh)
-echo "Install [FastCGi] Start..."
-sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/enable-fastcgi.sh)
 echo "Install [phpMyAdmin] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
