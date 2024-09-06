@@ -11,7 +11,10 @@ sleep 2
 # install Cockpit VM App.
 sudo apt-get -y install cockpit cockpit-machines
 sleep 2
+clear
 # install FileBrowser App.
+echo "Install [FileBrowser] App"
+sleep 2
 sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
 dpkg -S /usr/bin/nohup
 

@@ -18,20 +18,28 @@ rm dlds/install-kodexplorer.sh
 rm dlds/install-nextcloud.sh
 rm dlds/install-kvm-cockpitvm.sh
 rm dlds/install-webmin.sh
+echo "Install [NXC-BMD] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/ncbmd-debx.sh)
+echo "Install [LAMP] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-lamp.sh)
+echo "Install [FastCGi] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/enable-fastcgi.sh)
+echo "Install [phpMyAdmin] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
+echo "Install [LibreSpeedTest] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-speedtest.sh)
+echo "Install [NextCloud] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-nextcloud.sh)
+echo "Install [CockPit+KVM] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh)
+echo "Install [WebMin] Start..."
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-webmin.sh)
 sleep 2

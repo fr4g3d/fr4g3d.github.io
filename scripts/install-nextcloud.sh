@@ -58,29 +58,31 @@ sudo rm dlds/latest-2*.zip
 sleep 1
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
-  NCVer="latest-21.tar.bz2"
-  NCConf="nxcbmd10.conf"
+  NCVer="latest-21"
+  NCConf="nxcbmd10"
 elif [[ $VERSION == '10' ]]; then
-  NCVer="latest-23.tar.bz2"
-  NCConf="nxcbmd10.conf"
+  NCVer="latest-23"
+  NCConf="nxcbmd10"
 elif [[ $VERSION == '11' ]]; then
-  NCVer="latest-25.tar.bz2"
-  NCConf="nxcbmd11.conf"
+  NCVer="latest-25"
+  NCConf="nxcbmd11"
 fi
-echo $NCVer;
+echo $NCVer.zip;
 sleep 1
-#wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer
-sleep 2
-tar -xjvf dlds/$NCVer
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z01
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z02
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z03
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z04
+aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer.z05
 sleep 2
 sudo mkdir /var/www/.nc
-sudo mv -f nextcloud/* /var/www/.nc/
+sudo -u www-data unzip -o dlds/$NCVer -d /var/www/.nc
+sleep 2
 sudo chown -R www-data:www-data /var/www/.nc/
 sudo chmod -R 755 /var/www/.nc/
-sudo rm -r nextcloud/
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/$NCConf
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/$NCConf.conf
 sudo sh -c "printf \"Alias /nc \"/var/www/.nc/\"
 <Directory /var/www/.nc/>
   Require all granted
