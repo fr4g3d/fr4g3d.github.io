@@ -78,12 +78,6 @@ sudo sh -c "printf \"Alias /pmadmin \"/usr/share/phpMyAdmin-5.1.2-all-languages\
   Require all granted
   AllowOverride All
   Options FollowSymLinks MultiViews
-  AuthType Basic
-  AuthName "Wajib Login"
-  AuthBasicProvider file
-  AuthUserFile "/usr/share/phpMyAdmin-5.1.2-all-languages/.htpasswd"
-  Require valid-user
-
   <IfModule mod_dav.c>
     Dav off
   </IfModule>
