@@ -45,8 +45,8 @@ sudo service filebrowserd restart
 sleep 2
 sudo usermod -aG kvm $(whoami)
 sudo usermod -aG libvirt $(whoami)
-newgrp kvm
-newgrp libvirt
+echo Type: 'newgrp kvm'
+echo Type: 'newgrp libvirt'
 sleep 2
 sudo systemctl enable --now libvirtd
 sleep 2
