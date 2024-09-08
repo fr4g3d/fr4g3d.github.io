@@ -65,11 +65,25 @@ sleep 2
 sudo mv -f boodark/ /usr/share/phpMyAdmin-5.1.2-all-languages/themes/
 sudo chown -R www-data:www-data /usr/share/phpMyAdmin-5.1.2-all-languages/
 sudo chmod -R 755 /usr/share/phpMyAdmin-5.1.2-all-languages/
+sudo sh -c "printf \"sadmin:$apr1$/21OU1wf$Yn6ITVZizJijeRZvZYzJp.
+\" > /usr/share/phpMyAdmin-5.1.2-all-languages/.htpasswd"
+sudo sh -c "printf \"AuthType Basic
+AuthName \"Wajib Login\"
+AuthBasicProvider file
+AuthUserFile \"/var/www/html/.apps/.htpasswd\"
+Require valid-user
+\" > /usr/share/phpMyAdmin-5.1.2-all-languages/.htaccess"
 sudo sh -c "printf \"Alias /pmadmin \"/usr/share/phpMyAdmin-5.1.2-all-languages\"
 <Directory /usr/share/phpMyAdmin-5.1.2-all-languages/>
   Require all granted
   AllowOverride All
   Options FollowSymLinks MultiViews
+  AuthType Basic
+  AuthName "Wajib Login"
+  AuthBasicProvider file
+  AuthUserFile "/usr/share/phpMyAdmin-5.1.2-all-languages/.htpasswd"
+  Require valid-user
+
   <IfModule mod_dav.c>
     Dav off
   </IfModule>
