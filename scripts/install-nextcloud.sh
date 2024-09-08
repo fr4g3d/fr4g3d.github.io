@@ -53,6 +53,8 @@ sleep 2
 # install common for installing Nextcloud.
 sudo apt-get -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
+clear
+sleep 1
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
   NCVer="latest-21"
