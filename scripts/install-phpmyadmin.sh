@@ -52,6 +52,7 @@ sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
 sudo rm -r phpMyAdmin-5.1.2-all-languages/
 sudo rm dlds/phpMyAdmin-5.1.2-all-languages.z*
+sudo rm -r boodark/
 #wget -P dlds/ https://files.phpmyadmin.net/phpMyAdmin/5.1.2/phpMyAdmin-5.1.2-all-languages.zip
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/phpMyAdmin-5.1.2-all-languages.zip
 sleep 2
