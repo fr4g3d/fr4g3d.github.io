@@ -59,6 +59,6 @@ aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-webmin.s
 #sudo bash ./dlds/install-kvm-cockpitvm.sh
 #sudo bash ./dlds/install-webmin.sh
 sleep 2
+clear
 echo All Well Done.
 sleep 3
-clear
