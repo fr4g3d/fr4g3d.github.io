@@ -50,8 +50,8 @@ printf "type \"source ncdb.sql\"\n"
 sleep 2
 sudo mysql -uroot < ncdb.sql
 sleep 2
-# install common for installing Nextcloud.
-sudo apt-get -y install curl wget zip unzip aria2 ffmpeg
+# install common apps and Downloader + NextCloud.
+sudo apt-get -y install curl wget zip unzip aria2 ffmpeg imagemagick ghostscript
 sleep 2
 clear
 sleep 1

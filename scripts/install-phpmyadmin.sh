@@ -47,7 +47,7 @@ FLUSH PRIVILEGES;
 sleep 2
 sudo mysql -uroot < pmadb.sql
 sleep 2
-# install common for installing Live Helper Chat.
+# install common apps and Downloader.
 sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
 sudo rm -r phpMyAdmin-5.1.2-all-languages/
