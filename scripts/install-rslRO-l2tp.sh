@@ -75,10 +75,10 @@ sudo chmod +x /usr/local/bin/start-vpn
 sleep 1
 sudo bash -c 'cat > /usr/local/bin/stop-vpn <<EOF
 #!/bin/bash
-(sudo echo "d rslRO" > /var/run/xl2tpd/l2tp-control
-sudo ipsec down rslRO) && (
-sudo service xl2tpd stop ;
-sudo service strongswan stop)
+(echo "d rslRO" > /var/run/xl2tpd/l2tp-control
+ipsec down rslRO) && (
+service xl2tpd stop ;
+service strongswan stop)
 EOF'
 sudo chmod +x /usr/local/bin/stop-vpn
 sleep 1
@@ -86,14 +86,15 @@ echo "To start VPN type: start-vpn"
 echo "To stop VPN type: stop-vpn"
 sleep 2
 sudo bash -c 'cat > /usr/local/bin/rslRO-vpn.sh <<EOF
+#!/bin/bash
 count=0
 until false
 do
 ((count))
 if ! ping -Q 1 -c 3 -t 1 10.66.66.1; then
-echo sadmin@123 | sudo -S service strongswan restart
-echo sadmin@123 | sudo -S service xl2tpd restart
-echo sadmin@123 | sudo -S start-vpn
+service strongswan restart
+service xl2tpd restart
+bash /usr/local/bin/start-vpn
 sleep 5
 fi
 sleep 9
@@ -110,7 +111,7 @@ StartLimitIntervalSec=0
 [Service]
 Type=simple
 Restart=always
-RestartSec=1
+RestartSec=3
 User=root
 Group=root
 ExecStart=/usr/local/bin/rslRO-vpn.sh
