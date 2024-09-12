@@ -63,6 +63,8 @@ sleep 1
 sudo ln -sf /var/www/.nc nxcf
 sudo ln -sf /var/www/.nc/config nxcfcf
 sleep 2
+sudo -u www-data php nxcf/occ config:app:set text workspace_available --value=0
+sleep 1
 sudo -u www-data php nxcf/occ config:app:set previewgenerator squareSizes --value="64 128 256"
 sleep 1
 sudo -u www-data php nxcf/occ config:app:set previewgenerator widthSizes --value="64 128 256"
