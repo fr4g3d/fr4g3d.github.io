@@ -68,7 +68,7 @@ service xl2tpd start) && (
 ipsec up rslRO
 echo "c rslRO" > /var/run/xl2tpd/l2tp-control
 sleep 5
-#ip route add 10.0.0.0/24 dev ppp0
+#ip route add 10.66.66.19/24 dev ppp0
 )
 EOF'
 sudo chmod +x /usr/local/bin/start-vpn
@@ -84,3 +84,49 @@ sudo chmod +x /usr/local/bin/stop-vpn
 sleep 1
 echo "To start VPN type: start-vpn"
 echo "To stop VPN type: stop-vpn"
+sleep 2
+sudo bash -c 'cat > /usr/local/bin/rslRO-vpn.sh <<EOF
+count=0
+until false
+do
+((count))
+if ! ping -Q 1 -c 3 -t 1 10.66.66.1; then
+echo sadmin@123 | sudo -S service strongswan restart
+echo sadmin@123 | sudo -S service xl2tpd restart
+echo sadmin@123 | sudo -S start-vpn
+sleep 5
+fi
+sleep 9
+done
+EOF'
+sudo chmod +x /usr/local/bin/rslRO-vpn.sh
+sleep 2
+sudo bash -c 'cat > rslRO-vpn.service <<EOF
+[Unit]
+Description=rslRO VPN Service
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+Group=root
+ExecStart=/usr/local/bin/rslRO-vpn.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF'
+
+sleep 2
+sudo mv -f rslRO-vpn.service /etc/systemd/system/rslRO-vpn.service
+sleep 2
+sudo systemctl enable rslRO-vpn.service
+sleep 2
+sudo service rslRO-vpn start
+sleep 2
+sudo service rslRO-vpn restart
+sleep 2
+echo Well Done..
+sleep 1
