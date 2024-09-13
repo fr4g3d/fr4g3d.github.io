@@ -32,6 +32,15 @@ $CONFIG = array (
   'installed' => true,
   'default_timezone' => 'Asia/Jakarta',
   'default_phone_region' => 'ID',
+  // APCu and Redis for Caching Local and Distributed
+  'memcache.local' => '\OC\Memcache\APCu',
+  'memcache.distributed' => '\OC\Memcache\Redis',
+  'memcache.locking' => '\OC\Memcache\Redis',
+  'redis' => [
+  'host' => 'localhost',
+  'port' => 6379,
+  ],
+  // Preview Apps.
   'enable_previews' => true,
   'preview_concurrency_all' => '16',
   'preview_concurrency_new' => '8',

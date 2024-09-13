@@ -37,6 +37,20 @@ fi
 sleep 2
 sudo a2enmod alias proxy proxy_fcgi
 sleep 2
+
+sudo sh -c "printf \"
+; nxcbmd set config FPM:
+pm.max_children = 256
+pm.max_requests = 2048
+pm.start_servers = 64
+pm.min_spare_servers = 32
+pm.max_spare_servers = 192
+pm.process_idle_timeout = 155
+\" >> /etc/php/7.3/fpm/pool.d/www.conf"
+
+sleep 1
+sudo systemctl restart php7.*-fpm.service
+sleep 2
 sudo systemctl restart apache2.service
 sleep 2
 echo Enable [PHP-FPM/FastCGi] is Done.
