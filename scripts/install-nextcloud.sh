@@ -52,7 +52,7 @@ sleep 2
 sudo mysql -uroot < ncdb.sql
 sleep 2
 # install common apps and Downloader + NextCloud.
-sudo apt-get -y install curl wget zip unzip aria2 ffmpeg imagemagick ghostscript
+sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 sleep 2
 clear
 sleep 1
