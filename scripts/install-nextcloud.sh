@@ -7,7 +7,7 @@ clear
 
 # install apache2 mod-php openssl.
 sudo apt-get update
-sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
+sudo apt-get -y install apache2 apache2-doc libapache2-mod-php libapache2-mod-fcgid openssl 
 #sudo apt-get install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
 sudo a2enmod env
@@ -31,7 +31,7 @@ sudo apt-get -y install redis-server php-redis php-apcu
 sudo php -v
 sleep 2
 # install mariadb-server as mysql-server.
-sudo apt-get -y install mariadb-server mariadb-client libdbd-mysql-perl
+sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;

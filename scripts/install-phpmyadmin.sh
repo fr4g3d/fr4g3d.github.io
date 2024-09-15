@@ -7,7 +7,7 @@ clear
 
 # install apache2 mod-php openssl.
 sudo apt-get update
-sudo apt-get -y install apache2 apache2-doc libapache2-mod-php openssl 
+sudo apt-get -y install apache2 apache2-doc libapache2-mod-php libapache2-mod-fcgid openssl 
 #sudo apt-get install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
 sudo a2enmod env
@@ -17,6 +17,7 @@ sudo a2enmod rewrite
 sudo a2enmod setenvif
 sudo a2enmod ssl
 sudo a2ensite default-ssl
+sudo a2enconf apache2-doc
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
