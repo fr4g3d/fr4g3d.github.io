@@ -42,12 +42,12 @@ chmod +x configure
 ./configure --enable-64bit --enable-packetver=20100831 --enable-prere=yes --with-MYSQL_LIBS=/usr/lib/x86_64-linux-gnu/libmariadbclient.so
 make clean && make server
 chmod +x *-server
-./athena-start restart
 sleep 2
 echo Well Done..
 sleep 1
 echo Type: ./athena-start start 
 echo to Start Server
-sleep 1
+sleep 2
 ./athena-start restart
 sleep 1
+cd
