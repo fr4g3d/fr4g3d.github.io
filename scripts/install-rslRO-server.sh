@@ -39,6 +39,8 @@ sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-rslRO-l2tp.sh)
 sleep 2
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
+mkdir ~/rslRO
+sleep 1
 mkdir ~/rslRO/rAthena-20181010
 sleep 2
 unzip -o dlds/rAthena-2018-10-10.zip -d ~/rslRO/rAthena-20181010
