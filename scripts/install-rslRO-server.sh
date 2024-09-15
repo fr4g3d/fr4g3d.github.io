@@ -40,7 +40,7 @@ sleep 2
 cd ~/rslRO/rAthena-20181010
 sleep 2
 sudo chmod +x configure
-.~/rslRO/rAthena-20181010/configure --enable-64bit --enable-packetver=20100831 --enable-prere=yes --with-MYSQL_LIBS=/usr/lib/x86_64-linux-gnu/libmariadbclient.so
+./configure --enable-64bit --enable-packetver=20100831 --enable-prere=yes --with-MYSQL_LIBS=/usr/lib/x86_64-linux-gnu/libmariadbclient.so
 make -C ~/rslRO/rAthena-20181010 clean && make -C ~/rslRO/rAthena-20181010 server
 sudo chmod +x *-server
 sleep 2
