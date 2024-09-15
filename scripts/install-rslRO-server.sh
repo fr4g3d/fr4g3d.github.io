@@ -6,8 +6,8 @@ sleep 2
 sudo apt-get -y install git make libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat gcc g++ zlib1g-dev libpcre3-dev
 sleep 2
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
-sudo mkdir ~/rslRO/rAthena-20181010
-sudo unzip -o dlds/rAthena-2018-10-10.zip -d ~/rslRO/rAthena-20181010
+mkdir ~/rslRO/rAthena-20181010
+unzip -o dlds/rAthena-2018-10-10.zip -d ~/rslRO/rAthena-20181010
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
