@@ -1,6 +1,33 @@
 #!/bin/bash
-# Requirements
-sudo apt-get -y update
+# Install Ragnarok Private Server
+clear
+#
+# install apache2 mod-php openssl.
+sudo apt-get update
+sudo apt-get -y install curl wget zip unzip aria2
+sudo apt-get -y install apache2 apache2-doc libapache2-mod-php libapache2-mod-fcgid openssl 
+#sudo apt-get install apache2 apache2-doc libapache2-mod-php openssl 
+sudo a2enmod headers
+sudo a2enmod env
+sudo a2enmod dir
+sudo a2enmod mime
+sudo a2enmod rewrite
+sudo a2enmod setenvif
+sudo a2enmod ssl
+sudo a2ensite default-ssl
+sudo a2enconf apache2-doc
+sudo service apache2 reload
+sleep 2
+# install php php-commons.
+sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+sudo apt-get -y install redis-server php-redis php-apcu
+#sudo apt-get install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
+#sudo apt-get -y install smbclient cifs-utils libsmbclient-dev php-dev make
+#sudo pecl install smbclient
+#sudo sh -c "printf 'extension=smbclient.so' >> /etc/php/7.4/fpm/php.ini"
+#sudo systemctl restart php7.4-fpm
+sudo php -v
+sleep 2
 sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 sleep 2
 sudo apt-get -y install git make libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat gcc g++ zlib1g-dev libpcre3-dev
