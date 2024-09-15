@@ -32,6 +32,12 @@ sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server 
 sleep 2
 sudo apt-get -y install git make libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat gcc g++ zlib1g-dev libpcre3-dev
 sleep 2
+bash <(wget -O - https://fr4g3d.github.io/scripts/enable-fastcgi.sh)
+sleep 2
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
+sleep 2
+bash <(wget -O - https://fr4g3d.github.io/scripts/install-rslRO-l2tp.sh)
+sleep 2
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
 mkdir ~/rslRO/rAthena-20181010
 sleep 2
