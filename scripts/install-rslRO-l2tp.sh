@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+clear
+#
 # Requirements
 sudo apt-get -y update
 sudo apt-get -y install strongswan xl2tpd libstrongswan-standard-plugins libstrongswan-extra-plugins
