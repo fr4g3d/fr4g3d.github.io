@@ -35,6 +35,79 @@ GRANT ALL ON rslrodb.* TO 'rslrouser'@'localhost' IDENTIFIED BY 'rslro@123';
 FLUSH PRIVILEGES;
 \"  > rslrodb.sql"
 sleep 2
+sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.conf <<EOF
+<VirtualHost *:80>
+     ServerAdmin admin@rsl.my.id
+     DocumentRoot /home/sadmin/rslRO/www/
+     ServerName ro.rsl.my.id
+     ServerAlias www.ro.rsl.my.id
+
+    <FilesMatch \.php$>
+        # 2.4.10+ can proxy to unix socket
+        SetHandler "proxy:unix:/run/php/php7.3-fpm.sock|fcgi://localhost"
+    </FilesMatch>
+
+     <Directory /home/sadmin/rslRO/www/>
+        Options +FollowSymlinks
+        AllowOverride All
+        Require all granted
+          <IfModule mod_dav.c>
+            Dav off
+          </IfModule>
+        SetEnv HOME /home/sadmin/rslRO/www
+        SetEnv HTTP_HOME /home/sadmin/rslRO/www
+     </Directory>
+
+#     ErrorLog ${APACHE_LOG_DIR}/rslRO.lan-error.log
+#     CustomLog ${APACHE_LOG_DIR}/rslRO.lan-access.log combined
+
+</VirtualHost>
+
+<IfModule mod_ssl.c>
+<VirtualHost _default_:443>
+     ServerAdmin admin@rsl.my.id
+     DocumentRoot /home/sadmin/rslRO/www/
+     ServerName ro.rsl.my.id
+     ServerAlias www.ro.rsl.my.id
+
+    <FilesMatch \.php$>
+        # 2.4.10+ can proxy to unix socket
+        SetHandler "proxy:unix:/run/php/php7.3-fpm.sock|fcgi://localhost"
+    </FilesMatch>
+
+     <Directory /home/sadmin/rslRO/www/>
+        Options +FollowSymlinks
+        AllowOverride All
+        Require all granted
+          <IfModule mod_dav.c>
+            Dav off
+          </IfModule>
+        SetEnv HOME /home/sadmin/rslRO/www
+        SetEnv HTTP_HOME /home/sadmin/rslRO/www
+     </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/rslRO.lan-ssl-error.log
+    CustomLog ${APACHE_LOG_DIR}/rslRO.lan-ssl-access.log combined
+
+SSLEngine on
+SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+<FilesMatch "\.(cgi|shtml|phtml|php)$">
+SSLOptions +StdEnvVars
+</FilesMatch>
+<Directory /usr/lib/cgi-bin>
+SSLOptions +StdEnvVars
+</Directory>
+
+</VirtualHost>
+</IfModule>
+EOF'
+sudo a2ensite rslRO
+sleep 1
+sudo service apache2 restart
+sleep 2
+echo Install rslRO DB...
 sudo mysql -uroot < rslrodb.sql
 sudo mysql -uroot -D rslrodb < ~/rslRO/rAthena-20181010/sql-files/main.sql
 sudo mysql -uroot -D rslrodb < ~/rslRO/rAthena-20181010/sql-files/logs.sql
@@ -47,12 +120,21 @@ sudo mysql -uroot -D rslrodb < ~/rslRO/rAthena-20181010/sql-files/mob_db2.sql
 sudo mysql -uroot -D rslrodb < ~/rslRO/rAthena-20181010/sql-files/mob_skill_db.sql
 sudo mysql -uroot -D rslrodb < ~/rslRO/rAthena-20181010/sql-files/mob_skill_db2.sql
 sudo mysql -uroot -D rslrodb < ~/rslRO/rAthena-20181010/sql-files/roulette_default_data.sql
-sleep 2
+sleep 1
 cd ~/rslRO/rAthena-20181010
-sleep 2
+sleep 1
+echo Configure rAthena Compiler...
 sudo chmod +x configure
 ./configure --enable-64bit --enable-packetver=20100831 --enable-prere=yes --with-MYSQL_LIBS=/usr/lib/x86_64-linux-gnu/libmariadbclient.so
-make -C ~/rslRO/rAthena-20181010 clean && make -C ~/rslRO/rAthena-20181010 server
+sleep 2
+
+if [[ -f login-server && -f char-server && -f map-server ]]; then
+    echo Files Exist! Skip Compiling...
+	sleep 2
+else
+	echo Make rAthena Servers...
+	make -C ~/rslRO/rAthena-20181010 clean && make -C ~/rslRO/rAthena-20181010 server
+fi
 sleep 2
 sudo chmod +x athena-start
 sudo chmod +x *-server
