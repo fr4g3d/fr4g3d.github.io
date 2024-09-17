@@ -49,7 +49,7 @@ sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.lan.conf <<EOF
      ServerAdmin admin@rsl.my.id
      DocumentRoot /home/sadmin/rslRO/www/
      ServerName ro.rsl.my.id
-     ServerAlias www.ro.rsl.my.id
+     ServerAlias www.ro.rsl.my.id rslro.lan
 
     <FilesMatch \.php$>
         # 2.4.10+ can proxy to unix socket
@@ -77,7 +77,7 @@ sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.lan.conf <<EOF
      ServerAdmin admin@rsl.my.id
      DocumentRoot /home/sadmin/rslRO/www/
      ServerName ro.rsl.my.id
-     ServerAlias www.ro.rsl.my.id
+     ServerAlias www.ro.rsl.my.id rslro.lan
 
     <FilesMatch \.php$>
         # 2.4.10+ can proxy to unix socket
