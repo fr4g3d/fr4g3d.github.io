@@ -26,7 +26,7 @@ mkdir ~/rslRO/rAthena-20181010
 sleep 1
 unzip -o dlds/rslRO-web.zip -d ~/rslRO/www
 sudo sh -c "printf \"<?php phpcredits(); ?>
-\" > ~/rslRO/www/index.php"
+\" > /home/sadmin/rslRO/www/index.php"
 sleep 2
 unzip -o dlds/rAthena-2018-10-10.zip -d ~/rslRO/rAthena-20181010
 sleep 1
