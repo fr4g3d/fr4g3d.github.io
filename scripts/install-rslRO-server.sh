@@ -14,12 +14,21 @@ bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
 sleep 2
 bash <(wget -O - https://fr4g3d.github.io/scripts/install-rslRO-l2tp.sh)
 sleep 2
+aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/rslRO-web.zip
+sleep 2
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
+sleep 1
 mkdir ~/rslRO
 sleep 1
+mkdir ~/rslRO/www
+sleep 1
 mkdir ~/rslRO/rAthena-20181010
+sleep 1
+unzip -o dlds/rslRO-web.zip -d ~/rslRO/www
 sleep 2
 unzip -o dlds/rAthena-2018-10-10.zip -d ~/rslRO/rAthena-20181010
+sleep 1
+sudo chown -R www-data ~/rslRO/www/rslRO/data/
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
@@ -35,7 +44,7 @@ GRANT ALL ON rslrodb.* TO 'rslrouser'@'localhost' IDENTIFIED BY 'rslro@123';
 FLUSH PRIVILEGES;
 \"  > rslrodb.sql"
 sleep 2
-sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.conf <<EOF
+sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.lan.conf <<EOF
 <VirtualHost *:80>
      ServerAdmin admin@rsl.my.id
      DocumentRoot /home/sadmin/rslRO/www/
@@ -58,8 +67,8 @@ sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.conf <<EOF
         SetEnv HTTP_HOME /home/sadmin/rslRO/www
      </Directory>
 
-#     ErrorLog ${APACHE_LOG_DIR}/rslRO.lan-error.log
-#     CustomLog ${APACHE_LOG_DIR}/rslRO.lan-access.log combined
+     ErrorLog /var/log/apache2/rslRO.lan-error.log
+     CustomLog /var/log/apache2/rslRO.lan-access.log combined
 
 </VirtualHost>
 
@@ -86,8 +95,8 @@ sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.conf <<EOF
         SetEnv HTTP_HOME /home/sadmin/rslRO/www
      </Directory>
 
-    ErrorLog ${APACHE_LOG_DIR}/rslRO.lan-ssl-error.log
-    CustomLog ${APACHE_LOG_DIR}/rslRO.lan-ssl-access.log combined
+    ErrorLog /var/log/apache2/rslRO.lan-ssl-error.log
+    CustomLog /var/log/apache2/rslRO.lan-ssl-access.log combined
 
 SSLEngine on
 SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
@@ -103,7 +112,7 @@ SSLOptions +StdEnvVars
 </VirtualHost>
 </IfModule>
 EOF'
-sudo a2ensite rslRO
+sudo a2ensite rslRO.lan
 sleep 1
 sudo service apache2 restart
 sleep 2
