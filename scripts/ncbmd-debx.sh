@@ -20,16 +20,16 @@ net.ipv6.conf.tun0.disable_ipv6 = 1
 # add SG Mirror Repo.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '10' ]]; then
-  bash <(wget -O - https://fr4g3d.github.io/scripts/debian-source-list-sg-buster.sh)
+  bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-sg-buster.sh)
 elif [[ $VERSION == '11' ]]; then
-  bash <(wget -O - https://fr4g3d.github.io/scripts/debian-source-list-sg-bullseye.sh)
+  bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-sg-bullseye.sh)
 fi
 sleep 2
 # install common apps.
 sudo apt-get update
 sleep 2
 sudo apt-get -y install curl wget aria2 zip unzip dnsutils net-tools openssl openssh-server openssh-client shellinabox
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/scss/00_Green_On_Black.css
+aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/scss/00_Green_On_Black.css
 sudo mv -f dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
 sudo mv -f "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shellinabox/options-enabled/00_Black On White.css"
@@ -48,7 +48,7 @@ sudo apt-get -y install bc fonts-powerline
 sleep 2
 # install Fancy Prompts
 sleep 2
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/fancyprompts.zip
+aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/fancyprompts.zip
 unzip -o dlds/fancyprompts.zip
 sleep 2
 sudo mv -f fancyprompts/ ~/.fancyprompts
@@ -60,7 +60,7 @@ sleep 2
 # install sshWifty.
 sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
+aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
@@ -68,7 +68,7 @@ mkdir ~/.config/
 sudo mkdir /root/.config/
 sudo chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sconf/sshwifty.conf.json
+aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sconf/sshwifty.conf.json
 sleep 2
 sudo cp dlds/sshwifty.conf.json ~/.config/
 sudo cp dlds/sshwifty.conf.json /root/.config/

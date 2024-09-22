@@ -21,9 +21,9 @@ sleep 2
 #sudo rm dlds/phpMyAdmin-5.1.3-all-languages.z*
 sudo rm -r boodark/
 #wget -P dlds/ https://files.phpmyadmin.net/phpMyAdmin/5.1.3/phpMyAdmin-5.1.3-all-languages.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/phpMyAdmin-5.1.3-all-languages.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/phpMyAdmin-5.1.3-all-languages.zip
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/boodark-1.0.1.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/boodark-1.0.1.zip
 sleep 2
 unzip -o dlds/phpMyAdmin-5.1.3-all-languages.zip
 sleep 2
@@ -36,7 +36,7 @@ sleep 1
 sudo chown -R www-data:www-data /usr/share/phpMyAdmin-5.1.3-all-languages/
 sudo chmod -R 755 /usr/share/phpMyAdmin-5.1.3-all-languages/
 sudo rm dlds/appz.zip
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/appz.zip
+aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/appz.zip
 unzip -o dlds/appz.zip
 sudo mv -f apps.conf /etc/apache2/sites-available/apps.conf
 sudo mv -f .htaccess /usr/share/phpMyAdmin-5.1.3-all-languages/.htaccess

@@ -20,37 +20,37 @@ rm dlds/install-kvm-cockpitvm.sh
 rm dlds/install-webmin.sh
 echo "Install [NXC-BMD] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/ncbmd-debx.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/ncbmd-debx.sh)
 echo "Install [LAMP] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-lamp.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-lamp.sh)
 echo "Install [FastCGi] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/enable-fastcgi.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/enable-fastcgi.sh)
 echo "Install [phpMyAdmin] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
 echo "Install [LibreSpeedTest] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-speedtest.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-speedtest.sh)
 echo "Install [NextCloud] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-nextcloud.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-nextcloud.sh)
 echo "Install [CockPit+KVM] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh)
 echo "Install [WebMin] Start..."
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-webmin.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-webmin.sh)
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/ncbmd-debx.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-lamp.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-phpmyadmin.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-speedtest.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-kodexplorer.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-nextcloud.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/scripts/install-webmin.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/ncbmd-debx.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-lamp.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-phpmyadmin.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-speedtest.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-kodexplorer.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-nextcloud.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-webmin.sh
 #sleep 2
 #sudo chmod +x dlds/*.sh
 #sudo bash ./dlds/ncbmd-debx.sh

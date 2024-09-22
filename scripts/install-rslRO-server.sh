@@ -6,17 +6,17 @@ clear
 sudo apt-get update
 sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-lamp.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-lamp.sh)
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/enable-fastcgi.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/enable-fastcgi.sh)
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
 sleep 2
-bash <(wget -O - https://fr4g3d.github.io/scripts/install-rslRO-l2tp.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/install-rslRO-l2tp.sh)
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/rslRO-web.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/rslRO-web.zip
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
 sleep 1
 mkdir ~/rslRO
 sleep 1

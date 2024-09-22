@@ -12,7 +12,7 @@ sleep 2
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # Download LibreSpeedTest
-aria2c -d dlds -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/spdtest.zip
+aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/spdtest.zip
 sleep 2
 # Install LibreSpeedTest
 unzip -o dlds/spdtest.zip
