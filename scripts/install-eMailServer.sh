@@ -10,9 +10,13 @@ sleep 2
 # install common apps and Downloader.
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
+echo "Install [LAMP] Start..."
+sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-lamp.sh)
+echo "Install [FastCGi] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/enable-fastcgi.sh)
+echo "Install [phpMyAdmin] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
 sleep 2

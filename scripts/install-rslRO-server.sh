@@ -6,11 +6,16 @@ clear
 sudo apt-get update
 sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
+echo "Install [LAMP] Start..."
+sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-lamp.sh)
+echo "Install [FastCGi] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/enable-fastcgi.sh)
+echo "Install [phpMyAdmin] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
+echo "Install [rslRO-L2TP-Server] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-rslRO-l2tp.sh)
 sleep 2
