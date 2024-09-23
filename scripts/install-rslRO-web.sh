@@ -25,10 +25,17 @@ mkdir ~/rslRO/www
 sleep 1
 unzip -o dlds/rslRO-web.zip -d ~/rslRO/www
 sleep 1
-sudo chown -R www-data ~/rslRO/www/rslRO/data/logs
-sudo chown -R www-data ~/rslRO/www/rslRO/data/itemshop
-sudo chown -R www-data ~/rslRO/www/rslRO/data/tmp
+sudo chown -R www-data /home/sadmin/rslRO/www/rslRO/data/logs
+sudo chown -R www-data /home/sadmin/rslRO/www/rslRO/data/itemshop
+sudo chown -R www-data /home/sadmin/rslRO/www/rslRO/data/tmp
 sleep 1
+sudo sh -c "printf \"CREATE DATABASE rslrodb DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL ON rslrodb.* TO 'rslrouser'@'localhost' IDENTIFIED BY 'rslro@123';
+FLUSH PRIVILEGES;
+\"  > rslrodb.sql"
+sleep 2
+sudo mysql -uroot < rslrodb.sql
+sleep 2
 sudo sh -c "printf \"<?php phpcredits(); ?>
 \" > /home/sadmin/rslRO/www/index.php"
 sleep 2
