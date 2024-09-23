@@ -27,9 +27,21 @@ FLUSH PRIVILEGES;
 \" > roundcube.sql"
 printf "type \"source roundcube.sql\"\n"
 sleep 2
+sudo mysql -uroot < roundcube.sql
+sleep 2
 sudo apt-get -y install roundcube
 sleep 2
-sudo mysql -uroot < roundcube.sql
+sudo sh -c "printf \"Alias /mailz /var/lib/roundcube/
+<Directory /var/lib/roundcube/>
+  Require all granted
+  AllowOverride All
+  Options Indexes Includes FollowSymLinks MultiViews
+</Directory>
+\" > /etc/apache2/sites-available/mailz.conf"
+sleep 1
+sudo a2ensite mailz
+sleep 1
+sudo systemctl restart apache2
 sleep 2
 # install eMail Server Apps.
 sudo apt-get -y install postfix dovecot-pop3d dovecot-imapd bind9
@@ -49,20 +61,13 @@ sudo mv -f 10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 sleep 2
 sudo dpkg-reconfigure postfix
 sleep 2
+echo smtp.mailbit.io
+echo user-e6a55b3a3809f7c4
+echo QvuFW8KfL9LjxugiSGdtWiUA6HUm
+sleep 2
 sudo systemctl restart postfix
 sudo systemctl restart dovecot
 sudo systemctl restart bind9
-sleep 2
-sudo sh -c "printf \"Alias /mailz /var/lib/roundcube/
-<Directory /var/lib/roundcube/>
-  Require all granted
-  AllowOverride All
-  Options Indexes Includes FollowSymLinks MultiViews
-</Directory>
-\" > /etc/apache2/sites-available/mailz.conf"
-sudo a2ensite mailz
-sleep 1
-sudo systemctl restart apache2
 sleep 2
 echo Install [eMail-Server] is Done.
 sleep 3
