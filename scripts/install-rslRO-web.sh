@@ -29,14 +29,7 @@ sudo chown -R www-data ~/rslRO/www/rslRO/data/logs
 sudo chown -R www-data ~/rslRO/www/rslRO/data/itemshop
 sudo chown -R www-data ~/rslRO/www/rslRO/data/tmp
 sleep 1
-sudo sh -c "printf \"<?php
-$host = $_SERVER['SERVER_NAME']; 
-if($host == 'ro.rsl.my.id') {
-header('Location: rslRO/');
-else 
-header('Location: http://ro.rsl.my.id:88/'); 
-}
-phpcredits(); ?>
+sudo sh -c "printf \"<?php phpcredits(); ?>
 \" > /home/sadmin/rslRO/www/index.php"
 sleep 2
 sudo bash -c 'cat > /etc/apache2/sites-available/rslRO.lan.conf <<EOF
