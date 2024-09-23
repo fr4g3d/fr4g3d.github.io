@@ -54,7 +54,7 @@ sudo systemctl restart dovecot
 sudo systemctl restart bind9
 sleep 2
 sudo sh -c "printf \"Alias /mailz /var/lib/roundcube/
-<Directory /mailz /var/lib/roundcube/>
+<Directory /var/lib/roundcube/>
   Require all granted
   AllowOverride All
   Options Indexes Includes FollowSymLinks MultiViews
