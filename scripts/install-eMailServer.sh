@@ -34,6 +34,35 @@ sleep 2
 # install eMail Server Apps.
 sudo apt-get -y install postfix dovecot-pop3d dovecot-imapd bind9
 sleep 2
-
+sudo maildirmake.dovecot /etc/skel/Maildir
+sudo sh -c "printf \"
+home_mailbox = Maildir/
+\" >> /etc/postfix/main.cf"
+sleep 1
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/dovecot-conf.zip
+sleep 1
+unzip -o dlds/dovecot-conf.zip
+sleep 1
+sudo mv -f dovecot.conf /etc/dovecot/dovecot.conf
+sudo mv -f 10-mail.conf /etc/dovecot/conf.d/10-mail.conf
+sudo mv -f 10-auth.conf /etc/dovecot/conf.d/10-auth.conf
+sleep 2
+sudo dpkg-reconfigure postfix
+sleep 2
+sudo systemctl restart postfix
+sudo systemctl restart dovecot
+sudo systemctl restart bind9
+sleep 2
+sudo sh -c "printf \"Alias /mailz /var/lib/roundcube/
+<Directory /mailz /var/lib/roundcube/>
+  Require all granted
+  AllowOverride All
+  Options Indexes Includes FollowSymLinks MultiViews
+</Directory>
+\" > /etc/apache2/sites-available/mailz.conf"
+sudo a2ensite mailz
+sleep 1
+sudo systemctl restart apache2
+sleep 2
 echo Install [eMail-Server] is Done.
 sleep 3
