@@ -17,9 +17,9 @@ mkdir ~/rslRO/www
 sleep 1
 mkdir ~/rslRO/www/idRO-Wiki
 sleep 1
-tar -xzvf dlds/dokuwiki-2023-04-04a.tgz -C ~/rslRO/www
+tar -xzvf dlds/mediawiki-1.35.13.tar.gz -C ~/rslRO/www
 sleep 1
-mv ~/rslRO/www/mediawiki-1.38.7 ~/rslRO/www/idRO-Wiki
+mv ~/rslRO/www/mediawiki-1.35.13 ~/rslRO/www/idRO-Wiki
 sleep 2
 echo Well Done.
 sleep 1
