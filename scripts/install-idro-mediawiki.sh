@@ -2,12 +2,11 @@
 #
 clear
 #
-# Install [idRO-DokuWiki]
+# Install [idRO-MediaWiki]
 sudo apt-get update
 sleep 2
-printf "Download idRO-DokuWiki Package...\n"
+printf "Download idRO-MediaWiki Package...\n"
 sleep 3
-rm dokuwiki-2023-04-04a.tgz
 #aria2c -d dlds/ -c -s8 -j8 -x8 https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.13.tar.gz
 aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/mediawiki-1.35.13.tar.gz
 sleep 2
