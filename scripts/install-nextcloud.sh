@@ -24,23 +24,26 @@ clear
 sleep 1
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
+  NCFVer="nxc-l21"
   NCVer="latest-21"
   NCConf="nxcbmd10"
 elif [[ $VERSION == '10' ]]; then
+  NCFVer="nxc-l23"
   NCVer="latest-23"
   NCConf="nxcbmd10"
 elif [[ $VERSION == '11' ]]; then
+  NCFVer="nxc-l25"
   NCVer="latest-25"
   NCConf="nxcbmd11"
 fi
 echo $NCVer.zip;
 sleep 1
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCVer/$NCVer.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCVer/$NCVer.z01
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCVer/$NCVer.z02
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCVer/$NCVer.z03
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCVer/$NCVer.z04
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCVer/$NCVer.z05
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.zip
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z01
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z02
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z03
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z04
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z05
 sleep 2
 sudo mkdir /var/www/.nc
 zip -F dlds/$NCVer.zip --out dlds/nc-$NCVer.zip
