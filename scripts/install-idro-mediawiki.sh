@@ -23,6 +23,11 @@ mkdir ~/rslRO/www/idRO-Wiki/extensions/CollapsibleVector
 sleep 1
 tar -xzvf dlds/CollapsibleVector-refs_heads_REL1_28.tar.gz -C ~/rslRO/www/idRO-Wiki/extensions/CollapsibleVector
 sleep 2
+mkdir ~/rslRO/www/idRO-Wiki/data
+sleep 1
+sudo chown -R www-data ~/rslRO/www/idRO-Wiki/data/
+sleep 1
+sudo chown -R www-data ~/rslRO/www/idRO-Wiki/images/
 echo Well Done.
 sleep 1
 : '
