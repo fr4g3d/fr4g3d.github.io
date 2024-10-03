@@ -18,7 +18,9 @@ sleep 1
 tar -xzvf dlds/mediawiki-1.28.3.tar.gz -C ~/rslRO/www
 sleep 1
 mv ~/rslRO/www/mediawiki-1.28.3 ~/rslRO/www/idRO-Wiki
-sleep 2
+sleep 1
+mkdir ~/rslRO/www/idRO-Wiki/extensions/CollapsibleVector
+sleep 1
 tar -xzvf dlds/CollapsibleVector-refs_heads_REL1_28.tar.gz -C ~/rslRO/www/idRO-Wiki/extensions/CollapsibleVector
 sleep 2
 echo Well Done.
