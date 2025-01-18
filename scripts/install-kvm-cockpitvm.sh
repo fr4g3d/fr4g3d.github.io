@@ -9,7 +9,7 @@ clear
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # install Cockpit VM App.
-sudo apt-get -y install --no-install-recommends cockpit cockpit-machines qemu-system libvirt-clients libvirt-daemon-system
+sudo apt-get -y install cockpit cockpit-machines qemu-system libvirt-clients libvirt-daemon-system
 sleep 2
 clear
 # install FileBrowser App.
@@ -47,6 +47,11 @@ sudo usermod -aG kvm $(whoami)
 sudo usermod -aG libvirt $(whoami)
 echo Type: 'newgrp kvm'
 echo Type: 'newgrp libvirt'
+sleep 2
+sudo adduser $USER libvirt
+sudo systemctl enable virtlogd.socket
+sleep 2
+sudo systemctl restart virtlogd.socket
 sleep 2
 sudo systemctl enable --now libvirtd
 sleep 2
