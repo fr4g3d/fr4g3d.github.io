@@ -9,7 +9,7 @@ clear
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # install Cockpit VM App.
-sudo apt-get -y install cockpit cockpit-machines
+sudo apt-get -y install --no-install-recommends cockpit cockpit-machines qemu-system libvirt-clients libvirt-daemon-system
 sleep 2
 clear
 # install FileBrowser App.
@@ -50,6 +50,10 @@ echo Type: 'newgrp libvirt'
 sleep 2
 sudo systemctl enable --now libvirtd
 sleep 2
+#sudo ip link set down virbr0
+#sleep 2
+#sudo brctl delbr virbr0
+#sleep 2
 sudo virsh net-autostart default
 sleep 2
 sudo virsh net-start default
