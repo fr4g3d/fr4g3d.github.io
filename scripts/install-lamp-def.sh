@@ -21,7 +21,7 @@ sudo a2enconf apache2-doc
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-get -y install php libapache2-mod-php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
 sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
 #sudo apt-get install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt-get -y install smbclient cifs-utils libsmbclient-dev php-dev make
@@ -31,11 +31,10 @@ sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
 sudo php -v
 sleep 2
 # install mariadb-server as mysql-server.
-sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
+sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' IDENTIFIED BY 'user@123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%%' IDENTIFIED BY 'user@123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 \" > mysqld.sql"
 printf "type \"source mysqld.sql\"\n"
