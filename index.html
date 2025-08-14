@@ -42,7 +42,7 @@ input[type="text" i] {
 }
 </style>
 </head>
-<body style="background-color: rgb(16, 24, 16);"> <p id="lastModified"></p> <hr class="head" />
+<body style="background-color: rgb(16, 24, 16);"> <p id="lastModified">Updated: </p> <hr class="head" />
 <!-- Place your content here -->
   <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/aio-installer.sh'">aio-installer</a>
   <a href="#" onclick="javascript:location.href='https://fr4g3d.github.io/scripts/ncbmd-debx.sh'">ncbmd-debx</a>
@@ -122,7 +122,7 @@ console.log(formattedDate);
 document.title = "Fr4g3d.GunZ - Site ("+formattedDate+")";
 
 const date = new Date(document.lastModified);
-document.getElementById("lastModified").innerHTML = formattedDate;
+document.getElementById("lastModified").innerHTML = "Updated: ("+formattedDate+")";
 </script>
 
 <script>
@@ -133,7 +133,7 @@ function CpyTotClpBrd(cpdtx) {
   navigator.clipboard.writeText(copyText.value);
   setTimeout(function myGreeting() { alert("Copied text: \n" + copyText.value); }, 384);
 }
-setInterval('window.location.reload()', 11000);
+setInterval('window.location.reload()', 90000);
 </script>
 <div class="footer">
 <font size="5">Hosted on 
