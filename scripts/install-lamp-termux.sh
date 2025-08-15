@@ -151,5 +151,7 @@ printf "Password: ******** \n\n" "$username"
 sleep 3
 printf "Please visit http://localhost:8080/...\n"
 printf "or visit http://%s:8080/...\n\n" "$ipaddress"
+sleep 7
+neofetch
 sleep 13
 htop
