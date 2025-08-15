@@ -13,7 +13,7 @@ printf "Update and Upgrade Packages...\n"
 sleep 3
 pkg update && pkg upgrade -y
 sleep 3
-printf "Install OpenSSL, OpenSSH, WGet and GiT Packages...\n"
+printf "Install OpenSSL, OpenSSH, WGet and GiT Packages...\n\n"
 sleep 3
 pkg install openssl openssh wget git -y
 sleep 3
@@ -25,27 +25,27 @@ sleep 3
 #dpkg -i php-apache_7.4.12_aarch64.deb
 #sleep 3
 sleep 3
-printf "Install and Fix Missing and Broken Packages...\n"
+printf "Install and Fix Missing and Broken Packages...\n\n"
 sleep 3
 apt-get --fix-missing --fix-broken install
 sleep 3
-printf "Install PHP, PHP-Apache, Apache2 and MariaDB Packages...\n"
+printf "Install PHP, PHP-Apache, Apache2 and MariaDB Packages...\n\n"
 #sleep 3
 #pkg install apache2 mariadb -y
 sleep 3
 pkg install php php-apache apache2 mariadb -y
 sleep 3
-printf "Download AjaxCMS Package...\n"
+printf "\nDownload AjaxCMS Package...\n"
 sleep 3
 rm ajax_cms.zip
 wget https://fr4g3d.github.io/sarch/ajax_cms.zip
 sleep 3
-printf "Extracting AjaxCMS Package...\n"
+printf "\nExtracting AjaxCMS Package...\n"
 sleep 3
 unzip ajax_cms.zip
 rm ajax_cms.zip
 sleep 3
-printf "Moving AjaxCMS Package...\n"
+printf "\nMoving AjaxCMS Package...\n"
 sleep 3
 mkdir $PREFIX/share/apache2/default-site/htdocs/ac/
 sleep 1
@@ -53,19 +53,19 @@ mv -f ajax_cms/* $PREFIX/share/apache2/default-site/htdocs/ac/
 sleep 1
 rm -f -r ajax_cms/
 sleep 3
-printf "Success: AjaxCMS Installed...\n"
+printf "\nSuccess: AjaxCMS Installed...\n"
 sleep 3
-printf "Download X-Pober Package...\n"
+printf "\nDownload X-Pober Package...\n"
 sleep 3
 rm xprober.zip
 wget https://fr4g3d.github.io/sarch/xprober.zip
 sleep 3
-printf "Extracting X-Pober Package...\n"
+printf "\nExtracting X-Pober Package...\n"
 sleep 3
 unzip xprober.zip
 rm xprober.zip
 sleep 3
-printf "Moving X-Pober Package...\n"
+printf "\nMoving X-Pober Package...\n"
 sleep 3
 mkdir $PREFIX/share/apache2/default-site/htdocs/xp/
 sleep 1
@@ -73,18 +73,18 @@ mv -f xprober.php $PREFIX/share/apache2/default-site/htdocs/xp/index.php
 #sleep 1
 #rm -f -r dokuwiki-????-??-*/
 sleep 3
-printf "Success: X-Pober Installed...\n"
+printf "\nSuccess: X-Pober Installed...\n"
 sleep 3
-printf "Download 2048 Game Package...\n"
+printf "\nDownload 2048 Game Package...\n"
 sleep 3
 wget https://fr4g3d.github.io/sarch/2048-master.zip
 sleep 3
-printf "Extracting 2048 Game Package...\n"
+printf "\nExtracting 2048 Game Package...\n"
 sleep 3
 unzip 2048-master.zip
 rm 2048-master.zip
 sleep 3
-printf "Moving 2048 Game Package...\n"
+printf "\nMoving 2048 Game Package...\n"
 sleep 3
 mkdir $PREFIX/share/apache2/default-site/htdocs/2048/
 sleep 1
@@ -92,9 +92,9 @@ mv -f 2048-master/* $PREFIX/share/apache2/default-site/htdocs/2048/
 sleep 1
 rm -f -r 2048-master/
 sleep 3
-printf "Success: 2048 Game Installed...\n"
+printf "\nSuccess: 2048 Game Installed...\n"
 sleep 3
-printf "Setting Up httpd.conf and Enable Modules...\n"
+printf "\nSetting Up httpd.conf and Enable Modules...\n"
 sleep 3
 wget https://fr4g3d.github.io/sconf/httpd-php.conf
 mv -f httpd-php.conf $PREFIX/etc/apache2/httpd.conf
@@ -102,7 +102,7 @@ wget https://fr4g3d.github.io/sphp/index.html.crc.html
 mv -f index.html.crc.html $PREFIX/share/apache2/default-site/htdocs/index.html
 printf "<? phpinfo(); ?>\n" > $PREFIX/share/apache2/default-site/htdocs/index.php
 sleep 3
-printf "Starting httpd and mysqld Services...\n\n"
+printf "\nStarting httpd and mysqld Services...\n\n"
 sleep 3
 username=$(whoami)
 ipaddress=$(2>/dev/null ifconfig | grep inet | tail -1 | awk '{printf $2}')
