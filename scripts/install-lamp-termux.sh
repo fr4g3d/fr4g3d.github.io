@@ -62,6 +62,7 @@ wget https://fr4g3d.github.io/sarch/xprober.zip
 sleep 3
 printf "\nExtracting X-Pober Package...\n"
 sleep 3
+rm -f -r xprober.php
 unzip xprober.zip
 rm xprober.zip
 sleep 3
@@ -70,8 +71,8 @@ sleep 3
 mkdir $PREFIX/share/apache2/default-site/htdocs/xp/
 sleep 1
 mv -f xprober.php $PREFIX/share/apache2/default-site/htdocs/xp/index.php
-#sleep 1
-#rm -f -r dokuwiki-????-??-*/
+sleep 1
+rm -f -r xprober.php
 sleep 3
 printf "\nSuccess: X-Pober Installed...\n"
 sleep 3
@@ -113,7 +114,7 @@ printf "Password : (Change Now!)\n"
 sleep 1
 passwd
 sleep 3
-printf "Starting LAMP...\n"
+printf "\nStarting LAMP...\n"
 sleep 1
 
 sshd &
