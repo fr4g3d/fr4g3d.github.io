@@ -42,7 +42,7 @@ wget https://fr4g3d.github.io/sarch/ajax_cms.zip
 sleep 3
 printf "\nExtracting AjaxCMS Package...\n"
 sleep 3
-unzip ajax_cms.zip
+unzip -o ajax_cms.zip
 rm ajax_cms.zip
 sleep 3
 printf "\nMoving AjaxCMS Package...\n"
@@ -63,7 +63,7 @@ sleep 3
 printf "\nExtracting X-Pober Package...\n"
 sleep 3
 rm -f -r xprober.php
-unzip xprober.zip
+unzip -o xprober.zip
 rm xprober.zip
 sleep 3
 printf "\nMoving X-Pober Package...\n"
@@ -82,7 +82,7 @@ wget https://fr4g3d.github.io/sarch/2048-master.zip
 sleep 3
 printf "\nExtracting 2048 Game Package...\n"
 sleep 3
-unzip 2048-master.zip
+unzip -o 2048-master.zip
 rm 2048-master.zip
 sleep 3
 printf "\nMoving 2048 Game Package...\n"
