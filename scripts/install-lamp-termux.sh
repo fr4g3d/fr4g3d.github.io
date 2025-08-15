@@ -13,7 +13,7 @@ printf "Update and Upgrade Packages...\n"
 sleep 3
 pkg update && pkg upgrade -y
 sleep 3
-printf "Install OpenSSL, OpenSSH, WGet and GiT Packages...\n\n"
+printf "\nInstall OpenSSL, OpenSSH, WGet and GiT Packages...\n"
 sleep 3
 pkg install openssl openssh wget git -y
 sleep 3
@@ -25,11 +25,11 @@ sleep 3
 #dpkg -i php-apache_7.4.12_aarch64.deb
 #sleep 3
 sleep 3
-printf "Install and Fix Missing and Broken Packages...\n\n"
+printf "\nInstall and Fix Missing and Broken Packages...\n"
 sleep 3
 apt-get --fix-missing --fix-broken install
 sleep 3
-printf "Install PHP, PHP-Apache, Apache2 and MariaDB Packages...\n\n"
+printf "\nInstall PHP, PHP-Apache, Apache2 and MariaDB Packages...\n"
 #sleep 3
 #pkg install apache2 mariadb -y
 sleep 3
