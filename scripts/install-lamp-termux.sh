@@ -103,7 +103,7 @@ wget https://fr4g3d.github.io/sphp/index.html.crc.html
 mv -f index.html.crc.html $PREFIX/share/apache2/default-site/htdocs/index.html
 printf "<? phpinfo(); ?>\n" > $PREFIX/share/apache2/default-site/htdocs/index.php
 sleep 3
-printf "\nStarting httpd and mysqld Services...\n\n"
+printf "\nStarting httpd and MariaDBD Services...\n\n"
 sleep 3
 username=$(whoami)
 ipaddress=$(2>/dev/null ifconfig | grep inet | tail -1 | awk '{printf $2}')
@@ -125,7 +125,7 @@ httpd &
 
 sleep 3
 
-mysqld &
+mariadbd &
 
 sleep 3
 printf "#!/bin/bash
@@ -134,7 +134,7 @@ sshd &
 
 httpd &
 
-mysqld &
+mariadbd &
 
 exit &
 
