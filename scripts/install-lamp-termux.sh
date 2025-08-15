@@ -55,26 +55,26 @@ rm -f -r ajax_cms/
 sleep 3
 printf "Success: AjaxCMS Installed...\n"
 sleep 3
-#printf "Download DokuWiki Package...\n"
-#sleep 3
-#rm dokuwiki-2023-04-04a.tgz
-#wget https://fr4g3d.github.io/sarch/dokuwiki-2023-04-04a.tgz
-#sleep 3
-#printf "Extracting DokuWiki Package...\n"
-#sleep 3
-#tar -xzvf dokuwiki-2023-04-04a.tgz
-#rm dokuwiki-2023-04-04a.tgz
-#sleep 3
-#printf "Moving DokuWiki Package...\n"
-#sleep 3
-#mkdir $PREFIX/share/apache2/default-site/htdocs/dw/
-#sleep 1
-#mv -f dokuwiki-????-??-*/* $PREFIX/share/apache2/default-site/htdocs/dw/
+printf "Download X-Pober Package...\n"
+sleep 3
+rm xprober.zip
+wget https://fr4g3d.github.io/sarch/xprober.zip
+sleep 3
+printf "Extracting X-Pober Package...\n"
+sleep 3
+unzip xprober.zip
+rm xprober.zip
+sleep 3
+printf "Moving X-Pober Package...\n"
+sleep 3
+mkdir $PREFIX/share/apache2/default-site/htdocs/xp/
+sleep 1
+mv -f xprober.php $PREFIX/share/apache2/default-site/htdocs/xp/index.php
 #sleep 1
 #rm -f -r dokuwiki-????-??-*/
-#sleep 3
-#printf "Success: DokuWiki Installed...\n"
-#sleep 3
+sleep 3
+printf "Success: X-Pober Installed...\n"
+sleep 3
 printf "Download 2048 Game Package...\n"
 sleep 3
 wget https://fr4g3d.github.io/sarch/2048-master.zip
@@ -83,6 +83,7 @@ printf "Extracting 2048 Game Package...\n"
 sleep 3
 unzip 2048-master.zip
 rm 2048-master.zip
+sleep 3
 printf "Moving 2048 Game Package...\n"
 sleep 3
 mkdir $PREFIX/share/apache2/default-site/htdocs/2048/
@@ -101,10 +102,10 @@ wget https://fr4g3d.github.io/sphp/index.html.crc.html
 mv -f index.html.crc.html $PREFIX/share/apache2/default-site/htdocs/index.html
 printf "<? phpinfo(); ?>\n" > $PREFIX/share/apache2/default-site/htdocs/index.php
 sleep 3
-printf "Starting httpd and mysqld Services...\n"
+printf "Starting httpd and mysqld Services...\n\n"
 sleep 3
 username=$(whoami)
-ipaddress=$(2>/dev/null ifconfig | grep inet | tail -1 | awk '{print $2}')
+ipaddress=$(2>/dev/null ifconfig | grep inet | tail -1 | awk '{printf $2}')
 sleep 1
 printf "UserName : %s \n" "$username"
 sleep 1
@@ -141,12 +142,12 @@ exit
 ">start-slamp.sh
 chmod +x start-slamp.sh
 sleep 1
-printf "Well Done...\n"
-sleep 1
-printf "UserName : ($whoami) \n"
-sleep 1
-printf "UserName: %s \n\n" "$username"
-sleep 1
+printf "Well Done...\n\n"
+sleep 3
+printf "Connect: ssh-client %s -p 8022\n" "$ipaddress" 
+printf "UserName: %s \n" "$username"
+printf "Password: ******** \n\n" "$username"
+sleep 3
 printf "Please visit http://localhost:8080/...\n"
-printf "or visit http://%s:8080/...\n" "$ipaddress"
+printf "or visit http://%s:8080/...\n\n" "$ipaddress"
 sleep 3
