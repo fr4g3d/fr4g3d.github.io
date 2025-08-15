@@ -15,7 +15,7 @@ pkg update && pkg upgrade -y
 sleep 3
 printf "\nInstall OpenSSL, OpenSSH, WGet and GiT Packages...\n"
 sleep 3
-pkg install openssl openssh wget git -y
+pkg install openssl openssh curl wget htop git neofetch -y
 sleep 3
 #rm php_7.4.12_aarch64.deb
 #rm php-apache_7.4.12_aarch64.deb
@@ -151,4 +151,5 @@ printf "Password: ******** \n\n" "$username"
 sleep 3
 printf "Please visit http://localhost:8080/...\n"
 printf "or visit http://%s:8080/...\n\n" "$ipaddress"
-sleep 3
+sleep 13
+htop
