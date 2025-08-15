@@ -57,14 +57,14 @@ printf "\nSuccess: AjaxCMS Installed...\n"
 sleep 3
 printf "\nDownload X-Pober Package...\n"
 sleep 3
-rm xprober.zip
-wget https://fr4g3d.github.io/sarch/xprober.zip
+rm xprober905.zip
+wget https://fr4g3d.github.io/sarch/xprober905.zip
 sleep 3
 printf "\nExtracting X-Pober Package...\n"
 sleep 3
-rm -f -r xprober.php
-unzip -o xprober.zip
-rm xprober.zip
+rm -f -r xprober905.php
+unzip -o xprober905.zip
+rm xprober905.zip
 sleep 3
 printf "\nMoving X-Pober Package...\n"
 sleep 3
