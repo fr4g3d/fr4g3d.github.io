@@ -55,8 +55,8 @@ rm -f -r ajax_cms/
 sleep 3
 printf "Success: AjaxCMS Installed...\n"
 sleep 3
-printf "Download DokuWiki Package...\n"
-sleep 3
+#printf "Download DokuWiki Package...\n"
+#sleep 3
 #rm dokuwiki-2023-04-04a.tgz
 #wget https://fr4g3d.github.io/sarch/dokuwiki-2023-04-04a.tgz
 #sleep 3
@@ -103,7 +103,10 @@ printf "<? phpinfo(); ?>\n" > $PREFIX/share/apache2/default-site/htdocs/index.ph
 sleep 3
 printf "Starting httpd and mysqld Services...\n"
 sleep 3
-printf "UserName : ($whoami) \n"
+username=$(whoami)
+ipaddress=$(2>/dev/null ifconfig | grep inet | tail -1 | awk '{print $2}')
+sleep 1
+printf "UserName : %s \n" "$username"
 sleep 1
 printf "Password : (Change Now!)\n"
 sleep 1
@@ -142,5 +145,8 @@ printf "Well Done...\n"
 sleep 1
 printf "UserName : ($whoami) \n"
 sleep 1
+printf "UserName: %s \n\n" "$username"
+sleep 1
 printf "Please visit http://localhost:8080/...\n"
+printf "or visit http://%s:8080/...\n" "$ipaddress"
 sleep 3
