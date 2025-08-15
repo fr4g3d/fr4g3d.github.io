@@ -105,6 +105,18 @@ printf "<? phpinfo(); ?>\n" > $PREFIX/share/apache2/default-site/htdocs/index.ph
 sleep 3
 printf "\nStarting httpd and MariaDBD Services...\n\n"
 sleep 3
+printf "\nInstalling CloudFlared Package...\n"
+sleep 1
+# Add cloudflare gpg key
+mkdir -p --mode=0755 /data/data/com.termux/files/usr/share/keyrings
+curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | tee /data/data/com.termux/files/usr/share/keyrings/cloudflare-main.gpg >/dev/null
+# Add this repo to your apt repositories
+echo 'deb [signed-by=/data/data/com.termux/files/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | tee /data/data/com.termux/files/usr/etc/apt/sources.list.d/cloudflared.list
+# install cloudflared
+pkg update && pkg install cloudflared
+sleep 1
+printf "\nSuccess: CloudFlared installed...\n"
+sleep 3
 username=$(whoami)
 ipaddress=$(2>/dev/null ifconfig | grep inet | tail -1 | awk '{printf $2}')
 sleep 1
@@ -135,6 +147,8 @@ sshd &
 httpd &
 
 mariadbd &
+
+nohup cloudflared tunnel run --token xxxxxxxxxxx &
 
 exit &
 
