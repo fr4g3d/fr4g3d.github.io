@@ -142,6 +142,9 @@ mariadbd &
 sleep 3
 printf "#!/bin/bash
 
+username=$(whoami)
+ipaddress=$(2>/dev/null ifconfig | grep inet | tail -1 | awk '{printf $2}')
+
 sshd &
 
 httpd &
@@ -149,6 +152,17 @@ httpd &
 mariadbd &
 
 nohup cloudflared tunnel run --token xxxxxxxxxxx &
+
+printf \"Connect: ssh-client %s -p 8022\n\" \"$ipaddress\" 
+printf \"UserName: %s \n\" \"$username\"
+printf \"Password: ******** \n\n\" \"$username\"
+sleep 3
+printf \"Please visit http://localhost:8080/...\n\"
+printf \"or visit http://%s:8080/...\n\n\" \"$ipaddress\"
+neofetch
+sleep 13
+sleep 7
+htop
 
 exit &
 
