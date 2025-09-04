@@ -20,9 +20,11 @@ net.ipv6.conf.tun0.disable_ipv6 = 1
 # add SG Mirror Repo.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '10' ]]; then
-  bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-sg-buster.sh)
+  bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-buster.sh)
 elif [[ $VERSION == '11' ]]; then
-  bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-sg-bullseye.sh)
+  bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-bullseye.sh)
+elif [[ $VERSION == '12' ]]; then
+  bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-bookworm.sh)
 fi
 sleep 2
 # install common apps.
