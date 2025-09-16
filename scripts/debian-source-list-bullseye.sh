@@ -27,8 +27,8 @@ sudo sh -c "printf \"
 # Archive
 deb http://archive.debian.org/debian/ bullseye main contrib non-free
 deb-src http://archive.debian.org/debian/ bullseye main contrib non-free
-deb http://security.debian.org/debian-security/ bullseye-updates main contrib non-free
-deb-src http://security.debian.org/debian-security/ bullseye-updates main contrib non-free
+deb http://security.debian.org/debian-security/ bullseye-security main contrib non-free
+deb-src http://security.debian.org/debian-security/ bullseye-security main contrib non-free
 deb http://archive.debian.org/debian/ bullseye-backports main contrib non-free
 deb-src http://archive.debian.org/debian/ bullseye-backports main contrib non-free
 
