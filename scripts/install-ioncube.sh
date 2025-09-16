@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-sudo apt udpate
+sudo apt update
 # install php php-commons.
 sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
 sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
