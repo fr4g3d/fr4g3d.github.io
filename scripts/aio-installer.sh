@@ -10,7 +10,7 @@ sleep 2
 sudo apt-get update
 sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
-rm dlds/ncbmd-debx.sh
+rm dlds/nxcbmd-debx.sh
 rm dlds/install-lamp.sh
 rm dlds/install-phpmyadmin.sh
 rm dlds/install-speedtest.sh
@@ -20,7 +20,7 @@ rm dlds/install-kvm-cockpitvm.sh
 rm dlds/install-webmin.sh
 echo "Install [NXC-BMD] Start..."
 sleep 2
-bash <(wget -O - http://fr4g3d.github.io/scripts/ncbmd-debx.sh)
+bash <(wget -O - http://fr4g3d.github.io/scripts/nxcbmd-debx.sh)
 echo "Install [LAMP] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-lamp.sh)
@@ -43,7 +43,7 @@ echo "Install [WebMin] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-webmin.sh)
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/ncbmd-debx.sh
+aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/nxcbmd-debx.sh
 aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-lamp.sh
 aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-phpmyadmin.sh
 aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-speedtest.sh
@@ -53,7 +53,7 @@ aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-kvm-cockp
 aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-webmin.sh
 #sleep 2
 #sudo chmod +x dlds/*.sh
-#sudo bash ./dlds/ncbmd-debx.sh
+#sudo bash ./dlds/nxcbmd-debx.sh
 #sudo bash ./dlds/install-lamp.sh
 #sudo bash ./dlds/install-phpmyadmin.sh
 #sudo bash ./dlds/install-speedtest.sh
