@@ -7,7 +7,7 @@ sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
 sudo php -v
 sleep 2
 cd /tmp
-wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+wget -nc https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
 cd ioncube
 ls
@@ -21,15 +21,15 @@ PHPEXTDIR="$(php -r 'echo ini_get("extension_dir");')"
 PHPMAJVER="$(php -v | head -n 1 | grep -oP 'PHP \K[0-9]+\.[0-9]+')"
 
 printf "$NOW\n"
-printf "$PHPINI\n"
+printf "${PHPINI}\n"
 printf "${PHPEXTDIR}\n"
 printf "The PHP Version is: ${PHPMAJVER}\n"
 
-sudo cp ioncube_loader_lin_7.3.so /usr/lib/php/20180731/
-zend_extension = /usr/lib/php/20180731/ioncube_loader_lin_7.3.so
+sudo cp ioncube_loader_lin_${PHPMAJVER}.so ${PHPEXTDIR}/
+zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
 sudo sh -c "
-zend_extension = /usr/lib/php/20180731/ioncube_loader_lin_7.3.so
-\" > /etc/php/7.3/cli/php.ini"
+zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
+\" > ${$PHPINI}"
 sudo systemctl restart apache2
 sudo systemctl restart php7.3-fpm
 php -m | grep ionCube
