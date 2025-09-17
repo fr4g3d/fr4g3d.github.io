@@ -31,7 +31,7 @@ sudo sh -c "
 zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
 \" > ${$PHPINI}"
 sudo systemctl restart apache2
-sudo systemctl restart php7.3-fpm
+sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
 cd
 wget -N https://files.softaculous.com/install.sh
