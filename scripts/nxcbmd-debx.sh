@@ -97,4 +97,6 @@ sudo service sshwifty start
 sleep 2
 sudo service sshwifty restart
 sleep 2
+echo "wget -O - https://get.ispconfig.org | sudo sh -s -- --use-ftp-ports=40110-40210 --unattended-upgrades"
+echo 
 echo Install [DebX-SVR] is Done.
