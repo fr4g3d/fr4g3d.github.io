@@ -5,7 +5,7 @@
 clear
 #
 
-# Always SysAdmin Message
+# Always Sudoer Message
 sudo sh -c "printf \"Defaults        lecture = always\n\" >> /etc/sudoers.d/privacy"
 sleep 2
 

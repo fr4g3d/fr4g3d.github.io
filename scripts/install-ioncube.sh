@@ -13,7 +13,6 @@ cd ioncube
 ls
 php -i | grep /.+/php.ini -oE
 php -r 'echo ini_get("extension_dir");'
-echo
 php -v | head -n 1 | grep -oP 'PHP \K[0-9]+\.[0-9]+'
 NOW=$(date)
 PHPINI="$(php -i | grep /.+/php.ini -oE)"
@@ -26,13 +25,14 @@ printf "${PHPEXTDIR}\n"
 printf "The PHP Version is: ${PHPMAJVER}\n"
 
 sudo cp ioncube_loader_lin_${PHPMAJVER}.so ${PHPEXTDIR}/
-zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
-sudo sh -c "
-zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
-\" > ${$PHPINI}"
+# zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
+sudo sh -c -E "printf \"
+zend_extension = $PHPEXTDIR/ioncube_loader_lin_$PHPMAJVER.so
+\" > $PHPINI "
 sudo systemctl restart apache2
 sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
 cd
+sleep 3
 wget -N https://files.softaculous.com/install.sh
 sudo bash ./install.sh
