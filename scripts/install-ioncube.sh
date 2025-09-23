@@ -13,6 +13,10 @@ else
     echo "PHP is already installed."
     php --version
 fi
+# install php php-commons.
+sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
+sudo php -v
 sleep 2
 cd /tmp
 wget -nc https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
@@ -43,4 +47,7 @@ php -m | grep ionCube
 cd
 sleep 3
 wget -O - https://get.ispconfig.org | sudo bash -s -- --use-ftp-ports=40110-40210 --unattended-upgrades
+sleep 2
+wget -N https://files.softaculous.com/install.sh
+sudo bash ./install.sh
 exit
