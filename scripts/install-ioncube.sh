@@ -1,10 +1,18 @@
 #!/bin/bash
 #
 sudo apt update
-# install php php-commons.
+sleep 1
+# Check if php command exists
+if ! command -v php &> /dev/null; then
+    echo "PHP is not installed. Installing PHP..."
 sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
 sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
 sudo php -v
+    echo "PHP installation complete."
+else
+    echo "PHP is already installed."
+    php --version
+fi
 sleep 2
 cd /tmp
 wget -nc https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
@@ -34,5 +42,6 @@ sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
 cd
 sleep 3
-wget -N https://files.softaculous.com/install.sh
-sudo bash ./install.sh
+wget --no-check-certificate -O installer.tgz https://github.com/servisys/ispconfig_setup/tarball/master && tar zxvf installer.tgz
+cd *ispconfig* && sudo bash install.sh --unattended-upgrades
+exit
