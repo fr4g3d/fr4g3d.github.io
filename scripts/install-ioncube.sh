@@ -42,6 +42,5 @@ sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
 cd
 sleep 3
-wget --no-check-certificate -O installer.tgz https://github.com/servisys/ispconfig_setup/tarball/master && tar zxvf installer.tgz
-cd *ispconfig* && sudo bash install.sh --unattended-upgrades
+wget -O - https://get.ispconfig.org | sudo bash -s -- --use-ftp-ports=40110-40210 --unattended-upgrades
 exit
