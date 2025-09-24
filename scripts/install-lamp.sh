@@ -21,14 +21,14 @@ sudo a2enconf apache2-doc
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
-sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
+#sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+#sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
 #sudo apt-get install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
 #sudo apt-get -y install smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
 #sudo sh -c "printf 'extension=smbclient.so' >> /etc/php/7.4/fpm/php.ini"
 #sudo systemctl restart php7.4-fpm
-sudo php -v
+#sudo php -v
 # Check if php command exists
 if ! command -v php &> /dev/null; then
     echo "PHP is not installed. Installing PHP..."
