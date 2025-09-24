@@ -29,9 +29,59 @@ sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
 #sudo sh -c "printf 'extension=smbclient.so' >> /etc/php/7.4/fpm/php.ini"
 #sudo systemctl restart php7.4-fpm
 sudo php -v
+# Check if php command exists
+if ! command -v php &> /dev/null; then
+    echo "PHP is not installed. Installing PHP..."
+	sleep 2
+sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
+sudo php -v
+    echo "PHP installation complete."
+	sleep 2
+else
+    echo "PHP is already installed."
+    php --version
+	sleep 2
+fi
 sleep 2
-# install mariadb-server as mysql-server.
-sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
+cd /tmp
+wget -nc https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
+cd ioncube
+ls
+php -i | grep /.+/php.ini -oE
+php -r 'echo ini_get("extension_dir");'
+php -v | head -n 1 | grep -oP 'PHP \K[0-9]+\.[0-9]+'
+NOW=$(date)
+PHPINI="$(php -i | grep /.+/php.ini -oE)"
+PHPEXTDIR="$(php -r 'echo ini_get("extension_dir");')"
+PHPMAJVER="$(php -v | head -n 1 | grep -oP 'PHP \K[0-9]+\.[0-9]+')"
+
+printf "$NOW\n"
+printf "${PHPINI}\n"
+printf "${PHPEXTDIR}\n"
+printf "The PHP Version is: ${PHPMAJVER}\n"
+
+sudo cp ioncube_loader_lin_${PHPMAJVER}.so ${PHPEXTDIR}/
+# zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
+sudo sh -c -E "printf \"
+zend_extension = $PHPEXTDIR/ioncube_loader_lin_$PHPMAJVER.so
+\" > $PHPINI "
+sudo systemctl restart apache2
+sudo systemctl restart php${PHPMAJVER}-fpm
+php -m | grep ionCube
+cd
+# install mariadb-server as mysql-server.VERSION=$(sed 's/\..*//' /etc/debian_version)
+if [[ $VERSION == '9' ]]; then
+  sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
+elif [[ $VERSION == '10' ]]; then
+  sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
+elif [[ $VERSION == '11' ]]; then
+  sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
+elif [[ $VERSION == '12' ]]; then
+  sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
+fi
+
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;

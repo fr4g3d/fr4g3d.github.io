@@ -17,7 +17,6 @@ net.ipv6.conf.tun0.disable_ipv6 = 1
 \" >> /etc/sysctl.conf"
 #sudo service networking reload
 
-# add SG Mirror Repo.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
   bash <(wget -O - http://fr4g3d.github.io/scripts/debian-source-list-stretch.sh)
