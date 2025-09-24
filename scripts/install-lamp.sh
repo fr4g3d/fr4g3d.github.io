@@ -70,6 +70,7 @@ zend_extension = $PHPEXTDIR/ioncube_loader_lin_$PHPMAJVER.so
 sudo systemctl restart apache2
 sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
+sleep 3
 cd
 # install mariadb-server as mysql-server.VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
@@ -81,7 +82,6 @@ elif [[ $VERSION == '11' ]]; then
 elif [[ $VERSION == '12' ]]; then
   sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
 fi
-
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'aset'@'localhost' IDENTIFIED BY 'aset@123' WITH GRANT OPTION;
