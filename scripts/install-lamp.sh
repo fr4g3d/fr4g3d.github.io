@@ -72,7 +72,8 @@ sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
 sleep 3
 cd
-# install mariadb-server as mysql-server.VERSION=$(sed 's/\..*//' /etc/debian_version)
+# install mariadb-server as mysql-server.
+VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
   sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 elif [[ $VERSION == '10' ]]; then
