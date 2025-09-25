@@ -30,7 +30,8 @@ sleep 2
 #sudo systemctl restart php7.4-fpm
 #sudo php -v
 # Check if php command exists
-if ! command -v php &> /dev/null; then
+php -v
+if ! command php -v &> /dev/null; then
     echo "PHP is not installed. Installing PHP..."
 	sleep 2
 sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
