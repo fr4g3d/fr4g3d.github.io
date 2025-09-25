@@ -27,7 +27,7 @@ sudo apt-get update
 sleep 2
 sudo apt-get install -y ssh openssh-server nano vim-nox lsb-release apt-transport-https ca-certificates wget git gnupg software-properties-common curl cron ntp
 sudo apt-get install -y dbconfig-common mariadb-client mariadb-server openssl rkhunter binutils sudo getmail dovecot-imapd dovecot-pop3d dovecot-mysql dovecot-sieve dovecot-managesieved dovecot-lmtpd
-sudo apt-get install -y software-properties-common update-inetd dnsutils resolvconf clamav clamav-daemon zip unzip bzip2 xz-utils lzip borgbackup arj nomarch lzop cabextract apt-listchanges libnet-ldap-perl libauthen-sasl-perl daemon libio-string-perl libio-socket-ssl-perl libnet-ident-perl libnet-dns-perl libdbd-mysql-perl bind9 rspamd redis-server p7zip p7zip-full unrar-free lrzip
+sudo apt-get install -y software-properties-common update-inetd dnsutils clamav clamav-daemon zip unzip bzip2 xz-utils lzip borgbackup arj nomarch lzop cabextract apt-listchanges libnet-ldap-perl libauthen-sasl-perl daemon libio-string-perl libio-socket-ssl-perl libnet-ident-perl libnet-dns-perl libdbd-mysql-perl redis-server p7zip p7zip-full unrar-free lrzip
 echo "Installing PHP Old to Current..."
 sleep 2
 sudo apt-get install -y php5.6 php5.6-common php5.6-gd php5.6-mysql php5.6-imap php5.6-cli php5.6-mcrypt php5.6-curl php5.6-intl php5.6-pspell php5.6-recode php5.6-sqlite3 php5.6-tidy php5.6-xmlrpc php5.6-xsl php5.6-zip php5.6-mbstring php5.6-soap php5.6-opcache php5.6-cgi php5.6-fpm
