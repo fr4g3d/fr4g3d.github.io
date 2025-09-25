@@ -153,5 +153,4 @@ sleep 2
 sleep 2
 sudo service apache2 reload
 echo Install [LAMP] is Done.
-sleep 3
-clear
+sleep 2
