@@ -71,10 +71,10 @@ sudo sh -c -E "printf \"
 zend_extension = $PHPEXTDIR/ioncube_loader_lin_$PHPMAJVER.so
 \" > $PHPINI "
 sudo systemctl restart apache2
-sudo a2enmod proxy_fcgi
-sudo a2enconf php${PHPMAJVER}-fpm
 sudo a2dismod php${PHPMAJVER}
-sudo a2enmod mpm_event
+sudo a2dismod mpm_prefork
+sudo a2enmod mpm_event proxy proxy_fcgi
+sudo a2enconf php${PHPMAJVER}-fpm
 sudo systemctl enable php${PHPMAJVER}-fpm
 sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
