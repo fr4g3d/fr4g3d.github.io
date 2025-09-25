@@ -3,12 +3,18 @@
 clear
 sudo apt-get update
 sleep 3
-VERSION=$(sed 's/\..*//' /etc/debian_version)
-if [[ $VERSION <= '10' ]]; then
-  echo "Cannot install on Debian <= 10 , only for Debian >= 11"
-  exit
-elif [[ $VERSION >= '11' ]]; then
-  echo "Preparing Install ISPConfig"
+# Get the Debian version ID
+DEBIAN_VERSION=$(grep -oP 'VERSION_ID="\K[^"]+' /etc/os-release)
+
+# Check if the version is less than or equal to 10
+if (( $(echo "$DEBIAN_VERSION <= 10" | bc -l) )); then
+    echo "Debian version is $DEBIAN_VERSION, which is less than or equal to 10."
+    # Add your commands here for Debian versions <= 10
+	exit
+else
+    echo "Debian version is $DEBIAN_VERSION, which is greater than 10."
+	echo "Preparing Install ISPConfig"
+    # Add your commands here for Debian versions > 10
 fi
 sleep 2
 sudo apt-get update
