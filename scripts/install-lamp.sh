@@ -7,7 +7,7 @@ clear
 
 # install apache2 mod-php openssl.
 sudo apt-get update
-sudo apt-get -y install apache2 apache2-doc libapache2-mod-php libapache2-mod-fcgid openssl 
+sudo apt-get -y install apache2 apache2-doc libapache2-mod-fcgid openssl 
 #sudo apt-get install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
 sudo a2enmod env
@@ -34,14 +34,16 @@ php -v
 if ! command php -v &> /dev/null; then
     echo "PHP is not installed. Installing PHP..."
 	sleep 2
-sudo apt-get -y install php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
-sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
-sudo php -v
+	sudo apt-get -y install php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+	sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
+	sudo php -v
     echo "PHP installation complete."
 	sleep 2
 else
     echo "PHP is already installed."
-    php --version
+	sudo apt-get -y install php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+	sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
+    php -v
 	sleep 2
 fi
 sleep 2
@@ -69,6 +71,7 @@ sudo sh -c -E "printf \"
 zend_extension = $PHPEXTDIR/ioncube_loader_lin_$PHPMAJVER.so
 \" > $PHPINI "
 sudo systemctl restart apache2
+sudo systemctl enable php${PHPMAJVER}-fpm
 sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
 sleep 3
