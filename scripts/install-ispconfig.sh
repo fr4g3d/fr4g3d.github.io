@@ -25,7 +25,7 @@ echo "Done Preparing..."
 sleep 2
 echo "Start ISPConfig Installer..."
 sleep 2
-wget -O - https://get.ispconfig.org | sudo bash -s -- --use-ftp-ports=40110-40210 --unattended-upgrades
+wget -O - https://get.ispconfig.org | sudo bash -s -- --use-ftp-ports=40110-40210 --unattended-upgrades --debug
 sleep 2
 #
 #wget -N https://files.softaculous.com/install.sh
