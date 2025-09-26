@@ -69,7 +69,7 @@ namespace InnStudio\Prober\Components\Bootstrap; use InnStudio\Prober\Components
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="renderer" content="webkit">
-<title>{$appName} v{$version}</title>
+<title>{$appName} v{$version} Z</title>
 <link rel="stylesheet" href="{$styleUrl}" />
 <script>window.CONF = {$scriptConf};</script>
 <script src="{$scriptUrl}" async></script>
