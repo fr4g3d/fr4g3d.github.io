@@ -32,7 +32,7 @@ sleep 2
 sudo apt-get update
 sleep 2
 sudo apt-get -y install curl wget aria2 zip unzip dnsutils net-tools openssl openssh-server openssh-client shellinabox htop neofetch
-aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/scss/00_Green_On_Black.css
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scss/00_Green_On_Black.css
 sudo mv -f dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
 sudo mv -f "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shellinabox/options-enabled/00_Black On White.css"
@@ -51,7 +51,7 @@ sudo apt-get -y install bc fonts-powerline
 sleep 2
 # install Fancy Prompts
 sleep 2
-aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/fancyprompts.zip
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/fancyprompts.zip
 unzip -o dlds/fancyprompts.zip
 sleep 2
 sudo mv -f fancyprompts/ ~/.fancyprompts
@@ -62,8 +62,8 @@ sudo cp -f ~/.fancyprompts/.bashrc-ptch ~/.bashrc
 sleep 2
 # install sshWifty.
 sleep 2
-sudo rm dlds/sshwifty_0.2.*.tar.gz
-aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
+#sudo rm dlds/sshwifty_0.2.*.tar.gz
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
@@ -71,7 +71,7 @@ mkdir ~/.config/
 sudo mkdir /root/.config/
 sudo chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
-aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sconf/sshwifty.conf.json
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sconf/sshwifty.conf.json
 sleep 2
 sudo cp dlds/sshwifty.conf.json ~/.config/
 sudo cp dlds/sshwifty.conf.json /root/.config/

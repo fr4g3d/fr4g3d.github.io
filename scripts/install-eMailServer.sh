@@ -51,7 +51,7 @@ sudo sh -c "printf \"
 home_mailbox = Maildir/
 \" >> /etc/postfix/main.cf"
 sleep 1
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/dovecot-conf.zip
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/dovecot-conf.zip
 sleep 1
 unzip -o dlds/dovecot-conf.zip
 sleep 1

@@ -10,7 +10,7 @@ echo "Install [rslRO-Game-Server] Start..."
 sleep 2
 sudo apt-get -y install git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/rAthena-2018-10-10.zip
 sleep 1
 mkdir ~/rslRO
 sleep 1

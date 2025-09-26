@@ -113,8 +113,8 @@ sudo mv -f dlds/admnr.php /var/www/html/.apps/
 sudo mv -f dlds/pfm.php /var/www/html/.apps/
 sudo mv -f dlds/xp.php /var/www/html/.apps/
 sleep 2
-sudo rm dlds/adminer.zip
-aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/adminer.zip
+#sudo rm dlds/adminer.zip
+aria2c -d dlds -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/adminer.zip
 unzip -o dlds/adminer.zip
 sudo mv -f adminer/ /var/www/html/.apps/
 sleep 2
@@ -136,8 +136,8 @@ sudo ln -s -f /usr/share/adminer/designs/rmsoft/adminer.css /etc/adminer/adminer
 sleep 2
 sudo service apache2 reload
 sleep 2
-sudo rm dlds/appz.zip
-aria2c -d dlds -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/appz.zip
+#sudo rm dlds/appz.zip
+aria2c -d dlds -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/appz.zip
 sleep 2
 unzip -o dlds/appz.zip
 sleep 2

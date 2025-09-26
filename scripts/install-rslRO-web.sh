@@ -16,7 +16,7 @@ echo "Install [phpMyAdmin] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-phpmyadmin.sh)
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/rslRO-web.zip
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/rslRO-web.zip
 sleep 2
 sleep 1
 mkdir ~/rslRO

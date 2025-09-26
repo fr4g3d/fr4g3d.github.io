@@ -53,9 +53,9 @@ sleep 2
 sudo apt-get -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
 sudo rm -r KodExplorer/
-sudo rm dlds/KodExplorer.zip
+#sudo rm dlds/KodExplorer.zip
 #wget -P dlds/ https://fr4g3d.github.io/sarch/KodExplorer.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/KodExplorer.zip
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://fr4g3d.github.io/sarch/KodExplorer.zip
 sleep 2
 unzip dlds/KodExplorer.zip
 sleep 2

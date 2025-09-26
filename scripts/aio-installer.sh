@@ -10,14 +10,14 @@ sleep 2
 sudo apt-get update
 sudo apt-get -y install curl wget zip unzip aria2
 sleep 2
-rm dlds/nxcbmd-debx.sh
-rm dlds/install-lamp.sh
-rm dlds/install-phpmyadmin.sh
-rm dlds/install-speedtest.sh
-rm dlds/install-kodexplorer.sh
-rm dlds/install-nextcloud.sh
-rm dlds/install-kvm-cockpitvm.sh
-rm dlds/install-webmin.sh
+#rm dlds/nxcbmd-debx.sh
+#rm dlds/install-lamp.sh
+#rm dlds/install-phpmyadmin.sh
+#rm dlds/install-speedtest.sh
+#rm dlds/install-kodexplorer.sh
+#rm dlds/install-nextcloud.sh
+#rm dlds/install-kvm-cockpitvm.sh
+#rm dlds/install-webmin.sh
 echo "Install [NXC-BMD] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/nxcbmd-debx.sh)
@@ -43,14 +43,14 @@ echo "Install [WebMin] Start..."
 sleep 2
 bash <(wget -O - http://fr4g3d.github.io/scripts/install-webmin.sh)
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/nxcbmd-debx.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-lamp.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-phpmyadmin.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-speedtest.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-kodexplorer.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-nextcloud.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/scripts/install-webmin.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/nxcbmd-debx.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/install-lamp.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/install-phpmyadmin.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/install-speedtest.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/install-kodexplorer.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/install-nextcloud.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/install-kvm-cockpitvm.sh
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scripts/install-webmin.sh
 #sleep 2
 #sudo chmod +x dlds/*.sh
 #sudo bash ./dlds/nxcbmd-debx.sh

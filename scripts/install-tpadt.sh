@@ -8,10 +8,10 @@ sudo apt-get -y install curl wget aria2 zip unzip tar gzip
 clear
 # install TouchPad Toggle Script.
 printf "install TouchPad Toggle Script\n"
-rm dlds/touchpad-script.tar.gz
+#rm dlds/touchpad-script.tar.gz
 sleep 3s
 #wget https://fr4g3d.github.io/sarch/touchpad-script.tar.gz
-aria2c -d dlds/ -c -s8 -j8 -x8 https://fr4g3d.github.io/sarch/touchpad-script.tar.gz
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://fr4g3d.github.io/sarch/touchpad-script.tar.gz
 sleep 2s
 tar -xf dlds/touchpad-script.tar.gz -C dlds/
 sleep 2s

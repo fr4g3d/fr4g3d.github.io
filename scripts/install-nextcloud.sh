@@ -38,12 +38,12 @@ elif [[ $VERSION == '11' ]]; then
 fi
 echo $NCVer.zip;
 sleep 1
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z01
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z02
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z03
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z04
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z05
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.zip
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z01
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z02
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z03
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z04
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/$NCFVer/$NCVer.z05
 sleep 2
 sudo mkdir /var/www/.nc
 zip -F dlds/$NCVer.zip --out dlds/nc-$NCVer.zip
@@ -53,7 +53,7 @@ sleep 2
 sudo chown -R www-data:www-data /var/www/.nc/
 sudo chmod -R 755 /var/www/.nc/
 sleep 2
-aria2c -d dlds/ -c -s8 -j8 -x8 http://fr4g3d.github.io/sconf/$NCConf.conf
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sconf/$NCConf.conf
 sudo sh -c "printf \"Alias /nc \"/var/www/.nc/\"
 <Directory /var/www/.nc/>
   Require all granted

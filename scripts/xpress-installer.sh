@@ -19,12 +19,12 @@ sudo apt-get update
 sleep 2
 sudo apt-get -y install curl wget aria2 unzip
 
-sudo aria2c -d dlds/ -c -x8 https://raw.githubusercontent.com/tatsuhiro-t/apt-metalink/master/apt-metalink
+sudo aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://raw.githubusercontent.com/tatsuhiro-t/apt-metalink/master/apt-metalink
 sudo chmod +x dlds/apt-metalink
 sudo install dlds/apt-metalink /usr/local/bin/apt-ml
 sleep 2
 sudo apt-get -y install dnsutils openssl openssh-server openssh-client shellinabox curl wget aria2 zip unzip
-sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/scss/00_Green_On_Black.css
+sudo aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://fr4g3d.github.io/scss/00_Green_On_Black.css
 sudo mv dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
 sudo mv "/etc/shellinabox/options-enabled/00+Black on White.css" "/etc/shellinabox/options-enabled/00_Black On White.css"
@@ -32,7 +32,7 @@ sudo sh -c "printf \"SHELLINABOX_ARGS=\"--disable-ssl\"\n\" >> /etc/default/shel
 sudo service shellinabox restart
 sleep 2
 sudo rm dlds/sshwifty_0.2.*.tar.gz
-sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
+sudo aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
 sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
@@ -40,7 +40,7 @@ mkdir ~/.config/
 sudo mkdir /root/.config/
 chmod +x sshwifty/sshwifty_linux_amd64
 sudo install sshwifty/sshwifty_linux_amd64 /usr/local/bin/sshwifty
-sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sconf/sshwifty.conf.json
+sudo aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://fr4g3d.github.io/sconf/sshwifty.conf.json
 sleep 2
 sudo cp dlds/sshwifty.conf.json ~/.config/
 sudo sh -c "printf \"[Unit]
@@ -110,8 +110,8 @@ sleep 2
 # install common for installing Common Downloader.
 sudo apt-get -y install curl wget zip unzip aria2 ffmpeg
 sleep 2
-sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sphp/pfm.php
-sudo aria2c -d dlds/ -c -x8 https://fr4g3d.github.io/sphp/xp.php
+sudo aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://fr4g3d.github.io/sphp/pfm.php
+sudo aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://fr4g3d.github.io/sphp/xp.php
 sudo mkdir /var/www/html/.apps
 sudo mv dlds/pfm.php /var/www/html/.apps/
 sudo mv dlds/xp.php /var/www/html/.apps/
@@ -177,7 +177,7 @@ sleep 2
 sudo rm -r livehelperchat-master/
 sudo rm dlds/livehelperchat-master*.z*
 #wget -P dlds/ https://github.com/remdex/livehelperchat/archive/master.zip
-sudo aria2c -d dlds/ -c -x8 https://github.com/remdex/livehelperchat/archive/master.zip
+sudo aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://github.com/remdex/livehelperchat/archive/master.zip
 sleep 2
 unzip dlds/livehelperchat-master.zip
 sleep 2
@@ -265,7 +265,7 @@ fi
 echo $NCVer;
 sleep 1
 #wget -P dlds/ https://download.nextcloud.com/server/releases/latest-23.zip
-aria2c -d dlds/ -c -s8 -j8 -x8 https://download.nextcloud.com/server/releases/$NCVer
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V https://download.nextcloud.com/server/releases/$NCVer
 sleep 2
 unzip dlds/$NCVer
 sleep 2
