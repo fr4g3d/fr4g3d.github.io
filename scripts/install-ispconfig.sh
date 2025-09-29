@@ -17,6 +17,24 @@ else
     # Add your commands here for Debian versions > 10
 fi
 sleep 2
+cd /tmp
+wget -nc https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
+cd ioncube
+ls
+php -i | grep /.+/php.ini -oE
+php -r 'echo ini_get("extension_dir");'
+php -v | head -n 1 | grep -oP 'PHP \K[0-9]+\.[0-9]+'
+NOW=$(date)
+PHPINI="$(php -i | grep /.+/php.ini -oE)"
+PHPEXTDIR="$(php -r 'echo ini_get("extension_dir");')"
+PHPMAJVER="$(php -v | head -n 1 | grep -oP 'PHP \K[0-9]+\.[0-9]+')"
+
+printf "$NOW\n"
+printf "${PHPINI}\n"
+printf "${PHPEXTDIR}\n"
+printf "The PHP Version is: ${PHPMAJVER}\n"
+sleep 2
 sudo apt-get update
 sudo apt install -y apt-transport-https lsb-release ca-certificates curl gnupg gnupg2
 curl -fsSL https://packages.sury.org/php/apt.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sury-php.gpg
