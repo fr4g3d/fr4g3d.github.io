@@ -17,6 +17,24 @@ else
     # Add your commands here for Debian versions > 10
 fi
 sleep 2
+# Check if php command exists
+#php -v
+if ! command php -v &> /dev/null; then
+    echo "PHP is not installed. Installing PHP..."
+	sleep 2
+	sudo apt-get -y install php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+	sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
+	sudo php -v
+    echo "PHP installation complete."
+	sleep 2
+else
+    echo "PHP is already installed."
+    php -v
+	sudo apt-get -y install php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+	sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
+	sleep 2
+fi
+sleep 2
 cd /tmp
 wget -nc https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
@@ -34,6 +52,22 @@ printf "$NOW\n"
 printf "${PHPINI}\n"
 printf "${PHPEXTDIR}\n"
 printf "The PHP Version is: ${PHPMAJVER}\n"
+
+sudo cp ioncube_loader_lin_${PHPMAJVER}.so ${PHPEXTDIR}/
+# zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
+sudo sh -c -E "printf \"
+zend_extension = $PHPEXTDIR/ioncube_loader_lin_$PHPMAJVER.so
+\" > $PHPINI "
+sudo systemctl restart apache2
+sudo a2dismod php${PHPMAJVER}
+sudo a2dismod mpm_prefork
+sudo a2enmod mpm_event proxy proxy_fcgi
+sudo a2enconf php${PHPMAJVER}-fpm
+sudo systemctl enable php${PHPMAJVER}-fpm
+sudo systemctl restart php${PHPMAJVER}-fpm
+php -m | grep ionCube
+sleep 3
+cd
 sleep 2
 sudo apt-get update
 sudo apt install -y apt-transport-https lsb-release ca-certificates curl gnupg gnupg2
