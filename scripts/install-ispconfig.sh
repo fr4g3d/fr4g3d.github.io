@@ -18,16 +18,13 @@ else
 fi
 sleep 2
 sudo apt-get update
-sudo apt-get install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg
-echo "deb https://packages.sury.org/php/ $(lsb_release -c -s) main" > /etc/apt/sources.list.d/php.list
-wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
-echo "deb https://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/goaccess.list >/dev/null 2>&1
-wget -O - https://deb.goaccess.io/gnugpg.key 2>&1 | sudo apt-key --keyring 
-sudo mkdir -p /etc/apt/keyrings
-wget -q -O- https://rspamd.com/apt-stable/gpg.key | sudo gpg --dearmor | sudo tee /etc/apt/keyrings/rspamd.gpg > /dev/null
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/rspamd.gpg] http://rspamd.com/apt-stable/ $(lsb_release -c -s) main" | sudo tee /etc/apt/sources.list.d/rspamd.list
-echo "deb-src [arch=amd64 signed-by=/etc/apt/keyrings/rspamd.gpg] http://rspamd.com/apt-stable/ $(lsb_release -c -s) main"  | sudo tee -a /etc/apt/sources.list.d/rspamd.list
-wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
+sudo apt install -y apt-transport-https lsb-release ca-certificates curl gnupg gnupg2
+curl -fsSL https://packages.sury.org/php/apt.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sury-php.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
+curl -sSL https://rspamd.com/apt-stable/gpg.key | sudo apt-key add -
+echo "deb [arch=amd64] https://rspamd.com/apt-stable/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/rspamd.list
+wget -O - https://deb.goaccess.io/gnugpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/goaccess.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/goaccess.gpg arch=$(dpkg --print-architecture)] https://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/goaccess.list
 sudo apt-get update
 sleep 2
 sudo apt-get install -y ssh openssh-server nano vim-nox lsb-release apt-transport-https ca-certificates wget git gnupg software-properties-common curl cron ntp
@@ -47,7 +44,13 @@ sudo apt-get install -y php8.1 php8.1-common php8.1-gd php8.1-mysql php8.1-imap 
 sudo apt-get install -y php8.2 php8.2-common php8.2-gd php8.2-mysql php8.2-imap php8.2-cli php8.2-curl php8.2-intl php8.2-pspell php8.2-sqlite3 php8.2-tidy php8.2-xsl php8.2-zip php8.2-mbstring php8.2-soap php8.2-opcache php8.2-cgi php8.2-fpm
 sudo apt-get install -y php8.3 php8.3-common php8.3-gd php8.3-mysql php8.3-imap php8.3-cli php8.3-curl php8.3-intl php8.3-pspell php8.3-sqlite3 php8.3-tidy php8.3-xsl php8.3-zip php8.3-mbstring php8.3-soap php8.3-opcache php8.3-cgi php8.3-fpm
 sudo apt-get install -y php8.4 php8.4-common php8.4-gd php8.4-mysql php8.4-imap php8.4-cli php8.4-curl php8.4-intl php8.4-pspell php8.4-sqlite3 php8.4-tidy php8.4-xsl php8.4-zip php8.4-mbstring php8.4-soap php8.4-opcache php8.4-cgi php8.4-fpm
-sleep 1
+sleep 2
+sudo apt-get install haveged, geoip-database, libclass-dbi-mysql-perl, libtimedate-perl, build-essential, autoconf, automake, libtool, flex, bison, debhelper, binutils
+sleep 2
+sudo apt-get install fail2ban, ufw
+sleep 2
+sudo apt-get install roundcube, roundcube-core, roundcube-mysql, roundcube-plugins
+sleep 2
 echo "Done Preparing..."
 sleep 2
 echo "Start ISPConfig Installer..."
