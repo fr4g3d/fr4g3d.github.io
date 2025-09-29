@@ -21,12 +21,12 @@ sudo apt-get update
 sudo apt-get install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg
 echo "deb https://packages.sury.org/php/ $(lsb_release -c -s) main" > /etc/apt/sources.list.d/php.list
 wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
-echo "deb https://deb.goaccess.io/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/goaccess.list >/dev/null 2>&1
+echo "deb https://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/goaccess.list >/dev/null 2>&1
 wget -O - https://deb.goaccess.io/gnugpg.key 2>&1 | sudo apt-key --keyring 
 sudo mkdir -p /etc/apt/keyrings
-wget -q -O- https://rspamd.com/apt-stable/gpg.key | sudo gpg --dearmor | tee /etc/apt/keyrings/rspamd.gpg > /dev/null
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/rspamd.gpg] http://rspamd.com/apt-stable/ $(lsb_release -c -s) main" | tee /etc/apt/sources.list.d/rspamd.list
-echo "deb-src [arch=amd64 signed-by=/etc/apt/keyrings/rspamd.gpg] http://rspamd.com/apt-stable/ $(lsb_release -c -s) main"  | tee -a /etc/apt/sources.list.d/rspamd.list
+wget -q -O- https://rspamd.com/apt-stable/gpg.key | sudo gpg --dearmor | sudo tee /etc/apt/keyrings/rspamd.gpg > /dev/null
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/rspamd.gpg] http://rspamd.com/apt-stable/ $(lsb_release -c -s) main" | sudo tee /etc/apt/sources.list.d/rspamd.list
+echo "deb-src [arch=amd64 signed-by=/etc/apt/keyrings/rspamd.gpg] http://rspamd.com/apt-stable/ $(lsb_release -c -s) main"  | sudo tee -a /etc/apt/sources.list.d/rspamd.list
 wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 sudo apt-get update
 sleep 2
