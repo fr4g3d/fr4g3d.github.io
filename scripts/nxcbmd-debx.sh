@@ -62,10 +62,10 @@ sudo cp -f ~/.fancyprompts/.bashrc-ptch ~/.bashrc
 sleep 2
 # install sshWifty.
 sleep 2
-#sudo rm dlds/sshwifty_0.2.*.tar.gz
-aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz
+#sudo rm dlds/sshwifty_0.3.*.tar.gz
+aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/sshwifty_0.3.4-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
-sudo tar -xf dlds/sshwifty_0.2.22-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
+sudo tar -xf dlds/sshwifty_0.3.4-beta-release_linux_amd64.tar.gz -C ~/sshwifty/
 sleep 2
 mkdir ~/.config/
 sudo mkdir /root/.config/
