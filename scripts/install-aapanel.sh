@@ -19,9 +19,9 @@ else
 	sleep 2
     exit 1
 fi
+echo 
 # Get the Debian version ID
 DEBIAN_VERSION=$(grep -oP 'VERSION_ID="\K[^"]+' /etc/os-release)
-
 # Check if the version is less than or equal to 10
 if (( $(echo "$DEBIAN_VERSION <= 10" | bc -l) )); then
     printf "Debian version is $DEBIAN_VERSION, which is less than or equal to 10.\n\n"
@@ -35,6 +35,7 @@ else
     # Add your commands here for Debian versions > 10
 fi
 sleep 2
+echo 
 # Check if php command exists
 #php -v
 if ! command php -v &> /dev/null; then
