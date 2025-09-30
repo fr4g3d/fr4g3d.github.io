@@ -99,6 +99,8 @@ wget -O - https://deb.goaccess.io/gnugpg.key | gpg --dearmor | sudo tee /usr/sha
 echo "deb [signed-by=/usr/share/keyrings/goaccess.gpg arch=$(dpkg --print-architecture)] https://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/goaccess.list
 sudo apt-get update
 sleep 2
+sudo apt-get install -y wget curl libcurl4-openssl-dev gcc make zip unzip tar openssl libssl-dev gcc libxml2 libxml2-dev libxslt-dev zlib1g zlib1g-dev libjpeg-dev libpng-dev lsof libpcre3 libpcre3-dev cron net-tools swig build-essential libffi-dev libbz2-dev libncurses-dev libsqlite3-dev libreadline-dev tk-dev libgdbm-dev libdb-dev libdb++-dev libpcap-dev xz-utils git ufw ipset sqlite3 uuid-dev libpq-dev liblzma-dev ca-certificates sudo autoconf at mariadb-client rsyslog xfsprogs quota libssh2-1-dev
+sleep 2
 sudo apt-get install -y ssh openssh-server nano vim-nox lsb-release apt-transport-https ca-certificates wget git gnupg software-properties-common curl cron ntp
 sleep 2
 sudo apt-get install -y dbconfig-common mariadb-client mariadb-server openssl rkhunter binutils sudo getmail dovecot-imapd dovecot-pop3d dovecot-mysql dovecot-sieve dovecot-managesieved dovecot-lmtpd
