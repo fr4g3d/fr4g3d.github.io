@@ -111,8 +111,16 @@ sleep 2
 wget -O - https://get.ispconfig.org | sudo bash -s -- --use-ftp-ports=40110-40210 --unattended-upgrades --debug
 #wget -O - https://get.ispconfig.org | sudo bash -s -- --use-nginx --use-ftp-ports=40110-40210 --unattended-upgrades --debug
 sleep 2
-read -n 1 -s -r -p "Press Enter to continue Install Softaculous.."
+sudo apt-get install -y apache2-doc
 sleep 2
+sudo a2enconf apache2-doc
+sleep 2
+sudo systemctl reload apache2
+sleep 2
+read -n 1 -s -r -p "Press Enter to continue Install Softaculous.."
+sleep 5
+read -n 1 -s -r -p "Press Enter to continue Install Softaculous.."
+sleep 3
 #
 wget -N https://files.softaculous.com/install.sh
 sudo bash ./install.sh
