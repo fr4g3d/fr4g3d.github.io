@@ -121,12 +121,6 @@ sudo apt-get install -y php8.3 php8.3-common php8.3-gd php8.3-mysql php8.3-imap 
 sleep 2
 sudo apt-get install -y php8.4 php8.4-common php8.4-gd php8.4-mysql php8.4-imap php8.4-cli php8.4-curl php8.4-intl php8.4-pspell php8.4-sqlite3 php8.4-tidy php8.4-xsl php8.4-zip php8.4-mbstring php8.4-soap php8.4-opcache php8.4-cgi php8.4-fpm
 sleep 2
-sudo apt-get install haveged, geoip-database, libclass-dbi-mysql-perl, libtimedate-perl, build-essential, autoconf, automake, libtool, flex, bison, debhelper, binutils
-sleep 2
-sudo apt-get install fail2ban, ufw
-sleep 2
-sudo apt-get install roundcube, roundcube-core, roundcube-mysql, roundcube-plugins
-sleep 2
 echo 
 echo "Done Preparing..."
 echo 
