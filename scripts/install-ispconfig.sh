@@ -3,6 +3,7 @@
 clear
 sudo apt-get update
 sleep 3
+echo 
 # Get the Debian version ID
 DEBIAN_VERSION=$(grep -oP 'VERSION_ID="\K[^"]+' /etc/os-release)
 # Check if the version is less than or equal to 10
