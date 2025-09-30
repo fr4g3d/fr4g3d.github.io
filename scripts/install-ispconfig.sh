@@ -5,19 +5,17 @@ sudo apt-get update
 sleep 3
 # Get the Debian version ID
 DEBIAN_VERSION=$(grep -oP 'VERSION_ID="\K[^"]+' /etc/os-release)
-
 # Check if the version is less than or equal to 10
 if (( $(echo "$DEBIAN_VERSION <= 10" | bc -l) )); then
-    echo "Debian version is $DEBIAN_VERSION, which is less than or equal to 10."
 	echo 
+    printf "Debian version is $DEBIAN_VERSION, which is less than or equal to 10.\n\n"
     # Add your commands here for Debian versions <= 10
 	exit
 else
-    echo "Debian version is $DEBIAN_VERSION, which is greater than 10."
 	echo 
+    printf "Debian version is $DEBIAN_VERSION, which is greater than 10.\n\n"
 	sleep 2
-	echo "Preparing Install ISPConfig"
-	echo 
+	printf "Preparing Install ISPConfig\n\n"
 	sleep 2
     # Add your commands here for Debian versions > 10
 fi
@@ -25,18 +23,17 @@ sleep 2
 # Check if php command exists
 #php -v
 if ! command php -v &> /dev/null; then
-    echo "PHP is not installed. Installing PHP..."
 	echo 
+    printf "PHP is not installed. Installing PHP...\n\n"
 	sleep 2
 	sudo apt-get -y install php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
 	sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
 	sudo php -v
-    echo "PHP installation complete."
-	echo 
+    printf "PHP installation complete.\n\n"
 	sleep 2
 else
-    echo "PHP is already installed."
 	echo 
+    printf "PHP is already installed.\n\n"
     php -v
 	sudo apt-get -y install php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
 	sudo apt-get -y install redis-server php-redis php-apcu php-memcached memcached
@@ -59,8 +56,7 @@ echo
 printf "$NOW\n"
 printf "${PHPINI}\n"
 printf "${PHPEXTDIR}\n"
-printf "The PHP Version is: ${PHPMAJVER}\n"
-echo 
+printf "The PHP Version is: ${PHPMAJVER}\n\n"
 sudo cp ioncube_loader_lin_${PHPMAJVER}.so ${PHPEXTDIR}/
 # zend_extension = ${PHPEXTDIR}/ioncube_loader_lin_${PHPMAJVER}.so
 sudo sh -c -E "printf \"
@@ -96,7 +92,7 @@ sudo apt-get install -y software-properties-common update-inetd dnsutils clamav 
 sleep 2
 sudo apt-get install -y daemon libio-string-perl libio-socket-ssl-perl libnet-ident-perl libnet-dns-perl libdbd-mysql-perl bind9 rspamd redis-server p7zip p7zip-full unrar-free lrzip
 echo 
-echo "Installing PHP Old to Current..."
+printf "Installing PHP Old to Current...\n\n"
 echo 
 sleep 2
 sudo apt-get install -y php5.6 php5.6-common php5.6-gd php5.6-mysql php5.6-imap php5.6-cli php5.6-mcrypt php5.6-curl php5.6-intl php5.6-pspell php5.6-recode php5.6-sqlite3 php5.6-tidy php5.6-xmlrpc php5.6-xsl php5.6-zip php5.6-mbstring php5.6-soap php5.6-opcache php5.6-cgi php5.6-fpm
@@ -122,12 +118,10 @@ sleep 2
 sudo apt-get install -y php8.4 php8.4-common php8.4-gd php8.4-mysql php8.4-imap php8.4-cli php8.4-curl php8.4-intl php8.4-pspell php8.4-sqlite3 php8.4-tidy php8.4-xsl php8.4-zip php8.4-mbstring php8.4-soap php8.4-opcache php8.4-cgi php8.4-fpm
 sleep 2
 echo 
-echo "Done Preparing..."
-echo 
+printf "Done Preparing...\n\n"
 sleep 2
 clear
-echo "Start ISPConfig Installer..."
-echo 
+printf "Start ISPConfig Installer...\n\n"
 sleep 2
 read -n 1 -s -r -p "Press Enter to continue Install ISPConfig.."
 echo 
@@ -143,7 +137,7 @@ sleep 2
 sudo systemctl reload apache2
 sleep 2
 echo 
-echo "Done Install ISPConfig"
+printf "Done Install ISPConfig\n"
 echo 
 read -n 1 -s -r -p "Press Enter to continue Install Softaculous.."
 echo 
