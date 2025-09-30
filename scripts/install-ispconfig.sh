@@ -118,8 +118,10 @@ sleep 2
 sudo systemctl reload apache2
 sleep 2
 read -n 1 -s -r -p "Press Enter to continue Install Softaculous.."
+echo 
 sleep 5
 read -n 1 -s -r -p "Press Enter to continue Install Softaculous.."
+echo 
 sleep 3
 #
 wget -N https://files.softaculous.com/install.sh
