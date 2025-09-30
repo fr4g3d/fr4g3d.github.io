@@ -21,7 +21,6 @@ else
     # Add your commands here for Debian versions > 10
 fi
 sleep 2
-echo 
 # Check if php command exists
 #php -v
 if ! command php -v &> /dev/null; then
