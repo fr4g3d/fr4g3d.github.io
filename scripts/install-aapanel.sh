@@ -3,6 +3,7 @@
 clear
 sudo apt-get update
 sleep 3
+echo 
 if [ "$(id -u)" -eq 0 ]
 then
     if [ -n "$SUDO_USER" ]
