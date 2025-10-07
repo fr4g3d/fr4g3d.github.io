@@ -9,7 +9,7 @@ clear
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # install Cockpit VM App.
-sudo apt-get -y install cockpit cockpit-machines qemu-system libvirt-clients libvirt-daemon-system
+sudo apt-get -y install cockpit cockpit-machines cockpit-podman qemu-system libvirt-clients libvirt-daemon-system
 sleep 2
 clear
 # install FileBrowser App.
