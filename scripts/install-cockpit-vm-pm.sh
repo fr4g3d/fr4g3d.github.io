@@ -18,9 +18,11 @@ sleep 2
 #sudo curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | sudo bash
 mkdir dlds
 aria2c -d dlds -c -m3 -s8 -j8 -x8 -V https://github.com/filebrowser/filebrowser/releases/download/v2.32.0/linux-amd64-filebrowser.tar.gz
+aria2c -d dlds -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sconf/filebrowserdb
 tar -xvzf dlds/linux-amd64-filebrowser.tar.gz -C dlds/
 sudo chmod +x dlds/filebrowser
 sudo install dlds/filebrowser /usr/local/bin/filebrowser
+sudo cp dlds/filebrowser.db /root/filebrowser.db
 dpkg -S /usr/bin/nohup
 
 sudo sh -c "printf \"[Unit]
