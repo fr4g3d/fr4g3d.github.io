@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Installer KVM/Qemu and Cockpit VM
+# Installer KVM/Qemu, Cockpit VM and Cockpit Podman
 #
 clear
 #
