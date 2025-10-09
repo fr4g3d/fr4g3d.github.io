@@ -31,7 +31,12 @@ registries = ['docker.io', 'quay.io']
 [registries.insecure]
 registries = []
 \" >> /etc/containers/registries.conf"
-
+sleep 1
+mkdir -p ~/.config/containers
+bash -c "printf \"
+[engine]
+cgroup_manager = '"cgroupfs"'
+\" >> ~/.config/containers/containers.conf"
 sleep 1
 
 sudo sh -c "printf \"[Unit]
