@@ -93,5 +93,5 @@ echo
 podman run quay.io/podman/hello
 sleep 2
 echo 
-echo Install [CockPit+KVM] is Done.
+echo Install [CockPit+KVM+Podman] is Done.
 sleep 3
