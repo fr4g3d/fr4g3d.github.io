@@ -81,8 +81,8 @@ sudo virsh net-start default
 sleep 2
 sudo service cockpit restart
 sleep 2
-echo Install [CockPit+KVM] is Done.
-sleep 3
 podman run quay.io/podman/hello
 sleep 1
-
+echo 
+echo Install [CockPit+KVM] is Done.
+sleep 3
