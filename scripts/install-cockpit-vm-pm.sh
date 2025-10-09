@@ -9,7 +9,7 @@ clear
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
 # install Cockpit VM App.
-sudo apt-get -y install cockpit cockpit-machines cockpit-podman qemu-system libvirt-clients libvirt-daemon-system
+sudo apt-get -y install cockpit cockpit-pcp cockpit-machines cockpit-podman qemu-system libvirt-clients libvirt-daemon-system
 sleep 2
 clear
 # install FileBrowser App.
@@ -81,8 +81,12 @@ sudo virsh net-start default
 sleep 2
 sudo service cockpit restart
 sleep 2
+echo 
+podman run docker.io/library/hello-world
+sleep 3
+echo 
 podman run quay.io/podman/hello
-sleep 1
+sleep 2
 echo 
 echo Install [CockPit+KVM] is Done.
 sleep 3
