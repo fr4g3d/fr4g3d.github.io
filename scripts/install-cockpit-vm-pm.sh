@@ -83,3 +83,6 @@ sudo service cockpit restart
 sleep 2
 echo Install [CockPit+KVM] is Done.
 sleep 3
+podman run quay.io/podman/hello
+sleep 1
+
