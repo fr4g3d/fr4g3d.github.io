@@ -25,6 +25,15 @@ sudo install dlds/filebrowser /usr/local/bin/filebrowser
 sudo cp dlds/filebrowser.db /root/filebrowser.db
 dpkg -S /usr/bin/nohup
 
+sudo sh -c "printf \"
+[registries.search]
+registries = ['docker.io', 'quay.io']
+[registries.insecure]
+registries = []
+\" >> /etc/containers/registries.conf"
+
+sleep 1
+
 sudo sh -c "printf \"[Unit]
 Description=FileBrowser Service
 After=network-online.target
