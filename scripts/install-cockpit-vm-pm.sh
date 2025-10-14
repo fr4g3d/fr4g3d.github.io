@@ -4,7 +4,7 @@
 #
 clear
 #
-
+start_time=$SECONDS
 # install common apps and Downloader.
 sudo apt-get -y install curl wget aria2 coreutils
 sleep 2
@@ -95,3 +95,9 @@ sleep 2
 echo 
 echo Install [CockPit+KVM+Podman] is Done.
 sleep 3
+end_time=$SECONDS
+duration=$((end_time - start_time))
+hours=$((duration / 360))
+minutes=$((duration / 60))
+seconds=$((duration % 60))
+echo "Script completed in $hours hours, $minutes minutes and $seconds seconds."
