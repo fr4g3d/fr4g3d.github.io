@@ -12,6 +12,12 @@ sleep 2
 sudo apt-get -y install cockpit cockpit-pcp cockpit-machines cockpit-podman qemu-system libvirt-clients libvirt-daemon-system
 sleep 2
 clear
+end_time=$SECONDS
+duration=$((end_time - start_time))
+hours=$((duration / 3600))
+minutes=$((duration / 60))
+seconds=$((duration % 60))
+echo "Install CockPit completed in $hours hours, $minutes minutes and $seconds seconds."
 # install FileBrowser App.
 echo "Install [FileBrowser] App"
 sleep 2
