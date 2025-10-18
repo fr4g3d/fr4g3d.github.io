@@ -4,7 +4,8 @@
 #
 clear
 #
-
+# Start Timer
+start_time=$SECONDS
 # install apache2 mod-php openssl.
 sudo apt-get update
 sleep 2
@@ -72,4 +73,12 @@ sleep 2
 sudo service apache2 restart
 sleep 2
 echo Install [NextCloud] is Done.
-sleep 3
+sleep 1
+# End Timer
+end_time=$SECONDS
+duration=$((end_time - start_time))
+hours=$((duration / 3600))
+minutes=$((duration / 60))
+seconds=$((duration % 60))
+echo "Script completed in $hours hours, $minutes minutes and $seconds seconds."
+
