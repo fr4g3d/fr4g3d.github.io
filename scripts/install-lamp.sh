@@ -4,7 +4,8 @@
 #
 clear
 #
-
+# Start Timer
+start_time=$SECONDS
 # install apache2 mod-php openssl.
 sudo apt-get update
 sudo apt-get -y install apache2 apache2-doc libapache2-mod-fcgid openssl 
@@ -161,4 +162,12 @@ sleep 2
 sleep 2
 sudo service apache2 reload
 echo Install [LAMP] is Done.
-sleep 2
+sleep 1
+# End Timer
+end_time=$SECONDS
+duration=$((end_time - start_time))
+hours=$((duration / 3600))
+minutes=$((duration / 60))
+seconds=$((duration % 60))
+echo "Script completed in $hours hours, $minutes minutes and $seconds seconds."
+

@@ -3,7 +3,7 @@
 # Installer KVM/Qemu, Cockpit VM and Cockpit Podman
 #
 clear
-#
+# Start Timer
 start_time=$SECONDS
 # install common apps and Downloader.
 sudo apt-get -y install curl wget aria2 coreutils
@@ -12,6 +12,7 @@ sleep 2
 sudo apt-get -y install cockpit cockpit-pcp cockpit-machines cockpit-podman qemu-system libvirt-clients libvirt-daemon-system
 sleep 2
 clear
+# End Timer 1
 end_time=$SECONDS
 duration=$((end_time - start_time))
 hours=$((duration / 3600))
@@ -101,6 +102,7 @@ sleep 2
 echo 
 echo Install [CockPit+KVM+Podman] is Done.
 sleep 3
+# End Timer 2
 end_time=$SECONDS
 duration=$((end_time - start_time))
 hours=$((duration / 3600))

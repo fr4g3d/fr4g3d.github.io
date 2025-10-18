@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 clear
+# Start Timer
+start_time=$SECONDS
 sudo apt-get update
 sleep 3
 echo 
@@ -162,4 +164,12 @@ sleep 2
 #wget -N https://files.softaculous.com/install.sh
 #sudo bash ./install.sh
 #
+sleep 1
+# End Timer
+end_time=$SECONDS
+duration=$((end_time - start_time))
+hours=$((duration / 3600))
+minutes=$((duration / 60))
+seconds=$((duration % 60))
+echo "Script completed in $hours hours, $minutes minutes and $seconds seconds."
 exit
