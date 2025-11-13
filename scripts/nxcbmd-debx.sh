@@ -63,6 +63,28 @@ sudo cp -f ~/.fancyprompts/.bashrc-ptch ~/.bashrc
 sleep 2
 # install sshWifty.
 sleep 2
+#
+konfirmasi_lanjut() {
+    read -p "Apakah Anda ingin melanjutkan instalasi aplikasi? (ya/tidak): " yn
+    case $yn in
+        'ya' ) return 0;; # Mengembalikan nilai sukses (0) jika ya
+        'tidak' ) return 1;; # Mengembalikan nilai gagal (1) jika tidak
+        * )
+            echo "Input tidak valid. Harap masukkan 'ya' atau 'tidak'."
+            konfirmasi_lanjut # Memanggil fungsi lagi jika input salah
+            ;;
+    esac
+}
+# --- PROSES UTAMA ---
+echo "Memulai script instalasi..."
+echo "Aplikasi yang akan diinstal: Aplikasi SSHWifty"
+echo "Pastikan Anda memiliki koneksi internet dan hak akses sudo/root (jika diperlukan)."
+# Memanggil fungsi konfirmasi
+if konfirmasi_lanjut; then
+    echo "Melanjutkan instalasi..."
+    # Tempatkan perintah instalasi Anda di sini
+    # Contoh:
+    # sudo apt update && sudo apt install -y nama-aplikasi
 #sudo rm dlds/sshwifty_0.3.*.tar.gz
 aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/sshwifty_0.3.4-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
@@ -98,6 +120,14 @@ sudo systemctl enable sshwifty.service
 #sudo service sshwifty start
 #sleep 2
 #sudo service sshwifty restart
+    echo "Instalasi 'Aplikasi SSHWifty' selesai."
+else
+    echo "Instalasi dibatalkan oleh pengguna."
+    exit 1 # Keluar dari script dengan status error
+fi
+#echo "Script selesai dijalankan."
+#
+
 sleep 2
 echo "wget -O - https://get.ispconfig.org | sudo sh -s -- --use-ftp-ports=40110-40210 --unattended-upgrades"
 echo 
