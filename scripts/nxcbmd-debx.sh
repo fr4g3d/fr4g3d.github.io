@@ -61,6 +61,7 @@ sudo cp ~/.bashrc ~/.bashrc-bak
 sleep 2
 sudo cp -f ~/.fancyprompts/.bashrc-ptch ~/.bashrc
 sleep 2
+clear
 # install sshWifty.
 sleep 2
 #
