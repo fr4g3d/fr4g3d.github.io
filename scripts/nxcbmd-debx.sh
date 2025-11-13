@@ -124,7 +124,7 @@ sudo systemctl enable sshwifty.service
     echo "Instalasi 'Aplikasi SSHWifty' selesai."
 else
     echo "Instalasi dibatalkan oleh pengguna."
-    exit 1 # Keluar dari script dengan status error
+    # exit 1 # Keluar dari script dengan status error
 fi
 #echo "Script selesai dijalankan."
 #
