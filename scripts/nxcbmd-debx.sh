@@ -68,24 +68,21 @@ sleep 2
 konfirmasi_lanjut() {
     read -p "Apakah Anda ingin melanjutkan instalasi aplikasi? (ya/tidak): " yn
     case $yn in
-        'ya' ) return 0;; # Mengembalikan nilai sukses (0) jika ya
-        'tidak' ) return 1;; # Mengembalikan nilai gagal (1) jika tidak
+        'ya' ) return 0;;
+        'tidak' ) return 1;;
         * )
             echo "Input tidak valid. Harap masukkan 'ya' atau 'tidak'."
-            konfirmasi_lanjut # Memanggil fungsi lagi jika input salah
+            konfirmasi_lanjut
             ;;
     esac
 }
-# --- PROSES UTAMA ---
+#
 echo "Memulai script instalasi..."
 echo "Aplikasi yang akan diinstal: Aplikasi SSHWifty"
 echo "Pastikan Anda memiliki koneksi internet dan hak akses sudo/root (jika diperlukan)."
-# Memanggil fungsi konfirmasi
+#
 if konfirmasi_lanjut; then
     echo "Melanjutkan instalasi..."
-    # Tempatkan perintah instalasi Anda di sini
-    # Contoh:
-    # sudo apt update && sudo apt install -y nama-aplikasi
 #sudo rm dlds/sshwifty_0.3.*.tar.gz
 aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sarch/sshwifty_0.3.4-beta-release_linux_amd64.tar.gz
 mkdir sshwifty/
