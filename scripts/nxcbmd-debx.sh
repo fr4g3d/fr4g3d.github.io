@@ -32,7 +32,8 @@ sleep 2
 # install common apps.
 sudo apt-get update
 sleep 2
-sudo apt-get install --allow-unauthenticated --force-yes -y curl wget aria2 zip unzip dnsutils net-tools openssl openssh-server openssh-client shellinabox htop neofetch
+sudo apt-get install --allow-unauthenticated --force-yes -y curl wget aria2 zip unzip dnsutils net-tools openssl openssh-server openssh-client shellinabox htop
+sudo apt-get install --allow-unauthenticated --force-yes -y neofetch
 aria2c -d dlds/ -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/scss/00_Green_On_Black.css
 sudo mv -f dlds/00_Green_On_Black.css /etc/shellinabox/options-available/
 sudo ln -s /etc/shellinabox/options-available/00_Green_On_Black.css /etc/shellinabox/options-enabled/00+Green_On_Black.css
