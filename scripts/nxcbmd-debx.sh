@@ -66,7 +66,7 @@ clear
 sleep 2
 #
 konfirmasi_lanjut() {
-    read -p "Apakah Anda ingin melanjutkan instalasi aplikasi? (ya/tidak): " yn
+    read -p "Apakah Anda ingin melanjutkan instalasi aplikasi 'SSHWifty'? (ya/tidak): " yn
     case $yn in
         'ya' ) return 0;;
         'tidak' ) return 1;;

@@ -48,6 +48,25 @@ else
 	sleep 2
 fi
 sleep 2
+#
+konfirmasi_lanjut() {
+    read -p "Apakah Anda ingin melanjutkan instalasi aplikasi 'ionCube'? (ya/tidak): " yn
+    case $yn in
+        'ya' ) return 0;;
+        'tidak' ) return 1;;
+        * )
+            echo "Input tidak valid. Harap masukkan 'ya' atau 'tidak'."
+            konfirmasi_lanjut
+            ;;
+    esac
+}
+#
+echo "Memulai script instalasi..."
+echo "Aplikasi yang akan diinstal: Aplikasi ionCube"
+echo "Pastikan Anda memiliki koneksi internet dan hak akses sudo/root (jika diperlukan)."
+#
+if konfirmasi_lanjut; then
+    echo "Melanjutkan instalasi..."
 cd /tmp
 wget -nc https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
@@ -81,6 +100,13 @@ sudo systemctl restart php${PHPMAJVER}-fpm
 php -m | grep ionCube
 sleep 3
 cd
+    echo "Instalasi 'Aplikasi ionCube' selesai."
+else
+    echo "Instalasi dibatalkan oleh pengguna."
+    # exit 1 # Keluar dari script dengan status error
+fi
+#echo "Script selesai dijalankan."
+#
 # install mariadb-server as mysql-server.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
