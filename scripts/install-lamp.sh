@@ -8,7 +8,7 @@ clear
 start_time=$SECONDS
 # install apache2 mod-php openssl.
 sudo apt-get update
-sudo apt-get install -y --force-yes apache2 apache2-doc libapache2-mod-fcgid openssl 
+sudo apt-get install --allow-unauthenticated --force-yes -y apache2 apache2-doc libapache2-mod-fcgid openssl 
 #sudo apt-get install apache2 apache2-doc libapache2-mod-php openssl 
 sudo a2enmod headers
 sudo a2enmod env
@@ -22,10 +22,10 @@ sudo a2enconf apache2-doc
 sudo service apache2 reload
 sleep 2
 # install php php-commons.
-#sudo apt-get install -y --force-yes php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
-#sudo apt-get install -y --force-yes redis-server php-redis php-apcu php-memcached memcached
+#sudo apt-get install --allow-unauthenticated --force-yes -y php php-fpm php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+#sudo apt-get install --allow-unauthenticated --force-yes -y redis-server php-redis php-apcu php-memcached memcached
 #sudo apt-get install php php-common php-xml php-curl php-gd php-json php-mbstring php-zip php-mysql php-bz2 php-intl php-ldap php-smbclient php-imap php-bcmath php-gmp php-redis php-imagick
-#sudo apt-get install -y --force-yes smbclient cifs-utils libsmbclient-dev php-dev make
+#sudo apt-get install --allow-unauthenticated --force-yes -y smbclient cifs-utils libsmbclient-dev php-dev make
 #sudo pecl install smbclient
 #sudo sh -c "printf 'extension=smbclient.so' >> /etc/php/7.4/fpm/php.ini"
 #sudo systemctl restart php7.4-fpm
@@ -35,16 +35,16 @@ sleep 2
 if ! command php -v &> /dev/null; then
     echo "PHP is not installed. Installing PHP..."
 	sleep 2
-	sudo apt-get install -y --force-yes php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
-	sudo apt-get install -y --force-yes redis-server php-redis php-apcu php-memcached memcached
+	sudo apt-get install --allow-unauthenticated --force-yes -y php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+	sudo apt-get install --allow-unauthenticated --force-yes -y redis-server php-redis php-apcu php-memcached memcached
 	sudo php -v
     echo "PHP installation complete."
 	sleep 2
 else
     echo "PHP is already installed."
     php -v
-	sudo apt-get install -y --force-yes php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
-	sudo apt-get install -y --force-yes redis-server php-redis php-apcu php-memcached memcached
+	sudo apt-get install --allow-unauthenticated --force-yes -y php php-fpm php-common libapache2-mod-php php-xml php-curl php-gd php-json php-mbstring php-zip php-sqlite3 php-mysql php-pgsql php-bz2 php-intl php-ldap php-imap php-bcmath php-gmp php-apcu php-redis php-imagick
+	sudo apt-get install --allow-unauthenticated --force-yes -y redis-server php-redis php-apcu php-memcached memcached
 	sleep 2
 fi
 sleep 2
@@ -110,13 +110,13 @@ fi
 # install mariadb-server as mysql-server.
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 if [[ $VERSION == '9' ]]; then
-  sudo apt-get install -y --force-yes git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
+  sudo apt-get install --allow-unauthenticated --force-yes -y git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 elif [[ $VERSION == '10' ]]; then
-  sudo apt-get install -y --force-yes git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
+  sudo apt-get install --allow-unauthenticated --force-yes -y git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev libmariadbclient-dev-compat
 elif [[ $VERSION == '11' ]]; then
-  sudo apt-get install -y --force-yes git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
+  sudo apt-get install --allow-unauthenticated --force-yes -y git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
 elif [[ $VERSION == '12' ]]; then
-  sudo apt-get install -y --force-yes git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
+  sudo apt-get install --allow-unauthenticated --force-yes -y git make gcc g++ zlib1g-dev libpcre3-dev mariadb-server mariadb-client libdbd-mysql-perl libmariadb-dev libmariadbclient-dev-compat
 fi
 sleep 2
 sudo sh -c "printf \"GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin@123' WITH GRANT OPTION;
@@ -129,7 +129,7 @@ sleep 2
 sudo mysql -uroot < mysqld.sql
 sleep 2
 # install common for installing Common Downloader.
-sudo apt-get install -y --force-yes curl wget zip unzip aria2 ffmpeg
+sudo apt-get install --allow-unauthenticated --force-yes -y curl wget zip unzip aria2 ffmpeg
 sleep 2
 aria2c -d dlds -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sphp/admnr.php
 aria2c -d dlds -c -m3 -s8 -j8 -x8 -V http://fr4g3d.github.io/sphp/pfm.php
@@ -181,7 +181,7 @@ sleep 2
 # install phpmyadmin.
 #VERSION=$(sed 's/\..*//' /etc/debian_version)
 #if [[ $VERSION == '11' ]]; then
-#  sudo apt-get install -y --force-yes phpmyadmin
+#  sudo apt-get install --allow-unauthenticated --force-yes -y phpmyadmin
 #  sleep 2
 #  sudo a2enconf phpmyadmin
 #fi
